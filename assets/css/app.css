@@ -128,14 +128,24 @@
 .uploaded-icons .Edit-BTN:hover {
     transform: none;
 }
+.uploaded-icons .icon-container.editing .Edit-BTN {
+    padding: 0;
+}
 
 /* input */
 .uploaded-icons .input {
-    width: 256px;
+    width: unset;
+    flex: 1;
+    height: 24px;
+}
+.uploaded-icons .input[status="error"] {
+    height: fit-content;
+}
+.uploaded-icons .input * {
+    height: 24px;
 }
 .uploaded-icons .input input {
-    min-height: 24px;
-    height: 24px;
+    min-height: unset;
 }
 
 /* Icon Item */
@@ -146,9 +156,13 @@
     align-items: center;
     gap: 8px;
 }
+.icon-container:has(.input[status="error"]) {
+    align-items: start;
+}
 .icon-container * {
     user-select: none;
 }
+
 
 /* Icon Symbole */
 .icon-container svg:nth-child(1) {
@@ -158,9 +172,13 @@
 
 /* Icon Name */
 .icon-container .icon-name {
+    display: block;
     flex: 1;
     cursor: default;
     user-select: unset;
+}
+.icon-container.editing .icon-name {
+    display: none;
 }
 
 /* Icon Remove */

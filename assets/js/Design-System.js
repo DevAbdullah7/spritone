@@ -528,6 +528,7 @@ function iconsSearch(searchInput) {
             icon.parentNode.classList.remove('hidden')
         })
         searchResult.innerHTML = ''
+        document.querySelectorAll('.section#icons .sprite .partContent').forEach(i => i.classList.add('opend'))
     }
 }
 

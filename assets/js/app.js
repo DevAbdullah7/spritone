@@ -111,19 +111,22 @@ function renderIcons() {
                 <!-- Icon Name -->
                 <p class="icon-name" title="${icon.id}">${icon.id}.svg</p>
                 
+
+                <!-- Edit Icon Name -->
+                <div class="input statusInp edit-icon-name" style="display: none;"  Status="">
+                    <div class="inputContainer">
+                        <input 
+                            type="text" 
+                            name="icon-name" 
+                            placeholder="Enter Icon Name" 
+                            oninput="inputHandlling(this), this.value = this.value.replace(/[^a-zA-Z0-9\s-]/g, '')"
+                        >
+                    </div>
+                    <span class="inputMSG"></span>
+                </div>
+
                 <!-- Action Call Buttons -->
                 <div class="action-call-buttons">
-                    <div class="input" style="display: none;">
-                        <div class="inputContainer">
-                            <input 
-                                type="text" 
-                                name="icon-name" 
-                                placeholder="Enter Icon Name" 
-                                oninput="inputHandlling(this), this.value = this.value.replace(/[^a-zA-Z0-9\s-]/g, '')"
-                            >
-                        </div>
-                    </div>
-
                     <!-- Edit Button -->
                     <div class="BTN Edit-BTN" title="Edit Icon Name" onclick="editIconName(this, ${i})">
                         <svg width="24" height="24">
@@ -159,11 +162,24 @@ function renderIcons() {
 }
 
 function editIconName(btn, index) {
-    const inputWrapper = btn.parentNode.querySelector('.input');
+    const iconContainer = btn.parentNode.parentNode
+    const inputWrapper = btn.parentNode.parentNode.querySelector('.input');
     const inputElement = inputWrapper.querySelector('input');
 
+    const isThereIconEditing = iconContainer.parentNode.querySelector('.icon-container.editing')
+    if (isThereIconEditing) {
+        isThereIconEditing.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest'
+        });
+        isThereIconEditing.querySelector('input').focus()
+        return;
+    };
+
+    iconContainer.classList.toggle('editing')
+
     inputWrapper.style.display = 'block';
-    // inputElement.value = icons[index].id;
+    inputElement.value = icons[index].id;
     inputElement.focus();
 
     btn.innerHTML = `
@@ -174,17 +190,17 @@ function editIconName(btn, index) {
 
     btn.onclick = (e) => {
         e.stopPropagation();
-        updateIconName(index, inputElement.value);
+        updateIconName(index, btn, inputElement.value);
     };
 
     inputElement.onkeydown = (e) => {
         if (e.key === 'Enter') {
-            updateIconName(index, inputElement.value);
+            updateIconName(index, btn, inputElement.value);
         }
     };
 }
 
-function updateIconName(index, newName) {
+function updateIconName(index, btn, newName) {
     if (!newName) return;
 
     const cleanId = newName
@@ -196,15 +212,16 @@ function updateIconName(index, newName) {
         .replace(/-+/g, '-');
 
     if (!cleanId) {
-        alert('يرجى إدخال اسم باللغة الإنجليزية فقط (أحرف إنجليزية، أرقام، أو شرطات).');
-        renderIcons();
         return;
     }
 
     const isDuplicate = icons.some((icon, i) => i !== index && icon.id === cleanId);
     if (isDuplicate) {
-        alert('هذا الاسم مستخدم بالفعل، اختر اسماً آخر.');
-        renderIcons();
+        btn.parentNode.parentNode.parentNode.querySelector('.icon-container.editing .input').setAttribute('Status', 'error')
+        btn.parentNode.parentNode.parentNode.querySelector('.icon-container.editing .input .inputMSG').innerHTML = `
+            This Name is Duplicated !
+        `
+        // btn.parentNode.parentNode.parentNode.querySelector('.icon-container.editing .input input').value = icons[index].id
         return;
     }
 
