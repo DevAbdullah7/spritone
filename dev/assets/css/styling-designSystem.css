@@ -1,0 +1,509 @@
+
+
+/* ========== Side Panel ========== */
+/* -- Side Panel -- */
+.sidePanel {
+    position: fixed;
+    width: 160px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background: rgba(0, 0, 0, .25);
+    box-shadow: var(--shadow-SM);
+    z-index: 9999999;
+    user-select: none;
+}
+
+/* -- Side Panel Section -- */
+.sidePanel .sidePanel-header,
+.sidePanel .sidePanel-links {
+    width: 100%;
+}
+
+.sidePanel .sidePanel-header {
+    border-bottom: 1px solid var(--primary-color-400);
+}
+
+.sidePanel .sidePanel-controlling .controls {
+    display: none;
+    font-size: var(--fontSize-LG);
+    color: var(--secondary-color-500-MD);
+    cursor: pointer;
+}
+
+.sidePanel .sidePanel-controlling {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-3);
+    background: var(--secondary-color-500-MD);
+}
+
+/* -- App Logo -- */
+.sidePanel .sidePanel-controlling .logo {
+    width: 100%;
+    cursor: pointer;
+    color: var(--primary-color-500-MD);
+}
+.sidePanel .sidePanel-controlling .logo svg {
+    width: 100%;
+    height: fit-content;
+}
+
+/* -- Profile -- */
+.sidePanel .profileInfo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-6) 0 0 0;
+}
+
+.sidePanel .profileInfo .item {
+    padding: var(--space-1);
+}
+
+.sidePanel .profileInfo .item:hover {
+    border: none;
+    padding: 0;
+    transform: scale(1);
+    background: var(--primary-color-500-MD);
+}
+
+.sidePanel .profileInfo .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: var(--borderRedius-XS);
+}
+
+.sidePanel .profileInfo .name {
+    font-size: var(--fontSize-XS);
+    color: var(--typography-color-secondary);
+    cursor: default;
+}
+
+/* -- Side Panel Links -- */
+.sidePanel .itemsContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-6) var(--space-4);
+}
+
+.sidePanel .item {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-2);
+    border: 1px solid transparent;
+    border-radius: var(--borderRedius-XS);
+    color: var(--secondary-color-500-MD);
+    background: var(--primary-color-500-MD);
+    box-shadow: var(--shadow-XS);
+    text-decoration: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all ease-in-out 0.3s;
+}
+
+.sidePanel .item .icon {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--fontSize-MD);
+}
+
+.sidePanel .item .icon img,
+.sidePanel .item .icon svg {
+    width: 60%;
+}
+
+.sidePanel .item p {
+    width: 100%;
+    font-size: var(--fontSize-XXS);
+    color: var(--typography-color-PL3);
+    text-align: center;
+    text-transform: capitalize;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    overflow: hidden;
+}
+
+/* -- Hover Status -- */
+.sidePanel .item:hover,
+.sidePanel .item.active {
+    color: var(--primary-color-500-MD);
+    border: 1px solid var(--secondary-color-500-MD);
+    background: var(--secondary-color-500-MD);
+}
+
+.sidePanel .item:hover p,
+.sidePanel .item.active p {
+    color: var(--primary-color-500-MD);
+}
+
+/* -- Overflow Scrolling Case -- */
+.sidePanel .sidePanel-links {
+    overflow-x: visible;
+    overflow-y: scroll;
+}
+
+.sidePanel .sidePanel-links::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+/* ========== End Side Panel ========== */
+
+
+
+/* HTML Colors */
+pre .html.tag {
+    color: #599eed;
+}
+pre .html.tagArrow {
+    color: #969696;
+}
+pre .html.attribute {
+    color: #a0e1fb;
+}
+pre .html.className {
+    color: #ffa44a;
+}
+pre .html.functionName {
+    color: #CEBE7D;
+}
+pre .html.functionBrackets {
+    color: #fed65d;
+}
+pre .html.functionDeclaration {
+    color: #366BB9;
+}
+pre .html.comment {
+    color: #5F7E40;
+}
+
+/* CSS Colors */
+pre .css.selector {
+    color: #c18804;
+}
+pre .css.selectorBrackets {
+    color: #fed65d;
+}
+pre .css.property {
+    color: #8ED1F9;
+}
+pre .css.numProperty {
+    color: #b6af7b;
+}
+pre .css.wordProperty {
+    color: #d39255;
+}
+pre .css.propertyBrackets {
+    color: #A961B6;
+}
+pre .css.propertyYallow {
+    color: #D9CE90;
+}
+pre .css.comment {
+    color: #5F7E40;
+}
+pre .css.colorSquar {
+    display: inline-flex;
+    width: 12px;
+    height: 12px;
+    margin-right: var(--space-1);
+    border: 1px solid #ffffff;
+    background: var(--primary-color-500-MD);
+}
+
+/* JS Colors */
+pre .js.function {
+    color: #4585C6;
+}
+pre .js.functionName {
+    color: #CEBE7D;
+}
+pre .js.functionArgument {
+    color: #85CAEC;
+}
+pre .js.mainBrackets {
+    color: #fed65d;
+}
+pre .js.secondBrackets {
+    color: #A961B6;
+}
+pre .js.declaration {
+    color: #366BB9;
+}
+pre .js.declarationName {
+    color: #70deff;
+}
+pre .js.declarationValue {
+    color: #84C6EE;
+}
+pre .js.num {
+    color: #2eff97;
+}
+pre .js.yallow {
+    color: #D9CE90;
+}
+pre .js.red {
+    color: #c47950;
+}
+/* End Code Shown Box */
+
+/* Pathes Stylling */
+.pathShown {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    direction: ltr;
+    padding: var(--space-2) var(--space-6);
+    border-radius: var(--borderRedius-XXS);
+    border: 1px solid var(--primary-color-100);
+    font-size: var(--fontSize-SM);
+    color: var(--typography-color-primary);
+    background-color: var(--primary-color-100);
+    box-shadow: var(--shadow-SM);
+}
+
+/* Stylling Design System */
+.mainContent {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: start;
+    gap: var(--space-10);
+}
+
+.section {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    background: #ffffff;
+    box-shadow: var(--shadow-SM);
+}
+
+.section .sectionTitle {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--typography-color-secondary);
+    font-size: var(--fontSize-H2);
+    font-weight: var(--fontWeight-Medium);
+}
+
+.section .sctionContent {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: var(--space-6);
+}
+
+.section .sectionContent.Instructions {
+    flex-direction: row;
+    gap: var(--space-7);
+}
+@media only screen and (max-width: 1375px) {
+    .section .sectionContent.Instructions {
+        flex-direction: column;
+        gap: var(--space-8);
+    }
+}
+
+.part {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: var(--space-3);
+}
+.part.icons-viewer {
+    gap: var(--space-10);
+    margin-bottom: var(--space-10);
+}
+.part.icons-viewer .sprite {
+    gap: var(--space-7);
+}
+.part.icons-viewer .sprite .partTitle .BTN {
+    font-size: var(--fontSize-SM);
+    padding: var(--space-3) var(--space-5);
+}
+.part p {
+    cursor: default;
+}
+
+.part .partTitle {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--fontSize-LG);
+    font-weight: var(--fontWeight-Medium);
+    text-transform: capitalize;
+    color: var(--typography-color-HL1);
+    cursor: default;
+}
+.part.icons-viewer .partTitle {
+    font-size: var(--fontSize-H3);
+    color: var(--typography-color-HL3);
+}
+.part.icons-viewer .actionCallButtons {
+    width: 100%;
+    margin-top: var(--space-5);
+}
+
+.part .partContent {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: var(--space-6);
+}
+.part.icons-viewer .partContent {
+    max-height: 320px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.part.icons-viewer .partContent.opend {
+    max-height: unset;
+    overflow: visible;
+}
+.part.icons-viewer .partContent.error {
+    width: fit-content;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    color: var(--warning-color-500-MD);
+    border: unset;
+    background: unset;
+    cursor: default;
+}
+
+.part .partContent .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: var(--space-3);
+}
+
+.section#Icons .sctionContent {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-8);
+}
+
+.section#Icons .iconcontainer {
+    width: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-3);
+}
+.section#Icons .iconcontainer.hidden {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .section#Icons .iconsContainer {
+        gap: var(--space-3);
+    }
+
+    .section#Icons .iconcontainer {
+        width: 55px;
+    }
+}
+
+.section#Icons .icon {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-1);
+    border-radius: var(--borderRedius-XS);
+    border: 1px solid var(--secondary-color-500-MD);
+    color: var(--secondary-color-500-MD);
+    background: var(--primary-color-500-MD);
+    box-shadow: var(--shadow-MD);
+    cursor: pointer;
+    user-select: none;
+    transition: all ease-in-out .3s;
+}
+
+.section#Icons .icon.copied::after {
+    position: absolute;
+    content: "✔ \A copyed";
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--fontSize-XXS);
+    text-align: center;
+    white-space: pre;
+    border-radius: var(--borderRedius-XS);
+    border: 1px solid var(--secondary-color-500-MD);
+    color: var(--socendary-color-500-MD);
+    background: var(--primary-color-500-MD);
+}
+
+
+.section#Icons .icon:hover {
+    border: 1px solid var(--secondary-color-500-MD);
+    color: var(--secondary-color-500-MD);
+    transform: scale(1.1)
+}
+
+.section#Icons .iconContainer p {
+    text-align: center;
+    color: var(--secondary-color-500-MD);
+    cursor: default;
+    opacity: 0;
+    transition: all ease-in-out .3s;
+}
+.section#Icons .iconContainer:hover p {
+    opacity: 1;
+}

@@ -1,0 +1,225 @@
+/* ========== Upload Icons Container ========== */
+.upload-icons-container {
+    width: 100%;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 48px;
+}
+
+/* ========== Upload Box ========== */
+.files-input {
+    width: 100%;
+    height: 100%;
+}
+.upload-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-6);
+    padding: 32px;
+    text-align: center;
+    border-radius: 12px;
+    border: 2px dashed #38bdf8;
+    cursor: pointer;
+    transition: all ease-in-out .25s;
+    user-select: none;
+}
+
+.files-input input {
+    display: none;
+}
+
+.upload-box .upload-shape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.upload-box svg {
+    color: #38bdf8;
+}
+
+.upload-box .inputMSG {
+    font-size: 14px;
+    color: #919191;
+}
+
+.upload-box.dragover,
+.upload-box:hover {
+    background: linear-gradient(-45deg, rgba(15, 23, 42, .5), rgb(12 18 34));
+}
+
+/* ========== Uploaded Icons ========== */
+.uploaded-icons {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.uploaded-icons h3 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #38bdf8;
+    user-select: none;
+}
+
+.uploaded-icons .icons-list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    gap: 8px;
+    padding-right: 8px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.uploaded-icons .orderMSG {
+    font-size: 14px;
+    font-weight: 400;
+    color: #919191;
+    user-select: none;
+}
+
+.icons-controlling {
+    width: 100%;
+    height: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    user-select: none;
+}
+
+.icons-controlling .icons-count {
+    width: 100%;
+    font-size: 18px;
+    color: var(--secondary-color-500-MD);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--fontSize-H4);
+    cursor: default;
+    user-select: none;
+}
+
+.uploaded-icons .action-call-buttons {
+    width: fit-content;
+}
+
+.uploaded-icons .Edit-BTN {
+    color: var(--secondary-color-500-MD);
+    background: transparent;
+}
+.uploaded-icons .Edit-BTN:hover {
+    transform: none;
+}
+
+/* input */
+.uploaded-icons .input {
+    width: 256px;
+}
+.uploaded-icons .input input {
+    min-height: 24px;
+    height: 24px;
+}
+
+/* Icon Item */
+.icon-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+.icon-container * {
+    user-select: none;
+}
+
+/* Icon Symbole */
+.icon-container svg:nth-child(1) {
+    max-width: 24px !important;
+    max-height: 24px !important;
+}
+
+/* Icon Name */
+.icon-container .icon-name {
+    flex: 1;
+    cursor: default;
+    user-select: unset;
+}
+
+/* Icon Remove */
+.icon-container .icon-remove {
+    color: var(--danger-color-500-MD);
+    cursor: pointer;
+}
+
+.codeShown {
+    width: 100%;
+}
+.codeShown .codeTitle {
+    font-size: var(--fontSize-H3);
+    color: var(--typography-color-secondary);
+    user-select: none;
+    cursor: default;
+}
+
+pre {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    padding: var(--space-3) var(--space-5) !important;
+    margin: 0 !important;
+    border-radius: 10px;
+    border: 2px solid var(--secondary-color-500-MD);
+    box-shadow: var(--shadow-XL);
+    background: rgba(15, 23, 42, .25) !important;
+    overflow: scroll;
+    direction: ltr;
+    transition: all ease-in-out .3s;
+}
+
+.token.tag {
+    color: #ff6565 !important;
+    /* color: #407abd !important; */
+}
+.token.attr-name {
+    /* color: #67d4ff !important; */
+    color: #ffbd7a !important;
+}
+/* .token.attr-value {
+    color: #ffbd7a !important;
+} */
+
+.output-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-7);
+}
+
+.output-container h3 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #38bdf8;
+    user-select: none;
+}
+
+.output-container .action-call-buttons .btn {
+    font-size: 18px;
+    margin-top: 16px;
+}
