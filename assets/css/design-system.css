@@ -159,6 +159,26 @@ html * {
     --fontSize-XXXS: 8px;
 }
 
+/* mobile version */
+:root {
+    /* Heading Titles */
+    --fontSize-H1: 52px;
+    --fontSize-H2: 40px;
+    --fontSize-H3: 30px;
+    --fontSize-H4: 26px;
+    --fontSize-H5: 22px;
+    --fontSize-H6: 20px;
+
+    /* Paragraphs */
+    --fontSize-XL: 20px;
+    --fontSize-LG: 18px;
+    --fontSize-MD: 16px;
+    --fontSize-SM: 14px;
+    --fontSize-XS: 12px;
+    --fontSize-XXS: 10px;
+    --fontSize-XXXS: 8px;
+}
+
 /* Laptops */
 @media only screen and (max-width: 1025px) {
     :root {
