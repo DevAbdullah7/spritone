@@ -140,9 +140,9 @@ function passwordInpHandlling(passToggle) {
 
     // Changing password hiding icon
     if (type == 'password') {
-        passToggle.querySelector('use').setAttribute('xlink:href', '/assets/icons.svg#eye')
+        passToggle.querySelector('use').setAttribute('xlink:href', '/assets/icons/sprites/icons.svg#eye')
     } else if (type == 'text') {
-        passToggle.querySelector('use').setAttribute('xlink:href', '/assets/icons.svg#eye-off')
+        passToggle.querySelector('use').setAttribute('xlink:href', '/assets/icons/sprites/icons.svg#eye-off')
     }
 }
 
@@ -174,6 +174,39 @@ function colorInputHandlling(input) {
 }
 
 // Image Input
+// function imageInputHandlling(input) {
+//     const file = input.files[0];
+
+//     if (!file) return;
+
+//     const ext = file.name.split(".").pop().toLowerCase();
+//     const allowedTypes = ["image/png", "image/jpeg", "image/jpg", "image/svg+xml"];
+//     const allowedExt = ["png","jpg","jpeg","svg"];
+
+//     if (!allowedTypes.includes(file.type) || !allowedExt.includes(ext)) {
+//         input.value = "";
+//         input.parentNode.querySelector('.inputMSG').innerHTML = `<span style="color: #ff0000;">Upload An Image !</span>`
+//         input.parentNode.querySelector('.inputFeild').classList.add('error')
+//         return;
+//     }
+
+//     input.parentNode.querySelector('.inputFeild').classList.remove('error')
+//     let b6h = ""
+//     if (file.name.length > 10) {
+//         console.log(file)
+//         b6h = "test"
+//     } else {
+//         b6h = file.name
+//     }
+//     input.parentNode.querySelector('.inputMSG').innerHTML = `
+//     ${b6h}
+//     <svg width="16" height="16" class="cleaner" onclick="imageInputCleaner(this.parentNode.parentNode.querySelector('input'))">
+//         <use xlink:href="/assets/icons/sprites/icons.svg#remove"></use>
+//     </svg>
+//     `;
+//     input.classList.add('has-text')
+// }
+
 function imageInputHandlling(input) {
     const file = input.files[0];
 
@@ -181,27 +214,38 @@ function imageInputHandlling(input) {
 
     const ext = file.name.split(".").pop().toLowerCase();
     const allowedTypes = ["image/png", "image/jpeg", "image/jpg", "image/svg+xml"];
-    const allowedExt = ["png","jpg","jpeg","svg"];
+    const allowedExt = ["png", "jpg", "jpeg", "svg"];
 
     if (!allowedTypes.includes(file.type) || !allowedExt.includes(ext)) {
         input.value = "";
-        input.parentNode.querySelector('.inputMSG').innerHTML = `<span style="color: #ff0000;">Upload An Image !</span>`
-        input.parentNode.querySelector('.inputFeild').classList.add('error')
+        input.parentNode.querySelector('.inputMSG').innerHTML = `<span style="color: #ff0000;">Upload Images Only!</span>`;
+        input.parentNode.querySelector('.inputFeild').classList.add('error');
         return;
     }
 
-    input.parentNode.querySelector('.inputFeild').classList.remove('error')
+    input.parentNode.querySelector('.inputFeild').classList.remove('error');
+
+    const lastDotIndex = file.name.lastIndexOf('.');
+    const nameWithoutExt = file.name.substring(0, lastDotIndex);
+
+    let formattedName = file.name;
+
+    if (file.name.length > 30) {
+        const truncatedName = nameWithoutExt.substring(0, 30);
+        formattedName = `${truncatedName}... .${ext}`;
+    }
+
     input.parentNode.querySelector('.inputMSG').innerHTML = `
-    ${file.name}
-    <svg width="12" height="12" class="cleaner" onclick="imageInputCleaner(this.parentNode.parentNode.querySelector('input'))">
-        <use xlink:href="/assets/icons.svg#remove"></use>
+    ${formattedName}
+    <svg width="16" height="16" class="cleaner" onclick="imageInputCleaner(this.parentNode.parentNode.querySelector('input'))">
+        <use xlink:href="/assets/icons/sprites/icons.svg#remove"></use>
     </svg>
     `;
-    input.classList.add('has-text')
+    input.classList.add('has-text');
 }
 function imageInputCleaner(input) {
     input.value = "";
-    input.parentNode.querySelector('.inputMSG').innerHTML = `<span style="color: #ff0000;">*</span>File Supported: .png .jpg .jpeg .svg`
+    input.parentNode.querySelector('.inputMSG').innerHTML = `<span style="color: #ff0000;">*</span> File Supported: .png .jpg .jpeg .svg`
     input.classList.remove('has-text')
 }
 

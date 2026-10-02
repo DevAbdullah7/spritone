@@ -123,7 +123,7 @@
 .icons-controlling .icons-count {
     width: 100%;
     font-size: 18px;
-    color: var(--secondary-color-500-MD);
+    color: var(--secondary-color-500);
     display: flex;
     justify-content: start;
     align-items: center;
@@ -138,7 +138,7 @@
 }
 
 .uploaded-icons .Edit-BTN {
-    color: var(--secondary-color-500-MD);
+    color: var(--secondary-color-500);
     background: transparent;
 }
 .uploaded-icons .Edit-BTN:hover {
@@ -219,7 +219,7 @@ pre {
     padding: var(--space-3) var(--space-5) !important;
     margin: 0 !important;
     border-radius: 10px;
-    border: 2px solid var(--secondary-color-500-MD);
+    border: 2px solid var(--secondary-color-500);
     box-shadow: var(--shadow-XL);
     background: rgba(15, 23, 42, 0.25) !important;
     overflow: scroll;

@@ -1,27 +1,33 @@
 /* ==================== Design System ==================== */
 :root {
     /* ---------- Colors ---------- */
-    /* Primary Colors */
-    --primary-color-100: #cfd1d4;
-    --primary-color-200: #9fa2aa;
-    --primary-color-300: #6f747f;
-    --primary-color-400: #3f4555;
-    --primary-color-500-MD: #0f172a;
-    --primary-color-600: #0c1222;
-    --primary-color-700: #090e19;
-    --primary-color-800: #060911;
-    --primary-color-900: #030508;
+    /* Primary Color */
+    --primary-color: #0f172a;
 
-    /* Secondary Colors */
-    --secondary-color-100: #d7f2fe;
-    --secondary-color-200: #afe5fc;
-    --secondary-color-300: #88d7fb;
-    --secondary-color-400: #60caf9;
-    --secondary-color-500-MD: #38bdf8;
-    --secondary-color-600: #2d97c6;
-    --secondary-color-700: #227195;
-    --secondary-color-800: #164c63;
-    --secondary-color-900: #0b2632;
+    /* Colors Generated */
+    --primary-color-100: color-mix(in srgb, var(--primary-color) 20%, #ffffff);
+    --primary-color-200: color-mix(in srgb, var(--primary-color) 40%, #ffffff);
+    --primary-color-300: color-mix(in srgb, var(--primary-color) 60%, #ffffff);
+    --primary-color-400: color-mix(in srgb, var(--primary-color) 80%, #ffffff);
+    --primary-color-500: var(--primary-color);
+    --primary-color-600: color-mix(in srgb, var(--primary-color) 80%, #000000);
+    --primary-color-700: color-mix(in srgb, var(--primary-color) 60%, #000000);
+    --primary-color-800: color-mix(in srgb, var(--primary-color) 40%, #000000);
+    --primary-color-900: color-mix(in srgb, var(--primary-color) 20%, #000000);
+
+    /* Secondary Color */
+    --secondary-color: #38bdf8;
+
+    /* Colors Generated */
+    --secondary-color-100: color-mix(in srgb, var(--secondary-color) 20%, #ffffff);
+    --secondary-color-200: color-mix(in srgb, var(--secondary-color) 40%, #ffffff);
+    --secondary-color-300: color-mix(in srgb, var(--secondary-color) 60%, #ffffff);
+    --secondary-color-400: color-mix(in srgb, var(--secondary-color) 80%, #ffffff);
+    --secondary-color-500: var(--secondary-color);
+    --secondary-color-600: color-mix(in srgb, var(--secondary-color) 80%, #000000);
+    --secondary-color-700: color-mix(in srgb, var(--secondary-color) 60%, #000000);
+    --secondary-color-800: color-mix(in srgb, var(--secondary-color) 40%, #000000);
+    --secondary-color-900: color-mix(in srgb, var(--secondary-color) 20%, #000000);
 
     /* Danger Colors */
     --danger-color-100: #fbdddd;
@@ -64,8 +70,8 @@
     );
 
     /* Typography Colors */
-    --typography-color-primary: var(--primary-color-500-MD);
-    --typography-color-secondary: var(--secondary-color-500-MD);
+    --typography-color-primary: var(--primary-color-500);
+    --typography-color-secondary: var(--secondary-color-500);
 
     /* Heading Title */
     --typography-color-HL1: #ffffff;
@@ -73,9 +79,9 @@
     --typography-color-HL3: #dddddd;
 
     /* Paragraphs */
-    --typography-color-PL1: #bbbbbb;
-    --typography-color-PL2: #aaaaaa;
-    --typography-color-PL3: #a1a1a1;
+    --typography-color-PL1: #cccccc;
+    --typography-color-PL2: #bbbbbb;
+    --typography-color-PL3: #aaaaaa;
     /* ---------- End Colors ---------- */
 
     /* ---------- Spaces ---------- */
@@ -139,44 +145,25 @@ html * {
 }
 
 /* ---------- Sizes ---------- */
+/* Old Version */
 /* Desktops */
 :root {
     /* Heading Titles */
-    --fontSize-H1: 52px;
-    --fontSize-H2: 40px;
-    --fontSize-H3: 30px;
-    --fontSize-H4: 26px;
-    --fontSize-H5: 22px;
-    --fontSize-H6: 20px;
+    --fontSize-H1: 64px;
+    --fontSize-H2: 48px;
+    --fontSize-H3: 38px;
+    --fontSize-H4: 32px;
+    --fontSize-H5: 28px;
+    --fontSize-H6: 26px;
 
     /* Paragraphs */
-    --fontSize-XL: 20px;
-    --fontSize-LG: 18px;
-    --fontSize-MD: 16px;
-    --fontSize-SM: 14px;
-    --fontSize-XS: 12px;
-    --fontSize-XXS: 10px;
-    --fontSize-XXXS: 8px;
-}
-
-/* mobile version */
-:root {
-    /* Heading Titles */
-    --fontSize-H1: 52px;
-    --fontSize-H2: 40px;
-    --fontSize-H3: 30px;
-    --fontSize-H4: 26px;
-    --fontSize-H5: 22px;
-    --fontSize-H6: 20px;
-
-    /* Paragraphs */
-    --fontSize-XL: 20px;
-    --fontSize-LG: 18px;
-    --fontSize-MD: 16px;
-    --fontSize-SM: 14px;
-    --fontSize-XS: 12px;
-    --fontSize-XXS: 10px;
-    --fontSize-XXXS: 8px;
+    --fontSize-XL: 24px;
+    --fontSize-LG: 20px;
+    --fontSize-MD: 18px;
+    --fontSize-SM: 16px;
+    --fontSize-XS: 14px;
+    --fontSize-XXS: 12px;
+    --fontSize-XXXS: 10px;
 }
 
 /* Laptops */
@@ -185,7 +172,7 @@ html * {
         /* Heading Titles */
         --fontSize-H1: 56px;
         --fontSize-H2: 42px;
-        --fontSize-H3: 36px;
+        --fontSize-H3: 32px;
         --fontSize-H4: 28px;
         --fontSize-H5: 26px;
         --fontSize-H6: 24px;
@@ -207,7 +194,7 @@ html * {
         /* Heading Titles */
         --fontSize-H1: 48px;
         --fontSize-H2: 36px;
-        --fontSize-H3: 32px;
+        --fontSize-H3: 28px;
         --fontSize-H4: 26px;
         --fontSize-H5: 24px;
         --fontSize-H6: 22px;
@@ -404,15 +391,15 @@ p {
 
 /* Primary Button */
 .Primary-BTN {
-    color: var(--primary-color-500-MD);
-    border: 1px solid var(--secondary-color-500-MD);
-    background: var(--secondary-color-500-MD);
+    color: var(--primary-color-500);
+    border: 1px solid var(--secondary-color-500);
+    background: var(--secondary-color-500);
 }
 
 /* Secondary Button */
 .Secondary-BTN {
-    color: var(--secondary-color-500-MD);
-    border: 1px solid var(--secondary-color-500-MD);
+    color: var(--secondary-color-500);
+    border: 1px solid var(--secondary-color-500);
     background: rgba(15, 23, 42, 0.25);
 }
 
@@ -435,8 +422,8 @@ p {
     height: 24px;
     padding: var(--space-2);
     border-radius: var(--borderRedius-Full);
-    color: var(--primary-color-500-MD);
-    background: var(--secondary-color-500-MD);
+    color: var(--primary-color-500);
+    background: var(--secondary-color-500);
     border: none;
 }
 
@@ -499,7 +486,7 @@ p {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 1px;
-    background: var(--secondary-color-500-MD);
+    background: var(--secondary-color-500);
 }
 .radio .radioInp:checked::after {
     border-radius: var(--borderRedius-Full);
@@ -525,8 +512,8 @@ p {
     width: 16px;
     height: 16px;
     border-radius: var(--borderRedius-XXXS);
-    border: 1px solid var(--secondary-color-500-MD);
-    color: var(--secondary-color-500-MD);
+    border: 1px solid var(--secondary-color-500);
+    color: var(--secondary-color-500);
     background: rgba(15, 23, 42, 0.25);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px); /* For Safari support */
@@ -543,7 +530,7 @@ p {
 .checkBox .checkBoxLabel,
 .radio .radioLabel {
     font-size: var(--fontSize-MD);
-    color: var(--secondary-color-500-MD);
+    color: var(--secondary-color-500);
     user-select: none;
     cursor: pointer;
 }
@@ -672,20 +659,20 @@ input::-webkit-inner-spin-button {
 .inputContainer:has(textarea:focus) textarea,
 .input.imgInp:has(input.has-text) .inputFeild {
     outline: none;
-    color: var(--secondary-color-500-MD);
-    border: 1px solid var(--secondary-color-500-MD);
+    color: var(--secondary-color-500);
+    border: 1px solid var(--secondary-color-500);
 }
 
 .input input.has-text,
 .input textarea.has-text {
-    color: var(--secondary-color-500-MD);
-    border: 1px solid var(--secondary-color-500-MD);
+    color: var(--secondary-color-500);
+    border: 1px solid var(--secondary-color-500);
 }
 
 .input.passwordInp:has(input):hover .inputIcon,
 .input.passwordInp:has(input:focus) .inputIcon,
 .input.passwordInp input.has-text ~ .inputIcon {
-    color: var(--secondary-color-500-MD);
+    color: var(--secondary-color-500);
 }
 
 .input input:disabled:hover {
@@ -703,6 +690,13 @@ input::-webkit-inner-spin-button {
     color: #686868;
     cursor: default;
     transition: all ease-in-out 0.3s;
+}
+.input.imgInp:has(input.has-text) .inputMSG {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--secondary-color-500);
 }
 
 .input label {
@@ -726,14 +720,14 @@ input::-webkit-inner-spin-button {
 .input:has(input:hover) .inputIcon,
 .input:has(input:focus) .inputIcon,
 .input:has(input.has-text) .inputIcon {
-    color: var(--secondary-color-500-MD);
+    color: var(--secondary-color-500);
 }
 
 .input .inputContainer:hover .inputMSG,
 .input .inputContainer:has(input:focus) .inputMSG,
 .input .inputContainer:hover .inputIcon,
 .input .inputContainer:has(input:focus) .inputIcon {
-    color: var(--secondary-color-500-MD);
+    color: var(--secondary-color-500);
 }
 
 .input.passwordInp .inputIcon,
@@ -765,8 +759,8 @@ input::-webkit-inner-spin-button {
 .input.buttonInp:has(input:hover) .inputIcon,
 .input.buttonInp:has(input:focus) .inputIcon,
 .input.buttonInp:has(input.has-text) .inputIcon {
-    border: 1px solid var(--secondary-color-500-MD);
-    color: var(--secondary-color-500-MD);
+    border: 1px solid var(--secondary-color-500);
+    color: var(--secondary-color-500);
 }
 
 /* Stylling Colors Input */
@@ -789,7 +783,7 @@ input::-webkit-inner-spin-button {
 }
 
 .input.buttonInp:has(input:disabled) .inputIcon:hover {
-    border: 1px solid var(--secondary-color-500-MD);
+    border: 1px solid var(--secondary-color-500);
     cursor: default;
 }
 
@@ -859,7 +853,7 @@ input::-webkit-inner-spin-button {
 .input .inputContainer:has(input:focus) .inputMSG,
 .input .inputContainer:hover .inputIcon,
 .input .inputContainer:has(input:focus) .inputIcon {
-    color: var(--secondary-color-500-MD);
+    color: var(--secondary-color-500);
 }
 
 /* ========== End Inputs ========== */
@@ -911,8 +905,8 @@ input::-webkit-inner-spin-button {
 .selectList select:hover,
 .selectList select:focus,
 .selectList select:open {
-    color: var(--secondary-color-500-MD);
-    border: 1px solid var(--secondary-color-500-MD);
+    color: var(--secondary-color-500);
+    border: 1px solid var(--secondary-color-500);
     background: rgba(15, 23, 42, 0.5);
 }
 
@@ -944,7 +938,7 @@ input::-webkit-inner-spin-button {
     &::picker(select) {
         padding: var(--space-1);
         margin: var(--space-1) 0;
-        border: 1px solid var(--secondary-color-500-MD);
+        border: 1px solid var(--secondary-color-500);
         background: rgba(15, 23, 42, 0.5);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px); /* For Safari support */
@@ -985,7 +979,7 @@ input::-webkit-inner-spin-button {
     padding: var(--space-1) var(--space-3);
     border-radius: var(--borderRedius-XXS);
     font-size: var(--fontSize-XS);
-    color: var(--secondary-color-500-MD);
+    color: var(--secondary-color-500);
     background: transparent;
     cursor: pointer;
     user-select: none;
@@ -994,8 +988,8 @@ input::-webkit-inner-spin-button {
 
 .selectList select option:hover,
 .selectList select option:checked {
-    color: var(--primary-color-500-MD);
-    background: var(--secondary-color-500-MD);
+    color: var(--primary-color-500);
+    background: var(--secondary-color-500);
 }
 
 .selectList select option::checkmark {
@@ -1017,12 +1011,12 @@ input::-webkit-inner-spin-button {
 .selectList select option p {
     width: 100%;
     text-wrap: auto;
-    color: var(--secondary-color-500-MD);
+    color: var(--secondary-color-500);
 }
 
 .selectList select option:hover p,
 .selectList select option:checked p {
-    color: var(--primary-color-500-MD);
+    color: var(--primary-color-500);
 }
 
 .selectList .selectIcon {
@@ -1035,7 +1029,7 @@ input::-webkit-inner-spin-button {
     top: 50%;
     right: 0;
     transform: translateY(-50%);
-    color: var(--secondary-color-500-MD);
+    color: var(--secondary-color-500);
     z-index: 1;
     cursor: pointer;
 }
@@ -1151,8 +1145,8 @@ input::-webkit-inner-spin-button {
     gap: var(--space-1);
     padding: var(--space-3);
     border-radius: var(--borderRedius-XS);
-    border: 1px solid var(--secondary-color-500-MD);
-    color: var(--secondary-color-500-MD);
+    border: 1px solid var(--secondary-color-500);
+    color: var(--secondary-color-500);
     font-size: var(--fontSize-SM);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px); /* For Safari support */
@@ -1162,9 +1156,9 @@ input::-webkit-inner-spin-button {
 }
 
 .paginationTBTN:hover {
-    border: 1px solid var(--secondary-color-500-MD);
+    border: 1px solid var(--secondary-color-500);
     transform: scale(1.1);
-    color: var(--secondary-color-500-MD);
+    color: var(--secondary-color-500);
 }
 
 .prevNextPagination .paginationPrev,
@@ -1181,7 +1175,7 @@ input::-webkit-inner-spin-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid var(--secondary-color-500-MD);
+    border: 1px solid var(--secondary-color-500);
     border-radius: var(--borderRedius-XS);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px); /* For Safari support */
@@ -1201,13 +1195,13 @@ input::-webkit-inner-spin-button {
 }
 
 .paginationNBTN:hover {
-    color: var(--secondary-color-500-MD);
+    color: var(--secondary-color-500);
     cursor: pointer;
 }
 
 .paginationNBTN.active {
-    color: var(--primary-color-500-MD);
-    background: var(--secondary-color-500-MD);
+    color: var(--primary-color-500);
+    background: var(--secondary-color-500);
 }
 
 /* ========== End Pagination ========== */
@@ -1228,7 +1222,7 @@ input::-webkit-inner-spin-button {
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px); /* For Safari support */
     border-radius: var(--borderRedius-SM);
-    border: 1px solid var(--secondary-color-500-MD);
+    border: 1px solid var(--secondary-color-500);
     box-shadow: var(--shadow-SM);
     transition: all ease-in-out 0.3s;
 }
@@ -1257,7 +1251,7 @@ input::-webkit-inner-spin-button {
     padding: var(--space-2);
     text-align: center;
     font-weight: var(--fontWeight-Bold);
-    color: var(--secondary-color-500-MD);
+    color: var(--secondary-color-500);
     cursor: default;
 }
 
@@ -1285,14 +1279,15 @@ input::-webkit-inner-spin-button {
 }
 
 .calendar .date.active,
-.calendar .date:hover {
-    color: var(--primary-color-500-MD);
-    border: 1px solid var(--secondary-color-500-MD);
-    background: var(--secondary-color-500-MD);
+.calendar .date:not(.inactive):hover {
+    color: var(--primary-color-500);
+    border: 1px solid var(--secondary-color-500);
+    background: var(--secondary-color-500);
 }
 
 .calendar .date.inactive {
-    color: var(--typography-color-PL3);
+    cursor: default;
+    opacity: .25;
 }
 
 /* Date Input Stylling */
@@ -1317,12 +1312,12 @@ input::-webkit-inner-spin-button {
 
 .input.dateInp:has(.calendar.active) input,
 .input.dateInp:has(.calendar.picked) input {
-    color: var(--secondary-color-500-MD);
-    border: 1px solid var(--secondary-color-500-MD);
+    color: var(--secondary-color-500);
+    border: 1px solid var(--secondary-color-500);
 }
 .input.dateInp:has(.calendar.active) .inputIcon,
 .input.dateInp:has(.calendar.picked) .inputIcon {
-    color: var(--secondary-color-500-MD);
+    color: var(--secondary-color-500);
 }
 
 .input.dateInp .inputIcon {
@@ -1349,8 +1344,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     gap: var(--space-6);
     padding: var(--space-3);
     border-radius: var(--borderRedius-SM);
-    border: 1px solid var(--secondary-color-500-MD);
-    color: var(--secondary-color-500-MD);
+    border: 1px solid var(--secondary-color-500);
+    color: var(--secondary-color-500);
     background: rgba(15, 23, 42, 0.25);
     box-shadow: var(--shadow-SM);
     backdrop-filter: blur(16px);
@@ -1400,10 +1395,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: var(--typography-color-PL1);
 }
 
+/* Primary Card */
+.card {
+    
+}
+
 /* Secondary Card */
 .card.Secondary-card {
-    background: var(--secondary-color-500-MD);
-    color: var(--primary-color-500-MD);
+    background: var(--secondary-color-500);
+    color: var(--primary-color-500);
 }
 
 .card.Secondary-card .cardContent .title,
@@ -1950,8 +1950,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     justify-content: center;
     align-items: center;
     border-radius: var(--borderRedius-XS);
-    color: var(--secondary-color-500-MD);
-    background: var(--primary-color-500-MD);
+    color: var(--secondary-color-500);
+    background: var(--primary-color-500);
     cursor: pointer;
     user-select: none;
 }
@@ -1984,17 +1984,17 @@ pre {
     position: relative;
     padding: var(--space-4) var(--space-6);
     border-radius: var(--borderRedius-SM);
-    border: 3px solid var(--secondary-color-500-MD);
+    border: 3px solid var(--secondary-color-500);
     text-align: start;
     color: var(--socendary-color-500-MD);
-    background: var(--primary-color-500-MD);
+    background: var(--primary-color-500);
     box-shadow: var(--shadow-SM);
     white-space: pre;
 }
 pre::selection,
 pre *::selection {
-    color: var(--primary-color-500-MD);
-    background: var(--secondary-color-500-MD);
+    color: var(--primary-color-500);
+    background: var(--secondary-color-500);
 }
 pre:focus {
     outline: none;
@@ -2025,9 +2025,9 @@ pre:focus {
     justify-content: center;
     align-items: center;
     border-radius: var(--borderRedius-XS) 0 var(--borderRedius-XS) 0;
-    border: 1px solid var(--secondary-color-500-MD);
-    color: var(--primary-color-500-MD);
-    background: var(--secondary-color-500-MD);
+    border: 1px solid var(--secondary-color-500);
+    color: var(--primary-color-500);
+    background: var(--secondary-color-500);
     cursor: pointer;
 }
 .copyIcon.copied {

@@ -16,8 +16,8 @@
     background-color: #38bdf8;
 }
 *::selection {
-    color: var(--primary-color-500-MD);
-    background: var(--secondary-color-500-MD);
+    color: var(--primary-color-500);
+    background: var(--secondary-color-500);
 }
 
 body {
@@ -30,7 +30,7 @@ body {
     align-items: center;
     gap: 48px;
     font-family: Arial;
-    background: #0f172a;
+    background: var(--primary-color-500);
     color: #fff;
     padding: 144px var(--space-10) var(--space-4);
     /* overflow: hidden; */
@@ -134,7 +134,7 @@ nav.navbar .nav-links a.active {
     border-radius: 50%;
     transform: translate(-50%, -50%);
     filter: blur(256px);
-    background: var(--secondary-color-500-MD);
+    background: var(--secondary-color-500);
     z-index: -9999;
 }
 
@@ -179,7 +179,7 @@ h1 {
 }
 .topArrow:hover {
     transform: scale(1.07);
-    border: 1px solid var(--primaryColor-1);
+    border: 1px solid var(--secondary-color-500);
 }
 .topArrow.active {
     bottom: var(--space-8);

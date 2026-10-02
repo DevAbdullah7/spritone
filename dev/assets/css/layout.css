@@ -11,7 +11,7 @@ body {
     flex-direction: row;
     gap: 0;
     padding: 0;
-    background: var(--primary-color-500-MD);
+    background: var(--primary-color-500);
 }
 
 .main {
@@ -70,7 +70,7 @@ body {
 }
 
 .searchHeader .input input {
-    border: 1px solid var(--secondary-color-500-MD);
+    border: 1px solid var(--secondary-color-500);
 }
 
 .searchHeader .Icon-BTN {

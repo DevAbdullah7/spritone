@@ -31,7 +31,7 @@
 .sidePanel .sidePanel-controlling .controls {
     display: none;
     font-size: var(--fontSize-LG);
-    color: var(--secondary-color-500-MD);
+    color: var(--secondary-color-500);
     cursor: pointer;
 }
 
@@ -42,14 +42,14 @@
     justify-content: center;
     align-items: center;
     padding: var(--space-3);
-    background: var(--secondary-color-500-MD);
+    background: var(--secondary-color-500);
 }
 
 /* -- App Logo -- */
 .sidePanel .sidePanel-controlling .logo {
     width: 100%;
     cursor: pointer;
-    color: var(--primary-color-500-MD);
+    color: var(--primary-color-500);
 }
 .sidePanel .sidePanel-controlling .logo svg {
     width: 100%;
@@ -75,7 +75,7 @@
     border: none;
     padding: 0;
     transform: scale(1);
-    background: var(--primary-color-500-MD);
+    background: var(--primary-color-500);
 }
 
 .sidePanel .profileInfo .item img {
@@ -113,8 +113,8 @@
     padding: var(--space-2);
     border: 1px solid transparent;
     border-radius: var(--borderRedius-XS);
-    color: var(--secondary-color-500-MD);
-    background: var(--primary-color-500-MD);
+    color: var(--secondary-color-500);
+    background: var(--primary-color-500);
     box-shadow: var(--shadow-XS);
     text-decoration: none;
     cursor: pointer;
@@ -149,14 +149,14 @@
 /* -- Hover Status -- */
 .sidePanel .item:hover,
 .sidePanel .item.active {
-    color: var(--primary-color-500-MD);
-    border: 1px solid var(--secondary-color-500-MD);
-    background: var(--secondary-color-500-MD);
+    color: var(--primary-color-500);
+    border: 1px solid var(--secondary-color-500);
+    background: var(--secondary-color-500);
 }
 
 .sidePanel .item:hover p,
 .sidePanel .item.active p {
-    color: var(--primary-color-500-MD);
+    color: var(--primary-color-500);
 }
 
 /* -- Overflow Scrolling Case -- */
@@ -231,7 +231,7 @@ pre .css.colorSquar {
     height: 12px;
     margin-right: var(--space-1);
     border: 1px solid #ffffff;
-    background: var(--primary-color-500-MD);
+    background: var(--primary-color-500);
 }
 
 /* JS Colors */
@@ -280,7 +280,7 @@ pre .js.red {
     padding: var(--space-2) var(--space-6);
     border-radius: var(--borderRedius-XXS);
     border: 1px solid var(--primary-color-100);
-    font-size: var(--fontSize-SM);
+    font-size: var(--fontSize-XXS);
     color: var(--typography-color-primary);
     background-color: var(--primary-color-100);
     box-shadow: var(--shadow-SM);
@@ -330,7 +330,7 @@ pre .js.red {
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    gap: var(--space-6);
+    gap: var(--space-7);
 }
 
 .section .sectionContent.Instructions {
@@ -374,7 +374,7 @@ pre .js.red {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: var(--fontSize-LG);
+    font-size: var(--fontSize-H4);
     font-weight: var(--fontWeight-Medium);
     text-transform: capitalize;
     color: var(--typography-color-HL1);
@@ -464,9 +464,9 @@ pre .js.red {
     align-items: center;
     padding: var(--space-1);
     border-radius: var(--borderRedius-XS);
-    border: 1px solid var(--secondary-color-500-MD);
-    color: var(--secondary-color-500-MD);
-    background: var(--primary-color-500-MD);
+    border: 1px solid var(--secondary-color-500);
+    color: var(--secondary-color-500);
+    background: var(--primary-color-500);
     box-shadow: var(--shadow-MD);
     cursor: pointer;
     user-select: none;
@@ -485,21 +485,21 @@ pre .js.red {
     text-align: center;
     white-space: pre;
     border-radius: var(--borderRedius-XS);
-    border: 1px solid var(--secondary-color-500-MD);
+    border: 1px solid var(--secondary-color-500);
     color: var(--socendary-color-500-MD);
-    background: var(--primary-color-500-MD);
+    background: var(--primary-color-500);
 }
 
 
 .section#Icons .icon:hover {
-    border: 1px solid var(--secondary-color-500-MD);
-    color: var(--secondary-color-500-MD);
+    border: 1px solid var(--secondary-color-500);
+    color: var(--secondary-color-500);
     transform: scale(1.1)
 }
 
 .section#Icons .iconContainer p {
     text-align: center;
-    color: var(--secondary-color-500-MD);
+    color: var(--secondary-color-500);
     cursor: default;
     opacity: 0;
     transition: all ease-in-out .3s;
