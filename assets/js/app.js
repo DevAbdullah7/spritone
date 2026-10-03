@@ -113,7 +113,7 @@ function renderIcons() {
                 
 
                 <!-- Edit Icon Name -->
-                <div class="input statusInp edit-icon-name" style="display: none;"  Status="">
+                <div class="input buttonInp statusInp edit-icon-name" style="display: none;"  Status="">
                     <div class="inputContainer">
                         <input 
                             type="text" 
@@ -121,6 +121,11 @@ function renderIcons() {
                             placeholder="Enter Icon Name" 
                             oninput="inputHandlling(this), this.value = this.value.replace(/[^a-zA-Z0-9\s-]/g, '')"
                         >
+                        <div class="inputIcon" id="resetIconName" title="Reset Icon Name">
+                            <svg width="24" height="24">
+                                <use href="/assets/icons/sprites/icons.svg#refresh"></use>
+                            </svg>
+                        </div>
                     </div>
                     <span class="inputMSG"></span>
                 </div>
@@ -130,12 +135,12 @@ function renderIcons() {
                     <!-- Edit Button -->
                     <div class="BTN Edit-BTN" title="Edit Icon Name" onclick="editIconName(this, ${i})">
                         <svg width="24" height="24">
-                            <use href="./assets/icons/sprites/icons.svg#pencel"></use>
+                            <use href="/assets/icons/sprites/icons.svg#pencel"></use>
                         </svg>
                     </div>
 
                     <!-- Delete Button -->
-                    <svg class="icon-remove" width="16" height="16" onclick="removeIcon(${i})">
+                    <svg class="icon-remove" title="Remove The Icon" width="16" height="16" onclick="removeIcon(${i})">
                         <use xlink:href="/assets/icons/sprites/icons.svg#remove"></use>
                     </svg>
                 </div>
@@ -198,6 +203,16 @@ function editIconName(btn, index) {
             updateIconName(index, btn, inputElement.value);
         }
     };
+
+    const resetBtn = iconContainer.querySelector('#resetIconName')
+    resetBtn.onclick = (e) => {
+        inputElement.value = icons[index].id;
+        inputElement.focus();
+        iconContainer.querySelector('.input').setAttribute('Status', '')
+        iconContainer.querySelector('.input .inputMSG').innerHTML = `
+        
+        `
+    }
 }
 
 function updateIconName(index, btn, newName) {

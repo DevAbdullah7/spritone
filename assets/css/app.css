@@ -1,15 +1,15 @@
 /* ========== Upload Icons Container ========== */
 .upload-icons-container {
     width: 100%;
-    height: fit-content;
+    height: 320px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: start;
     gap: 48px;
 }
 @media only screen and (max-width: 520px) {
     .upload-icons-container {
+        height: fit-content;
         flex-direction: column;
     }
 }
@@ -48,12 +48,12 @@
 }
 
 .upload-box svg {
-    color: #38bdf8;
+    color: var(--secondary-color-500);
 }
 
 .upload-box .inputMSG {
     font-size: 14px;
-    color: #919191;
+    color: var(--typography-color-PL3);
 }
 
 .upload-box.dragover,
@@ -65,18 +65,14 @@
 .uploaded-icons {
     width: 100%;
     height: 100%;
-    max-height: 512px;
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
-/* mobile version */
-.uploaded-icons {
-    height: 512px;
-}
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 520px) {
     .uploaded-icons {
-        height: 512px;
+        min-height: 320px;
+        max-height: 512px;
     }
 }
 
@@ -111,7 +107,6 @@
 
 .icons-controlling {
     width: 100%;
-    height: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -128,7 +123,7 @@
     justify-content: start;
     align-items: center;
     gap: var(--space-3);
-    font-size: var(--fontSize-H4);
+    font-size: var(--fontSize-H6);
     cursor: default;
     user-select: none;
 }
@@ -138,14 +133,18 @@
 }
 
 .uploaded-icons .Edit-BTN {
+    border-radius: var(--borderRedius-XXS);
     color: var(--secondary-color-500);
     background: transparent;
 }
 .uploaded-icons .Edit-BTN:hover {
     transform: none;
 }
-.uploaded-icons .icon-container.editing .Edit-BTN {
-    padding: 0;
+.uploaded-icons .icon-container.editing .Edit-BTN:not(#resetIconName) {
+    padding: var(--space-1);
+    border: 1px solid var(--secondary-color-500);
+    color: var(--primary-color-500);
+    background: var(--secondary-color-500);
 }
 
 /* input */
@@ -161,7 +160,34 @@
     height: 24px;
 }
 .uploaded-icons .input input {
+    flex: 1;
     min-height: unset;
+    padding: var(--space-1) var(--space-3);
+}
+.uploaded-icons .input.buttonInp .inputIcon {
+    width: 24px;
+    height: 24px;
+    transition: all ease-in-out .3s;
+}
+
+.uploaded-icons .input[status="error"].buttonInp .inputIcon {
+    color: var(--danger-color-500-MD);
+    border: 1px solid var(--danger-color-500-MD);
+}
+.uploaded-icons .input[status="error"].buttonInp:has(input:hover) .inputIcon,
+.uploaded-icons .input[status="error"].buttonInp:has(input:focus) .inputIcon,
+.uploaded-icons .input[status="error"].buttonInp .inputIcon:hover {
+    color: var(--secondary-color-500);
+    border: 1px solid var(--secondary-color-500);
+}
+
+.uploaded-icons .input.buttonInp .inputIcon svg {
+    width: unset;
+    height: unset;
+}
+.input.statusInp .inputIcon svg use {
+    transform: none;
+    opacity: 1;
 }
 
 /* Icon Item */

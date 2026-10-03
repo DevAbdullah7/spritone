@@ -79,9 +79,9 @@
     --typography-color-HL3: #dddddd;
 
     /* Paragraphs */
-    --typography-color-PL1: #cccccc;
-    --typography-color-PL2: #bbbbbb;
-    --typography-color-PL3: #aaaaaa;
+    --typography-color-PL1: #c0c0c0;
+    --typography-color-PL2: #b0b0b0;
+    --typography-color-PL3: #a0a0a0;
     /* ---------- End Colors ---------- */
 
     /* ---------- Spaces ---------- */
@@ -145,19 +145,18 @@ html * {
 }
 
 /* ---------- Sizes ---------- */
-/* Old Version */
 /* Desktops */
 :root {
     /* Heading Titles */
     --fontSize-H1: 64px;
     --fontSize-H2: 48px;
-    --fontSize-H3: 38px;
+    --fontSize-H3: 36px;
     --fontSize-H4: 32px;
     --fontSize-H5: 28px;
-    --fontSize-H6: 26px;
+    --fontSize-H6: 24px;
 
     /* Paragraphs */
-    --fontSize-XL: 24px;
+    --fontSize-XL: 22px;
     --fontSize-LG: 20px;
     --fontSize-MD: 18px;
     --fontSize-SM: 16px;
@@ -172,19 +171,19 @@ html * {
         /* Heading Titles */
         --fontSize-H1: 56px;
         --fontSize-H2: 42px;
-        --fontSize-H3: 32px;
-        --fontSize-H4: 28px;
-        --fontSize-H5: 26px;
-        --fontSize-H6: 24px;
+        --fontSize-H3: 36px;
+        --fontSize-H4: 32px;
+        --fontSize-H5: 28px;
+        --fontSize-H6: 26px;
 
         /* Paragraphs */
-        --fontSize-XL: 20px;
-        --fontSize-LG: 18px;
-        --fontSize-MD: 16px;
-        --fontSize-SM: 14px;
-        --fontSize-XS: 12px;
-        --fontSize-XXS: 10px;
-        --fontSize-XXXS: 8px;
+        --fontSize-XL: 22px;
+        --fontSize-LG: 20px;
+        --fontSize-MD: 18px;
+        --fontSize-SM: 16px;
+        --fontSize-XS: 14px;
+        --fontSize-XXS: 12px;
+        --fontSize-XXXS: 10px;
     }
 }
 
@@ -194,10 +193,10 @@ html * {
         /* Heading Titles */
         --fontSize-H1: 48px;
         --fontSize-H2: 36px;
-        --fontSize-H3: 28px;
-        --fontSize-H4: 26px;
-        --fontSize-H5: 24px;
-        --fontSize-H6: 22px;
+        --fontSize-H3: 32px;
+        --fontSize-H4: 28px;
+        --fontSize-H5: 26px;
+        --fontSize-H6: 24px;
 
         /* Paragraphs */
         --fontSize-XL: 20px;
@@ -216,10 +215,10 @@ html * {
         /* Heading Titles */
         --fontSize-H1: 42px;
         --fontSize-H2: 32px;
-        --fontSize-H3: 26px;
-        --fontSize-H4: 24px;
-        --fontSize-H5: 22px;
-        --fontSize-H6: 20px;
+        --fontSize-H3: 28px;
+        --fontSize-H4: 26px;
+        --fontSize-H5: 24px;
+        --fontSize-H6: 22px;
 
         /* Paragraphs */
         --fontSize-XL: 18px;
@@ -274,6 +273,7 @@ p.p-lg,
     font-size: var(--fontSize-LG);
 }
 
+p,
 p.p-md,
 .p-md {
     font-size: var(--fontSize-MD);
@@ -395,6 +395,9 @@ p {
     border: 1px solid var(--secondary-color-500);
     background: var(--secondary-color-500);
 }
+.Primary-BTN p {
+    color: var(--primary-color-500);
+}
 
 /* Secondary Button */
 .Secondary-BTN {
@@ -402,12 +405,18 @@ p {
     border: 1px solid var(--secondary-color-500);
     background: rgba(15, 23, 42, 0.25);
 }
+.Secondary-BTN p {
+    color: var(--secondary-color-500);
+}
 
 /* Danger Button */
 .Danger-BTN {
     color: var(--danger-color-500-MD);
     border: 1px solid var(--danger-color-500-MD);
     background: rgba(15, 23, 42, 0.25);
+}
+.Danger-BTN p {
+    color: var(--danger-color-500-MD);
 }
 
 /* Icon Buttons */

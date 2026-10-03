@@ -109,7 +109,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: var(--space-3);
+    gap: var(--space-2);
     padding: var(--space-2);
     border: 1px solid transparent;
     border-radius: var(--borderRedius-XS);
@@ -137,7 +137,7 @@
 
 .sidePanel .item p {
     width: 100%;
-    font-size: var(--fontSize-XXS);
+    font-size: var(--fontSize-XXXS);
     color: var(--typography-color-PL3);
     text-align: center;
     text-transform: capitalize;

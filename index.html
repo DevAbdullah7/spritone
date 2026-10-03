@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
+    <title>Spriteone</title>
     <meta charset="UTF-8">
-    <title>SVG Sprite Generator Pro</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="./assets/css/design-system.css">
@@ -14,10 +16,22 @@
 </head>
 
 <body>
-    <div class="bubble"></div>
     <nav class="navbar">
-        <!-- Website Logo -->
-        <img src="./res/Logo.svg" alt="Website Logo">
+        <div class="nav-header">
+            <!-- Website Logo -->
+            <img src="/res/Logo.svg" alt="Website Logo" class="logo">
+
+            <!-- Navbar open/close controlling -->
+            <div class="nav-controlling">
+                <svg width="24" height="24" class="open" onclick="document.querySelector('nav.navbar').classList.toggle('open')">
+                    <use xlink:href="/assets/icons/sprites/icons.svg#menu"></use>
+                </svg>
+
+                <svg width="24" height="24" class="close" onclick="document.querySelector('nav.navbar').classList.toggle('open')">
+                    <use xlink:href="/assets/icons/sprites/icons.svg#close"></use>
+                </svg>
+            </div>
+        </div>
 
         <!-- Website Links -->
         <ul class="nav-links">
@@ -51,7 +65,7 @@
                 </div>
 
                 <div class="text-part">
-                    <p class="h4">Upload or Drop Icons Here</p>
+                    <p class="h5">Upload or Drop Icons Here</p>
                     <p class="inputMSG"><span style="color: #ff0000;">*</span> File Supported: .svg</p>
                 </div>
             </div>
@@ -97,7 +111,7 @@
 
         <!-- SVG Sprite Code -->
         <div class="codeShown">
-            <p class="codeTitle">Output Code:</p>
+            <!-- <p class="codeTitle">Output Code:</p> -->
 <pre id="output" class="language-markup">
     
 </pre>
@@ -114,6 +128,7 @@
         </div>
     </div>
 
+    <div class="bubble"></div>
 
     <script src="./assets/js/app.js"></script>
     <script src="./assets/js/Design-System.js"></script>
