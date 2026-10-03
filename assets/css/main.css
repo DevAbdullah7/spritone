@@ -163,6 +163,10 @@ nav.navbar .nav-links a.active {
         justify-content: space-between;
     }
 
+    nav.navbar .nav-header .logo {
+        width: 96px;
+    }
+
     nav.navbar .nav-controlling {
         display: flex;
     }
