@@ -1404,11 +1404,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: var(--typography-color-PL1);
 }
 
-/* Primary Card */
-.card {
-    
-}
-
 /* Secondary Card */
 .card.Secondary-card {
     background: var(--secondary-color-500);
