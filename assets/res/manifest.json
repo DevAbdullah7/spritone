@@ -1,0 +1,24 @@
+{
+    "name": "Spritone",
+    "version": "0.0.1",
+    "author": "Abdullah Alqahtani",
+    "developer": {
+        "name": "Abdullah Alqahtani",
+        "url": "https://github.com/DevAbdullah7"
+    },
+    "short_name": "Spritone",
+    "description": "موقع الكتروني لعرض اوقات الصلاة",
+    "theme_color": "#0f172a",
+    "background_color": "#0f172a",
+    "display": "standalone",
+    "orientation": "portrait",
+    "Scope": "/",
+    "start_url": "https://Spritone.com/",
+    "dir": "auto",
+    "lang": "en",
+    "display_override": [
+        "window-control-overlay",
+        "standalone",
+        "browser"
+    ]
+}

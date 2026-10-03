@@ -194,18 +194,20 @@ nav.navbar .nav-links a.active {
 
     nav.navbar .nav-links,
     nav.navbar button {
-        position: absolute;
+        /* position: absolute;
         z-index: -9999;
         right: 0;
         opacity: 0;
-        transform: translateX(100%);
+        transform: translateX(100%); */
+        display: none;
     }
     nav.navbar.open .nav-links,
     nav.navbar.open button {
-        position: relative;
+        /* position: relative;
         z-index: 9999;
         opacity: 1;
-        transform: translateX(0);
+        transform: translateX(0); */
+        display: flex;
     }
 }
 

@@ -263,6 +263,16 @@ pre {
     direction: ltr;
     transition: all ease-in-out 0.3s;
 }
+@media only screen and (max-width: 520px) {
+    pre {
+        height: fit-content;
+        min-height: 320px;
+        max-height: 512px;
+    }
+    code[class*="language-"], pre[class*="language-"] {
+        font-size: 12px !important;
+    }
+}
 
 .token.tag {
     color: #ff6565 !important;
