@@ -123,38 +123,47 @@
 </head>
 
 <body>
-    <nav class="navbar">
+    <header class="navbar" id="navbar">
         <div class="nav-header">
             <!-- Website Logo -->
-            <img src="/res/Logo.svg" alt="Website Logo" class="logo">
+            <a href="#" class="logo">
+                <img src="/res/Logo.svg" alt="Website Logo">
+            </a>
 
-            <!-- Navbar open/close controlling -->
-            <div class="nav-controlling">
-                <svg width="24" height="24" class="open" onclick="document.querySelector('nav.navbar').classList.toggle('open')">
+            
+            <button class="menu-toggle" id="menuToggle" aria-label="قائمة التصفح">
+                
+                <svg width="24" height="24" class="icon-open">
                     <use xlink:href="/assets/icons/sprites/icons.svg#menu"></use>
                 </svg>
-
-                <svg width="24" height="24" class="close" onclick="document.querySelector('nav.navbar').classList.toggle('open')">
+                
+                
+                <svg width="24" height="24" class="icon-close">
                     <use xlink:href="/assets/icons/sprites/icons.svg#close"></use>
                 </svg>
-            </div>
+            </button>
         </div>
 
-        <!-- Website Links -->
-        <ul class="nav-links">
-            <li><a href="#">Generate</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Features</a></li>
-            <li><a href="#">How It Works</a></li>
-        </ul>
+        
+        <div class="nav-body">
+            
+            <ul class="nav-links">
+                <li><a href="#home">Generate</a></li>
+                <li><a href="#services">About</a></li>
+                <li><a href="#about">Features</a></li>
+                <li><a href="#portfolio">How It Works</a></li>
+            </ul>
 
-        <!-- Button -->
-        <button class="BTN Primary-BTN">Contact</button>
+            
+            <div class="nav-footer">
+                <button class="BTN Primary-BTN">Contact</button>
+            </div>
+
+        </div>
 
         <!-- UI Design Effect -->
         <div class="effect"></div>
-    </nav>
-    <!-- <h1>SVG Sprite Generator Pro</h1> -->
+    </header>
 
     <!-- Upload Section -->
     <div class="section upload-icons-container">
@@ -237,6 +246,7 @@
 
     <div class="bubble"></div>
 
+    <script src="./assets/js/main.js" class="cacheItem"></script>
     <script src="./assets/js/app.js" class="cacheItem"></script>
     <script src="./assets/js/Design-System.js" class="cacheItem"></script>
 

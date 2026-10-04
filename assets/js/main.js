@@ -11,3 +11,22 @@ cacheItems.forEach(item => {
         console.log(item)
     }
 })
+
+// Navbar 
+const navbar = document.getElementById('navbar');
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.querySelectorAll('.nav-links a, .btn-contact');
+
+// فتح وإغلاق الناف بار عند النقر على الأيقونة
+menuToggle.addEventListener('click', () => {
+    navbar.classList.toggle('is-open');
+});
+
+// إغلاق الناف بار عند النقر على أي رابط داخلي (لتجربة أفضل للمستخدم)
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (navbar.classList.contains('is-open')) {
+            navbar.classList.remove('is-open');
+        }
+    });
+});
