@@ -14,19 +14,38 @@ cacheItems.forEach(item => {
 
 // Navbar 
 const navbar = document.getElementById('navbar');
-const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.querySelectorAll('.nav-links a, .btn-contact');
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelectorAll('.nav-links a, .btn-contact');
+    
+    let scrollPosition = 0;
 
-// فتح وإغلاق الناف بار عند النقر على الأيقونة
-menuToggle.addEventListener('click', () => {
-    navbar.classList.toggle('is-open');
-});
+    function toggleMenu() {
+      const isOpen = navbar.classList.contains('is-open');
 
-// إغلاق الناف بار عند النقر على أي رابط داخلي (لتجربة أفضل للمستخدم)
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
+      if (!isOpen) {
+        // 1. حفظ موضع السكرول الحالي قبل الفتح
+        scrollPosition = window.scrollY;
+        
+        // 2. تثبيت البودي في نفس موقعه الظاهر
+        document.body.style.top = `-${scrollPosition}px`;
+        document.body.classList.add('freez');
+        
+        navbar.classList.add('is-open');
+      } else {
+        // 3. إلغاء التثبيت وإعادة السكرول إلى نفس النقطة فوراً
+        navbar.classList.remove('is-open');
+        document.body.classList.remove('freez');
+        document.body.style.top = '';
+        window.scrollTo(0, scrollPosition);
+      }
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
         if (navbar.classList.contains('is-open')) {
-            navbar.classList.remove('is-open');
+          toggleMenu();
         }
+      });
     });
-});

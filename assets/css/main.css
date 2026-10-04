@@ -40,6 +40,14 @@ body {
         padding: 96px var(--space-5) var(--space-5);
     }
 }
+body.freez {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    overflow: hidden;
+    touch-action: none;
+}
 
 /* Navbar */
 .navbar {
@@ -135,6 +143,7 @@ body {
 
 .navbar.is-open {
     height: 100vh;
+    height: 100dvh;
 }
 
 .navbar.is-open .nav-body {

@@ -56,6 +56,12 @@
 .upload-box svg {
     color: var(--secondary-color-500);
 }
+@media only screen and (max-width: 912px) {
+    .upload-box svg {
+        width: 48px !important;
+        height: 48px !important;
+    }
+}
 
 .upload-box .inputMSG {
     font-size: 14px;
