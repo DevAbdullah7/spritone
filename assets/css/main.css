@@ -13,7 +13,7 @@
 }
 *::-webkit-scrollbar-thumb {
     border-radius: 500px;
-    background-color: #38bdf8;
+    background-color: var(--secondary-color-500);
 }
 *::selection {
     color: var(--primary-color-500);
@@ -131,7 +131,8 @@ body.freez {
     transition: color 0.2s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--secondary-color-500);
 }
 

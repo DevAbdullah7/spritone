@@ -31,7 +31,7 @@
 .sidePanel .sidePanel-controlling .controls {
     display: none;
     font-size: var(--fontSize-LG);
-    color: var(--secondary-color-500);
+    color: var(--primary-color-500);
     cursor: pointer;
 }
 
@@ -168,6 +168,79 @@
 .sidePanel .sidePanel-links::-webkit-scrollbar {
     width: 0;
     height: 0;
+}
+
+@media only screen and (max-width: 769px) {
+    .sidePanel {
+        width: 100%;
+        height: 56px;
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.5), rgba(12, 18, 34, 0.75));
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        transition: all ease-in-out 0.3s;
+    }
+    .sidePanel.active {
+        height: 100vh;
+    }
+
+    .sidePanel .sidePanel-header .profileInfo,
+    .sidePanel .sidePanel-header .itemsContainer,
+    .sidePanel .sidePanel-links {
+        /* transform: translateX(-150%);
+        transition: all ease-in-out .3s; */
+        display: none;
+    }
+    .sidePanel.active .sidePanel-header .profileInfo,
+    .sidePanel.active .sidePanel-header .itemsContainer,
+    .sidePanel.active .sidePanel-links {
+        /* transform: translateX(0); */
+        display: flex;
+    }
+    .sidePanel .sidePanel-header {
+        border-bottom: none;
+    }
+    .sidePanel.active .sidePanel-header {
+        border-bottom: 1px solid var(--lightColor-1);
+    }
+
+    .sidePanel .sidePanel-controlling {
+        height: 56px;
+        direction: rtl;
+        justify-content: space-between;
+        padding: var(--space-3) var(--space-6);
+    }
+
+    .sidePanel .sidePanel-controlling .logo {
+        width: 96px;
+    }
+
+    .sidePanel .sidePanel-controlling .controls {
+        display: block;
+    }
+
+    .sidePanel .menu {
+        display: block;
+    }
+    .sidePanel.active .menu {
+        display: none;
+    }
+    .sidePanel .close {
+        display: none;
+    }
+    .sidePanel.active .close {
+        display: block;
+    }
+
+    .sidePanel .itemsContainer {
+        gap: var(--space-6);
+        padding: var(--space-6) var(--space-8);
+    }
+
+    /* Main Content */
+    .main {
+        padding: calc(56px + var(--space-6)) var(--space-6) var(--space-6)
+            var(--space-6) !important;
+    }
 }
 
 /* ========== End Side Panel ========== */
