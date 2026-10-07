@@ -63,9 +63,9 @@
 
 
     <!---------- Css Files ---------->
-    <link rel="stylesheet" href="./assets/css/design-system.css" class="cacheItem">
-    <link rel="stylesheet" href="./assets/css/main.css" class="cacheItem">
-    <link rel="stylesheet" href="./assets/css/app.css" class="cacheItem">
+    <link rel="stylesheet" href="/assets/css/design-system.css" class="cacheItem">
+    <link rel="stylesheet" href="/assets/css/main.css" class="cacheItem">
+    <link rel="stylesheet" href="/assets/css/app.css" class="cacheItem">
 
 
     <!---------- Favicon ---------->
@@ -192,7 +192,14 @@
     
         <!-- Uploaded Icons -->
         <div class="uploaded-icons">
-            <h3>Uploaded Icons:</h3>
+            <div class="container">
+                <p>Uploaded Icons:</p>
+
+                <div class="checkBox">
+                    <input type="checkbox" id="cleanSuffixesToggle" class="checkBoxInp">
+                    <label for="cleanSuffixesToggle" class="checkBoxLabel">Add/Remove Suffixes</label>
+                </div>
+            </div>
             
             <!-- Icons List -->
             <div class="icons-list" id="iconsList">

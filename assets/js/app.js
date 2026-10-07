@@ -3,8 +3,73 @@ const fileInput = document.getElementById('fileInput');
 const iconsList = document.getElementById('iconsList');
 const output = document.getElementById('output');
 const count = document.getElementById('count');
+const cleanSuffixesToggle = document.getElementById('cleanSuffixesToggle');
 
 let icons = [];
+
+// قائمة اللواحق المدعومة
+const SUFFIXES_REGEX = /\b(outline|sharp|filled|round|twotone)\b/gi;
+
+function isCleanNamesChecked() {
+    return cleanSuffixesToggle ? cleanSuffixesToggle.checked : false;
+}
+
+function cleanBoundaries(name) {
+    return name.replace(/^[^a-z0-9]+|[^a-z0-9]+$/gi, '');
+}
+
+// دالة استخراج الجزء الأساسي واللاحقة من أي اسم
+function extractBaseAndSuffix(fullName) {
+    const cleanName = fullName.replace(/\.svg$/i, '').trim().toLowerCase();
+    
+    // البحث عن اللاحقة إذا كانت موجودة في نهاية الاسم
+    const match = cleanName.match(/^(.*?)(?:[_-]?(outline|sharp|filled|round|twotone))?$/i);
+    
+    if (match) {
+        const base = cleanBoundaries(match[1] || cleanName);
+        const suffix = match[2] ? match[2].toLowerCase() : null;
+        return { base, suffix };
+    }
+    
+    return { base: cleanBoundaries(cleanName), suffix: null };
+}
+
+// حساب الاسم بشكل ديناميكي ومتناسق مع الشيك بوكس والتعديل اليدوي الصريح
+function computeIconId(icon) {
+    // 1. إذا فرض المستخدم اسماً مخصصاً كاملاً (كتب فيه اللاحقة بيده أو مسحها صراحة)
+    if (icon.customId) {
+        return icon.customId;
+    }
+
+    // 2. استخراج التفاصيل الأصلية للملف
+    const originalInfo = extractBaseAndSuffix(icon.originalId);
+    
+    // اختيار الجذر المعتمد (سواء المعدل يدوياً customBaseId أو الأصلي)
+    const activeBase = icon.customBaseId ? icon.customBaseId : originalInfo.base;
+    
+    // 3. إذا كان الشيك بوكس مفعل (Clean Suffixes): نعيد الاسم الأساسي فقط
+    if (isCleanNamesChecked()) {
+        return activeBase;
+    }
+
+    // 4. إذا كان الشيك بوكس معطل: ندمج الاسم الأساسي مع اللاحقة الأصلية للملف (إن وجدت)
+    if (originalInfo.suffix) {
+        return cleanBoundaries(`${activeBase}-${originalInfo.suffix}`);
+    }
+
+    return activeBase;
+}
+
+// عند تغيير حالة الشيك بوكس
+if (cleanSuffixesToggle) {
+    cleanSuffixesToggle.addEventListener('change', () => {
+        icons.forEach(icon => {
+            icon.id = computeIconId(icon);
+        });
+        renderIcons();
+        generateSprite();
+    });
+}
 
 dropZone.addEventListener('click', () => {
     fileInput.value = '';
@@ -34,7 +99,6 @@ async function handleFiles(files) {
     const fileList = [...files];
     if (fileList.length === 0) return;
 
-    // قراءة ومعالجة الملفات بالتوازي في الذاكرة أولاً
     const readTasks = fileList.map(file => {
         return new Promise(resolve => {
             const reader = new FileReader();
@@ -63,12 +127,17 @@ async function handleFiles(files) {
                 const isIllustration = elementCount > 50 || sizeInKB > 45 || hasEmbeddedImages;
                 if (isIllustration) return resolve(null);
 
-                const id = file.name
-                    .replace(/\.svg$/i, '')
-                    .replace(/\s+/g, '-')
-                    .toLowerCase();
+                const originalId = file.name;
+                const tempIcon = { originalId, customBaseId: null, customId: null };
+                const id = computeIconId(tempIcon);
 
-                resolve({ id, content });
+                resolve({ 
+                    originalId, 
+                    customBaseId: null,
+                    customId: null,
+                    id, 
+                    content 
+                });
             };
 
             reader.readAsText(file);
@@ -93,11 +162,21 @@ async function handleFiles(files) {
     }
 }
 
+function checkScroll() {
+    const hasScroll = iconsList.scrollHeight > iconsList.clientHeight;
+    if (hasScroll) {
+        iconsList.classList.add('has-scroll');
+    } else {
+        iconsList.classList.remove('has-scroll');
+    }
+}
+
 function renderIcons() {
     iconsList.innerHTML = '';
     iconsList.style = 'justify-content: start;';
 
     if (icons.length > 0) {
+        iconsList.parentNode.classList.add('active');
         const fragment = document.createDocumentFragment();
 
         icons.forEach((icon, i) => {
@@ -111,9 +190,8 @@ function renderIcons() {
                 <!-- Icon Name -->
                 <p class="icon-name" title="${icon.id}">${icon.id}.svg</p>
                 
-
                 <!-- Edit Icon Name -->
-                <div class="input buttonInp statusInp edit-icon-name" style="display: none;"  Status="">
+                <div class="input buttonInp statusInp edit-icon-name" style="display: none;" Status="">
                     <div class="inputContainer">
                         <input 
                             type="text" 
@@ -140,7 +218,7 @@ function renderIcons() {
                     </div>
 
                     <!-- Delete Button -->
-                    <svg class="icon-remove" title="Remove The Icon" width="16" height="16" onclick="removeIcon(${i})">
+                    <svg class="icon-remove" width="16" height="16" onclick="removeIcon(${i})">
                         <use xlink:href="/assets/icons/sprites/icons.svg#remove"></use>
                     </svg>
                 </div>
@@ -152,7 +230,6 @@ function renderIcons() {
         iconsList.appendChild(fragment);
         iconsList.parentElement.querySelector('.icons-controlling').style = 'opacity: 1; height: unset;';
     } else {
-        // رسم الواجهة الفارغة فقط لمنع الـ Stack Overflow
         iconsList.innerHTML = `
             <svg class="icon-remove" width="48" height="48" style="color: #919191;">
                 <use xlink:href="/assets/icons/sprites/icons.svg#image"></use>
@@ -164,24 +241,25 @@ function renderIcons() {
     }
 
     count.textContent = `${icons.length}`;
+    checkScroll();
 }
 
 function editIconName(btn, index) {
-    const iconContainer = btn.parentNode.parentNode
+    const iconContainer = btn.parentNode.parentNode;
     const inputWrapper = btn.parentNode.parentNode.querySelector('.input');
     const inputElement = inputWrapper.querySelector('input');
 
-    const isThereIconEditing = iconContainer.parentNode.querySelector('.icon-container.editing')
+    const isThereIconEditing = iconContainer.parentNode.querySelector('.icon-container.editing');
     if (isThereIconEditing) {
         isThereIconEditing.scrollIntoView({
             behavior: 'smooth',
             block: 'nearest'
         });
-        isThereIconEditing.querySelector('input').focus()
+        isThereIconEditing.querySelector('input').focus();
         return;
-    };
+    }
 
-    iconContainer.classList.toggle('editing')
+    iconContainer.classList.toggle('editing');
 
     inputWrapper.style.display = 'block';
     inputElement.value = icons[index].id;
@@ -204,43 +282,72 @@ function editIconName(btn, index) {
         }
     };
 
-    const resetBtn = iconContainer.querySelector('#resetIconName')
-    resetBtn.onclick = (e) => {
-        inputElement.value = icons[index].id;
-        inputElement.focus();
-        iconContainer.querySelector('.input').setAttribute('Status', '')
-        iconContainer.querySelector('.input .inputMSG').innerHTML = `
-        
-        `
+    const resetBtn = iconContainer.querySelector('#resetIconName');
+    if (resetBtn) {
+        resetBtn.onclick = (e) => {
+            e.stopPropagation();
+            inputElement.value = icons[index].id;
+            inputElement.focus();
+            iconContainer.querySelector('.input').setAttribute('Status', '')
+            iconContainer.querySelector('.input .inputMSG').innerHTML = `
+            
+            `
+        };
     }
 }
 
 function updateIconName(index, btn, newName) {
     if (!newName) return;
 
-    const cleanId = newName
-        .replace(/\.svg$/i, '')
-        .toLowerCase()
-        .replace(/[^a-z0-9\s-]/g, '')
-        .trim()
-        .replace(/\s+/g, '-')
-        .replace(/-+/g, '-');
+    const cleanedNewName = cleanBoundaries(
+        newName
+            .replace(/\.svg$/i, '')
+            .toLowerCase()
+            .replace(/[^a-z0-9\s-]/g, '')
+            .trim()
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-')
+    );
 
-    if (!cleanId) {
-        return;
+    if (!cleanedNewName) return;
+
+    const newInfo = extractBaseAndSuffix(cleanedNewName);
+    const originalInfo = extractBaseAndSuffix(icons[index].originalId);
+
+    let tempCustomId = null;
+    let tempCustomBaseId = null;
+
+    // الاحتمال 1: الشيك بوكس مفعل (حذف اللواحق) ولكن المستخدم أضاف لاحقة يدوياً (مثال: user-outline)
+    if (isCleanNamesChecked() && newInfo.suffix) {
+        tempCustomId = cleanedNewName;
+    } 
+    // الاحتمال 2: الشيك بوكس معطل (إبقاء اللواحق) والملف أصلاً فيه لاحقة لكن المستخدم مسحها يدوياً (كتب: user بدلاً من user-outline)
+    else if (!isCleanNamesChecked() && originalInfo.suffix && !newInfo.suffix) {
+        tempCustomId = cleanedNewName;
+    } 
+    // الحالة العادية: تعديل الاسم الأساسي مع الحفاظ على تزامن اللاحقة
+    else {
+        if (newInfo.base !== originalInfo.base) {
+            tempCustomBaseId = newInfo.base;
+        }
     }
 
-    const isDuplicate = icons.some((icon, i) => i !== index && icon.id === cleanId);
+    // حساب النتيجة التقديرية للاختبار والتأكد من عدم وجود تكرار
+    const tempIcon = { ...icons[index], customBaseId: tempCustomBaseId, customId: tempCustomId };
+    const calculatedId = computeIconId(tempIcon);
+
+    const isDuplicate = icons.some((icon, i) => i !== index && icon.id === calculatedId);
     if (isDuplicate) {
-        btn.parentNode.parentNode.parentNode.querySelector('.icon-container.editing .input').setAttribute('Status', 'error')
-        btn.parentNode.parentNode.parentNode.querySelector('.icon-container.editing .input .inputMSG').innerHTML = `
-            This Name is Duplicated !
-        `
-        // btn.parentNode.parentNode.parentNode.querySelector('.icon-container.editing .input input').value = icons[index].id
+        btn.parentNode.parentNode.parentNode.querySelector('.icon-container.editing .input').setAttribute('Status', 'error');
+        btn.parentNode.parentNode.parentNode.querySelector('.icon-container.editing .input .inputMSG').innerHTML = `This Name is Duplicated !`;
         return;
     }
 
-    icons[index].id = cleanId;
+    // تطبيق القيم بعد نجاح التحقق
+    icons[index].customId = tempCustomId;
+    icons[index].customBaseId = tempCustomBaseId;
+    icons[index].id = calculatedId;
+
     renderIcons();
     generateSprite();
 }
@@ -356,15 +463,14 @@ function generateSprite() {
 function clearSprite() {
     icons = [];
     output.textContent = '';
+    iconsList.parentNode.classList.remove('active');
     renderIcons();
 }
 
 function downloadSprite() {
     const content = output.textContent;
 
-    if (!content.trim()) {
-        return;
-    }
+    if (!content.trim()) return;
 
     const blob = new Blob([content], { type: 'image/svg+xml' });
     const url = URL.createObjectURL(blob);
