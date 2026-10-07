@@ -354,6 +354,10 @@ function updateIconName(index, btn, newName) {
 
 function removeIcon(i) {
     icons.splice(i, 1);
+    if (!icons.length > 0) {
+        clearSprite()
+        return
+    }
     renderIcons();
     generateSprite();
 }
