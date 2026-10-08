@@ -20,6 +20,10 @@
     background: var(--secondary-color-500);
 }
 
+html {
+    scrollbar-gutter: stable;
+}
+
 body {
     position: relative;
     width: 100%;
@@ -475,15 +479,63 @@ h1 {
     .card {
         height: 190px;
     }
-    .card .qrcode {
-        width: 50%;
-    }
-    .card .qrType {
-      width: 48px;
-      height: 32px;
-    }
-    .card .qrType svg {
-        width: 18px;
-        height: 18px;
-    }
+}
+
+/* Loading Page */
+html .loading {
+    position: fixed;
+    width: 100%;
+    height: 100dvh;
+    top: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--fontSize-H6);
+    color: var(--typography-color-HL1);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    background: rgba(0 0 0 / .25);
+    z-index: -999999;
+}
+
+html.loading .loading {
+    display: flex;
+    z-index: 999999;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: 
+        radial-gradient(farthest-side, var(--secondary-color-500) 94%,#0000) top/8px 8px no-repeat,
+        conic-gradient(#0000 30%,var(--secondary-color-500));
+    -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+    animation: l13 1s infinite linear;
+}
+@keyframes l13{ 
+    100%{transform: rotate(1turn)}
+}
+
+/* Stylling output code */
+/* تنسيقات تلوين الكود المحلي */
+.hl-tag {
+    color: #569cd6; /* أزرق للوسوم مثل svg, symbol, path */
+}
+
+.hl-attr {
+    color: #9cdcfe; /* أزرق فاتح للخصائص مثل id, viewBox, fill */
+}
+
+.hl-value {
+    color: #ce9178; /* برتقالي/بني للقيم مثل "none", "0 0 24 24" */
+}
+
+.hl-comment {
+    color: #6a9955; /* أخضر للتعليقات */
+    font-style: italic;
 }

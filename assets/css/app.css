@@ -247,7 +247,8 @@
 }
 
 /* Icon Symbole */
-.icon-container svg:nth-child(1) {
+.icon-container .icon-viewer,
+.icon-container .icon-viewer svg {
     max-width: 24px !important;
     max-height: 24px !important;
 }
