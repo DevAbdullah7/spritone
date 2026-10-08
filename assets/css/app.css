@@ -92,9 +92,11 @@
 .uploaded-icons .container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .uploaded-icons .container .checkBox {
+    height: fit-content;
     transform-origin: center;
     transform: scale(0);
     opacity: 0;
@@ -106,13 +108,11 @@
 }
 
 .uploaded-icons .container .checkBox label {
-    color: var(--typography-color-PL1);
     font-size: var(--fontSize-XS);
     transition: all ease-in-out .3s;
 }
-.uploaded-icons .container .checkBox:hover label,
-.uploaded-icons .container .checkBox:has(input[type=checkbox]:checked) label {
-    color: var(--typography-color-secondary);
+.uploaded-icons .container .checkBox:hover input {
+    transform: scale(1.1);
 }
 
 .uploaded-icons .container p {

@@ -134,9 +134,9 @@
             These Metrics Are Calibrated Specifically For This Font !
             Changing The Font File Requires Recalibration.
     */
-    ascent-override: 87%;
-    descent-override: 13%;
-    line-gap-override: 50%;
+    ascent-override: 87%; /* 70% */
+    descent-override: 13%; /* 19% */
+    line-gap-override: 50%; /* 28% */
 }
 
 /* Applay Font */
@@ -528,6 +528,7 @@ p {
     -webkit-backdrop-filter: blur(16px); /* For Safari support */
     box-shadow: var(--shadow-SM);
     cursor: pointer;
+    transition: all ease-in-out .3s;
 }
 .radio .radioInp {
     width: 12px;
