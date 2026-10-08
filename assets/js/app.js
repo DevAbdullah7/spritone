@@ -38,6 +38,7 @@ function computeIconId(icon, allIcons = [], currentIndex = -1) {
     const originalInfo = extractBaseAndSuffix(icon.originalId);
     const activeBase = icon.customBaseId ? icon.customBaseId : originalInfo.base;
     
+    // حالة 1: خيار إزالة اللواحق مفعّل (Clean Suffixes ON)
     if (isCleanNamesChecked()) {
         if (!originalInfo.suffix) {
             return activeBase;
@@ -59,8 +60,20 @@ function computeIconId(icon, allIcons = [], currentIndex = -1) {
         return candidateBase;
     }
 
+    // حالة 2: خيار إزالة اللواحق غير مفعّل (Clean Suffixes OFF)
     if (originalInfo.suffix) {
-        return cleanBoundaries(`${activeBase}-${originalInfo.suffix}`);
+        const candidateWithSuffix = cleanBoundaries(`${activeBase}-${originalInfo.suffix}`);
+        
+        const willCauseDuplicate = allIcons.some((otherIcon, idx) => {
+            if (idx === currentIndex) return false;
+            return otherIcon.id === candidateWithSuffix;
+        });
+
+        if (willCauseDuplicate) {
+            return activeBase;
+        }
+
+        return candidateWithSuffix;
     }
 
     return activeBase;
@@ -320,6 +333,11 @@ function editIconName(btn, index) {
     if (resetBtn) {
         resetBtn.onclick = (e) => {
             e.stopPropagation();
+            // عند إعادة ضبط اسم الأيقونة يلغى التحديد اليدوي CustomId
+            icons[index].customId = null;
+            icons[index].customBaseId = null;
+            icons[index].id = computeIconId(icons[index], icons, index);
+            
             inputElement.value = icons[index].id;
             inputElement.focus();
             iconContainer.querySelector('.input').setAttribute('Status', '');
@@ -349,15 +367,15 @@ function updateIconName(index, btn, newName) {
     let tempCustomId = null;
     let tempCustomBaseId = null;
 
-    if (isCleanNamesChecked() && newInfo.suffix) {
+    if (isCleanNamesChecked()) {
         tempCustomId = cleanedNewName;
-    } 
-    else if (!isCleanNamesChecked() && originalInfo.suffix && !newInfo.suffix) {
-        tempCustomId = cleanedNewName;
-    } 
-    else {
-        if (newInfo.base !== originalInfo.base) {
-            tempCustomBaseId = newInfo.base;
+    } else {
+        if (originalInfo.suffix && !newInfo.suffix) {
+            tempCustomId = cleanedNewName;
+        } else {
+            if (newInfo.base !== originalInfo.base) {
+                tempCustomBaseId = newInfo.base;
+            }
         }
     }
 
