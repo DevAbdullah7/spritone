@@ -84,15 +84,23 @@
 @media only screen and (max-width: 520px) {
     .uploaded-icons {
         width: 100%;
-        min-height: 320px;
-        max-height: 512px;
+        height: 320px;
     }
 }
 
 .uploaded-icons .container {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+}
+@media only screen and (max-width: 520px) {
+  .uploaded-icons .container {
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-3);
+  }
 }
 
 .uploaded-icons .container .checkBox {
@@ -120,6 +128,12 @@
     font-weight: 400;
     color: var(--typography-color-secondary);
     user-select: none;
+}
+
+@media only screen and (max-width: 520px) {
+  .uploaded-icons .container p {
+    font-size: var(--fontSize-H3);
+  }
 }
 
 .uploaded-icons .icons-list {
@@ -237,7 +251,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 8px;
+    gap: var(--space-3);
 }
 .icon-container:has(.input[status="error"]) {
     align-items: start;
@@ -267,6 +281,12 @@
 }
 .icon-container.editing .icon-name {
     display: none;
+}
+
+@media only screen and (max-width: 520px) {
+    .icon-container .action-call-buttons {
+      gap: var(--space-3);
+    }
 }
 
 /* Icon Remove */
@@ -303,7 +323,7 @@ pre {
     pre {
         height: fit-content;
         min-height: 320px;
-        max-height: 512px;
+        max-height: 416px;
     }
     code[class*="language-"], pre[class*="language-"] {
         font-size: 12px !important;
