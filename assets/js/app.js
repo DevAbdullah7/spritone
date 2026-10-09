@@ -120,7 +120,7 @@ async function handleFiles(files) {
     if (fileList.length === 0) return;
 
     const totalCountAfterUpload = icons.length + fileList.length;
-    const shouldShowLoading = totalCountAfterUpload >= 100;
+    const shouldShowLoading = totalCountAfterUpload >= 150;
 
     if (shouldShowLoading) {
         showLoading();
@@ -489,6 +489,33 @@ function formatNode(node, level = 2) {
     return result;
 }
 
+// دالة تلوين كود XML/SVG محلياً مع فصل الرموز < > / لتلوينها بالرصاصي
+function highlightSVG(code) {
+    // 1. تشفير الرموز الخاصة
+    const escaped = code
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+
+    // 2. مطابقة الرموز، أسماء التاقات، والخصائص
+    return escaped.replace(/(&lt;\/?|&gt;|\/&gt;)|([a-zA-Z0-9-]+)(?=\s|&gt;|\/&gt;)|([a-zA-Z0-9-]+)=("[^"]*")/g, (match, punct, tagName, attr, attrName, attrValue) => {
+        // أقواس ورموز التاقات: < </ > />
+        if (punct) {
+            return `<span class="token-punctuation">${punct}</span>`;
+        }
+        // اسم التاق فقط بدون الرموز (مثل svg, symbol, path)
+        if (tagName) {
+            return `<span class="token-tag">${tagName}</span>`;
+        }
+        // الخصائص والقيم ( مثل id="icon" )
+        if (match.includes('=')) {
+            const parts = match.split('=');
+            return `<span class="token-attr-name">${parts[0]}</span>=<span class="token-attr-value">${parts[1]}</span>`;
+        }
+        return match;
+    });
+}
+
 function generateSprite() {
     if (icons.length > 0) {
         let sprite = `<svg xmlns="http://www.w3.org/2000/svg" style="display:none;">\n`;
@@ -508,21 +535,15 @@ function generateSprite() {
     
         sprite += `</svg>`;
     
-        output.textContent = sprite;
-
-        if (window.Prism) {
-            requestAnimationFrame(() => {
-                Prism.highlightElement(output);
-            });
-        }
+        output.innerHTML = highlightSVG(sprite);
     } else {
-        output.textContent = '';
+        output.innerHTML = '';
     }
 }
 
 function clearSprite() {
     icons = [];
-    output.textContent = '';
+    output.innerHTML = '';
     iconsList.parentNode.classList.remove('active');
     renderIcons();
 }

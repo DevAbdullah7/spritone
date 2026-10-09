@@ -358,3 +358,27 @@ pre {
     font-size: 18px;
     margin-top: 16px;
 }
+
+/* حافظ على المسافات والتابات بدقة داخل حاوية العرض */
+#output {
+    white-space: pre !important;
+    font-family: monospace;
+    display: block;
+}
+
+/* ألوان العناصر محلياً */
+#output .token-punctuation {
+    color: #969696 !important; /* لون الوسوم/التاقات مثل <svg> و <symbol> */
+}
+
+#output .token-tag {
+    color: #599eed !important; /* لون الوسوم/التاقات مثل <svg> و <symbol> */
+}
+
+#output .token-attr-name {
+    color: #a0e1fb !important; /* لون الخصائص مثل id و viewBox */
+}
+
+#output .token-attr-value {
+    color: #ffa44a !important; /* لون قيم الخصائص بين التنصيص */
+}
