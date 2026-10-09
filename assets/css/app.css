@@ -85,12 +85,8 @@
 @media only screen and (max-width: 520px) {
     .uploaded-icons {
         width: 100%;
-<<<<<<< HEAD
         min-height: 320px;
         max-height: 448px;
-=======
-        height: 320px;
->>>>>>> 1d02f02bb9a24c493ca212eeee7a37307055ceb2
     }
 }
 
@@ -100,13 +96,6 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-}
-@media only screen and (max-width: 520px) {
-  .uploaded-icons .container {
-    flex-direction: column;
-    justify-content: center;
-    gap: var(--space-3);
-  }
 }
 
 .uploaded-icons .container .checkBox {
@@ -291,7 +280,7 @@
 
 @media only screen and (max-width: 520px) {
     .icon-container .action-call-buttons {
-      gap: var(--space-3);
+        gap: var(--space-3);
     }
 }
 
@@ -322,8 +311,7 @@
 pre {
     position: relative;
     width: 100%;
-    min-height: 320px;
-    flex: 1;
+    height: 100%;
     padding: var(--space-3) var(--space-5) !important;
     margin: 0 !important;
     border-radius: 10px;
@@ -335,11 +323,6 @@ pre {
     transition: all ease-in-out 0.3s;
 }
 @media only screen and (max-width: 520px) {
-    pre {
-        height: fit-content;
-        min-height: 320px;
-        max-height: 416px;
-    }
     code[class*="language-"], pre[class*="language-"] {
         font-size: 12px !important;
     }
