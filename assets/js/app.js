@@ -6,6 +6,7 @@ const count = document.getElementById('count');
 const cleanSuffixesToggle = document.getElementById('cleanSuffixesToggle');
 
 let icons = [];
+let rawSpriteContent = '';
 
 const SUFFIXES_REGEX = /\b(outline|sharp|filled|round|twotone)\b/gi;
 
@@ -38,7 +39,6 @@ function computeIconId(icon, allIcons = [], currentIndex = -1) {
     const originalInfo = extractBaseAndSuffix(icon.originalId);
     const activeBase = icon.customBaseId ? icon.customBaseId : originalInfo.base;
     
-    // حالة 1: خيار إزالة اللواحق مفعّل (Clean Suffixes ON)
     if (isCleanNamesChecked()) {
         if (!originalInfo.suffix) {
             return activeBase;
@@ -60,7 +60,6 @@ function computeIconId(icon, allIcons = [], currentIndex = -1) {
         return candidateBase;
     }
 
-    // حالة 2: خيار إزالة اللواحق غير مفعّل (Clean Suffixes OFF)
     if (originalInfo.suffix) {
         const candidateWithSuffix = cleanBoundaries(`${activeBase}-${originalInfo.suffix}`);
         
@@ -119,85 +118,98 @@ async function handleFiles(files) {
     const fileList = [...files];
     if (fileList.length === 0) return;
 
-    const totalCountAfterUpload = icons.length + fileList.length;
-    const shouldShowLoading = totalCountAfterUpload >= 150;
+    // تصفية أولية: قبول ملفات SVG الحقيقية واستبعاد المجلدات فوراً
+    const svgFiles = fileList.filter(file => {
+        const isSvgExtension = file.name.toLowerCase().endsWith('.svg');
+        const isSvgMime = file.type === 'image/svg+xml' || file.type === '';
+        return isSvgExtension && isSvgMime && file.size > 0;
+    });
 
-    if (shouldShowLoading) {
-        showLoading();
-    }
+    if (svgFiles.length === 0) return;
 
-    setTimeout(async () => {
-        try {
-            const readTasks = fileList.map(file => {
-                return new Promise(resolve => {
-                    const reader = new FileReader();
+    runWithLoadingIfNeeded(svgFiles.length, async () => {
+        const readTasks = svgFiles.map(file => {
+            return new Promise(resolve => {
+                const reader = new FileReader();
 
-                    reader.onload = e => {
-                        let content = e.target.result;
+                // حماية بمؤقت 3 ثوانٍ لكل ملف لمنع التعليق
+                const fileTimeout = setTimeout(() => {
+                    reader.abort();
+                    resolve(null);
+                }, 3000);
 
-                        content = content
-                            .replace(/<\?xml[^>]*>/g, '')
-                            .replace(/<!DOCTYPE[^>]*>/g, '')
-                            .replace(/<!--[\s\S]*?-->/g, '')
-                            .replace(/xmlns(:\w+)?="[^"]*"/g, '');
+                reader.onload = e => {
+                    clearTimeout(fileTimeout);
+                    let content = e.target.result;
 
-                        if (!content.includes('<svg')) return resolve(null);
+                    content = content
+                        .replace(/<\?xml[^>]*>/g, '')
+                        .replace(/<!DOCTYPE[^>]*>/g, '')
+                        .replace(/<!--[\s\S]*?-->/g, '')
+                        .replace(/xmlns(:\w+)?="[^"]*"/g, '');
 
-                        const parser = new DOMParser();
-                        const doc = parser.parseFromString(content, "image/svg+xml");
-                        const svgNode = doc.querySelector('svg');
+                    if (!content.includes('<svg')) return resolve(null);
 
-                        if (!svgNode || doc.querySelector('parsererror')) return resolve(null);
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(content, "image/svg+xml");
+                    const svgNode = doc.querySelector('svg');
 
-                        const elementCount = svgNode.querySelectorAll('*').length;
-                        const hasEmbeddedImages = svgNode.querySelectorAll('image').length > 0;
-                        const sizeInKB = new Blob([content]).size / 1024;
+                    if (!svgNode || doc.querySelector('parsererror')) return resolve(null);
 
-                        const isIllustration = elementCount > 50 || sizeInKB > 45 || hasEmbeddedImages;
-                        if (isIllustration) return resolve(null);
+                    const elementCount = svgNode.querySelectorAll('*').length;
+                    const hasEmbeddedImages = svgNode.querySelectorAll('image').length > 0;
+                    const sizeInKB = new Blob([content]).size / 1024;
 
-                        const originalId = file.name;
-                        
-                        resolve({ 
-                            originalId, 
-                            customBaseId: null,
-                            customId: null,
-                            content 
-                        });
-                    };
+                    const isIllustration = elementCount > 50 || sizeInKB > 45 || hasEmbeddedImages;
+                    if (isIllustration) return resolve(null);
 
-                    reader.readAsText(file);
-                });
+                    const originalId = file.name;
+                    
+                    resolve({ 
+                        originalId, 
+                        customBaseId: null,
+                        customId: null,
+                        content 
+                    });
+                };
+
+                reader.onerror = () => {
+                    clearTimeout(fileTimeout);
+                    resolve(null);
+                };
+
+                reader.onabort = () => {
+                    clearTimeout(fileTimeout);
+                    resolve(null);
+                };
+
+                reader.readAsText(file);
             });
+        });
 
-            const results = await Promise.all(readTasks);
-            const validFiles = results.filter(item => item !== null);
+        const results = await Promise.all(readTasks);
+        const validFiles = results.filter(item => item !== null);
 
-            let addedAny = false;
-            validFiles.forEach(item => {
-                const tempIconsList = [...icons];
-                item.id = computeIconId(item, tempIconsList, -1);
+        let addedAny = false;
+        validFiles.forEach(item => {
+            const tempIconsList = [...icons];
+            item.id = computeIconId(item, tempIconsList, -1);
 
-                const isDuplicate = icons.some(icon => icon.id === item.id || icon.content.trim() === item.content.trim());
-                if (!isDuplicate) {
-                    icons.push(item);
-                    addedAny = true;
-                }
+            const isDuplicate = icons.some(icon => icon.id === item.id || icon.content.trim() === item.content.trim());
+            if (!isDuplicate) {
+                icons.push(item);
+                addedAny = true;
+            }
+        });
+
+        if (addedAny) {
+            icons.forEach((icon, idx) => {
+                icon.id = computeIconId(icon, icons, idx);
             });
-
-            if (addedAny) {
-                icons.forEach((icon, idx) => {
-                    icon.id = computeIconId(icon, icons, idx);
-                });
-                renderIcons();
-                generateSprite();
-            }
-        } finally {
-            if (shouldShowLoading) {
-                hideLoading();
-            }
+            renderIcons();
+            generateSprite();
         }
-    }, shouldShowLoading ? 10 : 0);
+    });
 }
 
 function checkScroll() {
@@ -209,7 +221,7 @@ function checkScroll() {
     }
 }
 
-function renderIcons(onComplete) {
+function renderIcons() {
     iconsList.innerHTML = '';
     iconsList.style = 'justify-content: start;';
 
@@ -224,7 +236,6 @@ function renderIcons(onComplete) {
         iconsList.parentElement.querySelector('.icons-controlling').style = 'opacity: 0; height: 0;';
         count.textContent = '0';
         checkScroll();
-        if (onComplete) onComplete();
         return;
     }
 
@@ -284,7 +295,6 @@ function renderIcons(onComplete) {
         } else {
             iconsList.parentElement.querySelector('.icons-controlling').style = 'opacity: 1; height: unset;';
             checkScroll();
-            if (onComplete) onComplete();
         }
     }
 
@@ -333,7 +343,6 @@ function editIconName(btn, index) {
     if (resetBtn) {
         resetBtn.onclick = (e) => {
             e.stopPropagation();
-            // عند إعادة ضبط اسم الأيقونة يلغى التحديد اليدوي CustomId
             icons[index].customId = null;
             icons[index].customBaseId = null;
             icons[index].id = computeIconId(icons[index], icons, index);
@@ -489,25 +498,20 @@ function formatNode(node, level = 2) {
     return result;
 }
 
-// دالة تلوين كود XML/SVG محلياً مع فصل الرموز < > / لتلوينها بالرصاصي
+// تلوين الكود محلياً بدون مكتبات خارجية
 function highlightSVG(code) {
-    // 1. تشفير الرموز الخاصة
     const escaped = code
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;');
 
-    // 2. مطابقة الرموز، أسماء التاقات، والخصائص
-    return escaped.replace(/(&lt;\/?|&gt;|\/&gt;)|([a-zA-Z0-9-]+)(?=\s|&gt;|\/&gt;)|([a-zA-Z0-9-]+)=("[^"]*")/g, (match, punct, tagName, attr, attrName, attrValue) => {
-        // أقواس ورموز التاقات: < </ > />
+    return escaped.replace(/(&lt;\/?|&gt;|\/&gt;)|([a-zA-Z0-9-]+)(?=\s|&gt;|\/&gt;)|([a-zA-Z0-9-]+)=("[^"]*")/g, (match, punct, tagName, attr) => {
         if (punct) {
             return `<span class="token-punctuation">${punct}</span>`;
         }
-        // اسم التاق فقط بدون الرموز (مثل svg, symbol, path)
         if (tagName) {
             return `<span class="token-tag">${tagName}</span>`;
         }
-        // الخصائص والقيم ( مثل id="icon" )
         if (match.includes('=')) {
             const parts = match.split('=');
             return `<span class="token-attr-name">${parts[0]}</span>=<span class="token-attr-value">${parts[1]}</span>`;
@@ -535,21 +539,24 @@ function generateSprite() {
     
         sprite += `</svg>`;
     
+        rawSpriteContent = sprite;
         output.innerHTML = highlightSVG(sprite);
     } else {
+        rawSpriteContent = '';
         output.innerHTML = '';
     }
 }
 
 function clearSprite() {
     icons = [];
+    rawSpriteContent = '';
     output.innerHTML = '';
     iconsList.parentNode.classList.remove('active');
     renderIcons();
 }
 
 function downloadSprite() {
-    const content = output.textContent;
+    const content = rawSpriteContent || output.textContent;
 
     if (!content.trim()) return;
 

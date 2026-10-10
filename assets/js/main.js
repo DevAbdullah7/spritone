@@ -1,16 +1,16 @@
-// Caching Daynamic
-const cacheItems = document.querySelectorAll('.cacheItem')
+// Caching Dynamic
+const cacheItems = document.querySelectorAll('.cacheItem');
 cacheItems.forEach(item => {
     if (item.src !== undefined) {
-        item.src = item.src + cacheVersion
+        item.src = item.src + cacheVersion;
     } else if (item.href !== undefined) {
-        item.href = item.href + cacheVersion
+        item.href = item.href + cacheVersion;
     } else if (item.content !== undefined) {
-        item.content = item.content + cacheVersion
+        item.content = item.content + cacheVersion;
     } else {
-        console.log(item)
+        console.log(item);
     }
-})
+});
 
 // ==========================================
 // 1. Freeze Manager (نظام التجميد الموحد)
@@ -21,7 +21,6 @@ const FreezeManager = {
 
     freeze() {
         if (this.lockCount === 0) {
-            // حفظ موقع السكرول عند أول طلب تجميد
             this.scrollPosition = window.scrollY;
             document.body.style.top = `-${this.scrollPosition}px`;
             document.body.classList.add('freez');
@@ -34,7 +33,6 @@ const FreezeManager = {
             this.lockCount--;
         }
 
-        // إرجاع التمرير فقط عند انتهاء كافة الطلبات
         if (this.lockCount === 0) {
             document.body.classList.remove('freez');
             document.body.style.top = '';
@@ -44,12 +42,12 @@ const FreezeManager = {
 };
 
 // ==========================================
-// 2. Loading Controller (إدارة اللودينج)
+// 2. Loading Controller (إدارة اللودينج المباشرة)
 // ==========================================
 let loadingStartTime = 0;
 
 function showLoading() {
-    loadingStartTime = performance.now(); // تسجيل وقت البداية
+    loadingStartTime = performance.now();
     FreezeManager.freeze();
     document.documentElement.classList.add('loading');
     console.log('⏳ Loading started...');
@@ -59,12 +57,15 @@ function hideLoading() {
     document.documentElement.classList.remove('loading');
     FreezeManager.unfreeze();
     
-    // حساب الوقت المستغرق بالثواني
     const durationInSeconds = ((performance.now() - loadingStartTime) / 1000).toFixed(2);
-    
     console.log(`✅ Loading finished in ${durationInSeconds} seconds.`);
 }
 
+/**
+ * غلاف مخصص لعمليات الأيقونات: يُظهر اللودينج فقط إذا كان عدد الأيقونات >= 100
+ * @param {number} targetCount - عدد الأيقونات المستهدفة
+ * @param {Function} actionTask - الدالة المراد تنفيذها
+ */
 function runWithLoadingIfNeeded(targetCount, actionTask) {
     if (targetCount >= 100) {
         showLoading();
