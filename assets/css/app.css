@@ -323,35 +323,16 @@ pre {
     transition: all ease-in-out 0.3s;
 }
 @media only screen and (max-width: 520px) {
-    code[class*="language-"], pre[class*="language-"] {
-        font-size: 12px !important;
+    pre {
+        padding: var(--space-3) var(--space-4) !important;
     }
 }
-
-.token.tag {
-    color: #ff6565 !important;
-    /* color: #407abd !important; */
-}
-.token.attr-name {
-    /* color: #67d4ff !important; */
-    color: #ffbd7a !important;
-}
-/* .token.attr-value {
-    color: #ffbd7a !important;
-} */
 
 .output-container {
     display: flex;
     flex: 1;
     flex-direction: column;
     gap: var(--space-7);
-}
-
-.output-container h3 {
-    font-size: 24px;
-    font-weight: 400;
-    color: #38bdf8;
-    user-select: none;
 }
 
 .output-container .action-call-buttons .btn {
@@ -362,7 +343,6 @@ pre {
 /* حافظ على المسافات والتابات بدقة داخل حاوية العرض */
 #output {
     white-space: pre !important;
-    font-family: monospace;
     display: block;
 }
 
