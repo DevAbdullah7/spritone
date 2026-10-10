@@ -1,46 +1,132 @@
 <html lang="en">
 <head>
-    <title>Ramaz | Design System</title>
+    <!---------- General Metas ---------->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://URL.com/"> <!-- Change the URL -->
+    <meta name="robots" content="index, follow">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../assets/imgs/Favicon/Favicon.png">
 
-    <!-- <link rel="apple-touch-icon-precomposed" sizes="57x57" href="./assets/imgs/Favicon/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/imgs/Favicon/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/imgs/Favicon/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/imgs/Favicon/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="./assets/imgs/Favicon/apple-touch-icon-60x60.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="./assets/imgs/Favicon/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="./assets/imgs/Favicon/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./assets/imgs/Favicon/apple-touch-icon-152x152.png" />
-    <link rel="icon" type="image/png" href="./assets/imgs/Favicon/favicon-196x196.png" sizes="196x196" />
-    <link rel="icon" type="image/png" href="./assets/imgs/Favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/png" href="./assets/imgs/Favicon/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="./assets/imgs/Favicon/favicon-16x16.png" sizes="16x16" />
-    <link rel="icon" type="image/png" href="./assets/imgs/Favicon/favicon-128.png" sizes="128x128" />
-    <meta name="application-name" content="&nbsp;"/>
-    <meta name="msapplication-TileColor" content="#FFFFFF" />
-    <meta name="msapplication-TileImage" content="./assets/imgs/Favicon/mstile-144x144.png" />
-    <meta name="msapplication-square70x70logo" content="./assets/imgs/Favicon/mstile-70x70.png" />
-    <meta name="msapplication-square150x150logo" content="./assets/imgs/Favicon/mstile-150x150.png" />
-    <meta name="msapplication-wide310x150logo" content="./assets/imgs/Favicon/mstile-310x150.png" />
-    <meta name="msapplication-square310x310logo" content="./assets/imgs/Favicon/mstile-310x310.png" /> -->
+    <!---------- Website Information ---------->
+    <title>Spritone | Design System</title>
+    <meta name="application-name" content="Spritone">
+    <meta name="apple-mobile-web-app-title" content="Spritone">
+    <link rel="manifest" href="/assets/res/manifest.json" class="cacheItem">
 
-    <!-- Css Main Files -->
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/design-system.css">
+
+    <!---------- SEO Metas ---------->
+    <!-- Title -->
+    <meta property="title" content="Spritone">
+    <meta property="og:site_name" content="Spritone">
+    <meta property="og:title" content="Spritone">
+    <meta name="twitter:title" content="Spritone">
+
+    <!-- Description -->
+    <meta name="description" content=""> <!-- put the description of website in ( content ) property -->
+    <meta name="og:description" content=""> <!-- put the description of website in ( content ) property -->
+    <meta name="twitter:description" content=""> <!-- put the description of website in ( content ) property -->
+
+    <!-- Website Information -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://URL.com"> <!-- Change the URL -->
+    <meta property="og:locale" content="en_EN">
+
+    <!-- Sharing Image -->
+    <meta name="image" content="https://URL.com/assets/imgs/Sharing-image.png" class="cacheItem"> <!-- Change the URL -->
+    <meta property="image" content="https://URL.com/assets/imgs/Sharing-image.png" class="cacheItem"> <!-- Change the URL -->
+    <meta property="og:image" content="https://URL.com/assets/imgs/Sharing-image.png" class="cacheItem"> <!-- Change the URL -->
+
+    <!-- Keywords -->
+    <meta name="keywords" content=""> <!-- put the keywords list of website in ( content ) property -->
+
+
+    <!---------- Display Settings ---------->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Theme Colors -->
+    <meta name="theme-color" content="#0f172a">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#0f172a-transparent">
+    <meta name="msapplication-TileColor" content="#0f172a-transparent">
+
+    <!-- iOS Lunch Screen -->
+    <!-- <link rel="apple-touch-startup-image" href="/assets/imgs/lunchScreens/apple_splash_2048.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem" class="cacheItem"/>
+    <link rel="apple-touch-startup-image" href="/assets/imgs/lunchScreens/apple_splash_1668.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem" class="cacheItem"/>
+    <link rel="apple-touch-startup-image" href="/assets/imgs/lunchScreens/apple_splash_1536.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem" class="cacheItem"/>
+    <link rel="apple-touch-startup-image" href="/assets/imgs/lunchScreens/apple_splash_1125.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem" class="cacheItem"/>
+    <link rel="apple-touch-startup-image" href="/assets/imgs/lunchScreens/apple_splash_1242.png" media="(device-width: 414px) and (device-height: 763px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" class="cacheItem" class="cacheItem"/>
+    <link rel="apple-touch-startup-image" href="/assets/imgs/lunchScreens/apple_splash_828.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem" class="cacheItem"/>
+    <link rel="apple-touch-startup-image" href="/assets/imgs/lunchScreens/apple_splash_750.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem" class="cacheItem"/>
+    <link rel="apple-touch-startup-image" href="/assets/imgs/lunchScreens/apple_splash_640.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem" class="cacheItem"/> -->
+
+
+    <!---------- Css Files ---------->
+    <!-- Defualt Files -->
+    <link rel="stylesheet" href="/assets/css/design-system.css" class="cacheItem">
+    <link rel="stylesheet" href="/assets/css/main.css" class="cacheItem">
+    <link rel="stylesheet" href="/assets/css/app.css" class="cacheItem">
+
+    <!-- For Staylling The Design System (Development Use Only !) -->
+    <link rel="stylesheet" href="/dev/assets/css/styling-designSystem.css" class="cacheItem">
+    <link rel="stylesheet" href="/dev/assets/css/layout.css" class="cacheItem">
     
-    <!-- Sylling the Design System ( For Development Team ! ) -->
-    <link rel="stylesheet" href="./assets/css/styling-designSystem.css">
-    <link rel="stylesheet" href="./assets/css/layout.css">
+
+
+    <!---------- Favicon ---------->
+    <link rel="icon" type="image/x-icon" href="/assets/imgs/Favicon/Favicon.png" class="cacheItem">
     
+    <!-- Browser -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/imgs/Favicon/favicon-16x16.png" class="cacheItem">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/imgs/Favicon/favicon-32x32.png" class="cacheItem">
+    <link rel="icon" type="image/png" sizes="72x72" href="/assets/imgs/Favicon/favicon-72x72.png" class="cacheItem">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/imgs/Favicon/favicon-96x96.png" class="cacheItem">
+    <link rel="icon" type="image/png" sizes="114x114" href="/assets/imgs/Favicon/favicon-114x114.png" class="cacheItem">
+    <link rel="icon" type="image/png" sizes="128x128" href="/assets/imgs/Favicon/favicon-128x128.png" class="cacheItem">
+    <link rel="icon" type="image/png" sizes="144x144" href="/assets/imgs/Favicon/favicon-144x144.png" class="cacheItem">
+    <link rel="icon" type="image/png" sizes="196x196" href="/assets/imgs/Favicon/favicon-196x196.png" class="cacheItem">
+
+    <!-- IOS -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/imgs/Favicon/apple-touch-icon-57x57.png" class="cacheItem">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/imgs/Favicon/apple-touch-icon-60x60.png" class="cacheItem">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/imgs/Favicon/apple-touch-icon-72x72.png" class="cacheItem">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/imgs/Favicon/apple-touch-icon-76x76.png" class="cacheItem">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/imgs/Favicon/apple-touch-icon-114x114.png" class="cacheItem">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/imgs/Favicon/apple-touch-icon-120x120.png" class="cacheItem">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/imgs/Favicon/apple-touch-icon-144x144.png" class="cacheItem">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/imgs/Favicon/apple-touch-icon-152x152.png" class="cacheItem">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/imgs/Favicon/apple-touch-icon-180x180.png" class="cacheItem">
+    
+    <!-- Android -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/imgs/Favicon/android-icon-16x16.png" class="cacheItem">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/imgs/Favicon/android-icon-32x32.png" class="cacheItem">
+    <link rel="icon" type="image/png" sizes="57x57" href="/assets/imgs/Favicon/android-icon-57x57.png" class="cacheItem">
+    <link rel="icon" type="image/png" sizes="72x72" href="/assets/imgs/Favicon/android-icon-72x72.png" class="cacheItem">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/imgs/Favicon/android-icon-96x96.png" class="cacheItem">
+    <link rel="icon" type="image/png" sizes="128x128" href="/assets/imgs/Favicon/android-icon-128x128.png" class="cacheItem">
+    <link rel="icon" type="image/png" sizes="144x144" href="/assets/imgs/Favicon/android-icon-144x144.png" class="cacheItem">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/imgs/Favicon/android-icon-192x192.png" class="cacheItem">
+
+    <!-- MS -->
+    <meta name="msapplication-TileImage" content="/assets/imgs/Favicon/mstile-70x70.png" class="cacheItem">
+    <meta name="msapplication-TileImage" content="/assets/imgs/Favicon/mstile-144x144.png" class="cacheItem">
+    <meta name="msapplication-TileImage" content="/assets/imgs/Favicon/mstile-150x150.png" class="cacheItem">
+    <meta name="msapplication-TileImage" content="/assets/imgs/Favicon/mstile-310x150.png" class="cacheItem">
+    <meta name="msapplication-TileImage" content="/assets/imgs/Favicon/mstile-310x310.png" class="cacheItem">
+
+    <!-- Cachebusting -->
+    <meta http-equiv="Cache-Control" content="max-age=0, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0" />
+    <!-- Cache Version -->
+    <script>
+        var cacheVersion = '?v=0.0.1'
+    </script>
 </head>
+
 <body>
     <!-- Side Panel -->
-    <div class="sidePanel">
+    <nav class="sidePanel">
         <!-- SP Header -->
         <div class="sidePanel-header">
             <!-- SP Top Header Section -->
@@ -203,23 +289,23 @@
                 </a>
             </div>
         </div>
-    </div>
+    </nav>
 
     <!-- Main Container -->
-    <div class="main">
+    <main class="main">
         <!-- Page Header -->
         <div class="pageHeader">
             <!-- Navigator -->
             <div class="navigator">
                 <a href="#" class="navigatorStart">
                     <div class="icon">
-                        <svg viewBox="0 0 24 24" xmlns="./assets/imgs/icons/home.svg">
-                            <path d="M18.2251 21.5326C18.371 21.5414 18.5172 21.5192 18.6539 21.4674C18.7907 21.4156 18.9149 21.3354 19.0183 21.232C19.1217 21.1287 19.2021 21.0045 19.254 20.8678C19.3059 20.7311 19.3282 20.5849 19.3195 20.439V10.5918C19.3281 10.4206 19.2923 10.25 19.2156 10.0967C19.139 9.94335 19.024 9.81242 18.8819 9.71658L12.3171 4.24618C12.1143 4.0867 11.8638 4 11.6059 4C11.3479 4 11.0974 4.0867 10.8947 4.24618L4.32986 9.71658C4.11077 9.9545 3.9931 10.2685 4.00186 10.5918V20.439C3.9931 20.5849 4.01541 20.7311 4.06732 20.8678C4.11924 21.0045 4.19957 21.1287 4.303 21.232C4.40644 21.3354 4.53063 21.4156 4.66737 21.4674C4.80412 21.5192 4.9503 21.5414 5.09626 21.5326H9.47306V16.0622H13.8499V21.5326H18.2251Z" fill="currentColor"/>
+                        <svg width="24" height="24">
+                            <use xlink:href="/assets/icons/sprites/icons.svg#home"></use>
                         </svg>
                     </div>
                 </a>
                 
-                <a href="./home.html" class="navigatorItem">
+                <a href="/home.html" class="navigatorItem">
                     <p>Design System</p>
                 </a>
             </div>
@@ -242,7 +328,7 @@
                         Design System:
                         </div>
                         <div class="partContent">
-                            <a href="./assets/css/Design-System.css" class="BTN Primary-BTN Icon-BTN" target="_blank" download="Design-System">
+                            <a href="/assets/css/Design-System.css" class="BTN Primary-BTN Icon-BTN" target="_blank" download="Design-System">
                                 <svg width="24" height="24">
                                     <use xlink:href="/assets/icons/sprites/icons.svg#download"></use>
                                 </svg>
@@ -264,7 +350,7 @@
                         <div class="partTitle">
                         Design System:
                         </div>
-                        <a href="./assets/js/Design-System.js" class="BTN Primary-BTN Icon-BTN" target="_blank" download="Design-System">
+                        <a href="/assets/js/Design-System.js" class="BTN Primary-BTN Icon-BTN" target="_blank" download="Design-System">
                             <svg width="24" height="24">
                                 <use xlink:href="/assets/icons/sprites/icons.svg#download"></use>
                             </svg>
@@ -285,7 +371,7 @@
                         <div class="partContent">
                             <div class="content">
                                 <p>English Font:</p>
-                                <a href="./assets/fonts/mainFont-en.woff2" class="BTN Primary-BTN Icon-BTN" target="_blank" download="mainFont-en.woff2">
+                                <a href="/assets/fonts/mainFont-en.woff2" class="BTN Primary-BTN Icon-BTN" target="_blank" download="mainFont-en.woff2">
                                     <svg width="24" height="24">
                                         <use xlink:href="/assets/icons/sprites/icons.svg#download"></use>
                                     </svg>
@@ -293,7 +379,7 @@
                             </div>
                             <div class="content">
                                 <p>Arabic Font:</p>
-                                <a href="./assets/fonts/mainFont-ar.woff2" class="BTN Primary-BTN Icon-BTN" target="_blank" download="mainFont-ar.woff2">
+                                <a href="/assets/fonts/mainFont-ar.woff2" class="BTN Primary-BTN Icon-BTN" target="_blank" download="mainFont-ar.woff2">
                                     <svg width="24" height="24">
                                         <use xlink:href="/assets/icons/sprites/icons.svg#download"></use>
                                     </svg>
@@ -315,7 +401,7 @@
                                 <div class="partContent" style="gap: 24px;">
                                     <div class="part">
                                         <p>Download the font files and put them in this path:</p>
-                                        <p class="pathShown">./assets/fonts/</p>
+                                        <p class="pathShown">/assets/fonts/</p>
                                     </div>
                                     <div class="partContent" style="gap: 8px; align-items: center;">
                                         <p>- Should add </p>
@@ -358,11 +444,11 @@
                                     <div class="part" style="gap: 24px;">
                                         <div class="part">
                                             <p style="font-weight: 500;">Example of the problem:</p>
-                                            <img src="./res/design-system/ty/1.png" alt="Typography Vertical Issues Example" style="width: 256px;">
+                                            <img src="/res/design-system/ty/1.png" alt="Typography Vertical Issues Example" style="width: 256px;">
                                         </div>
                                         <div class="part">
                                             <p style="font-weight: 500;">After readjusting:</p>
-                                            <img src="./res/design-system/ty/2.png" alt="Typography Vertical solve Example" style="width: 256px;">
+                                            <img src="/res/design-system/ty/2.png" alt="Typography Vertical solve Example" style="width: 256px;">
                                         </div>
                                     </div>
                                     <div class="part">
@@ -373,7 +459,7 @@
 <span class="html comment">/* English version */</span>
 <span class="css propertyBrackets">@font-face</span> <span class="css selectorBrackets">{</span>
     <span class="css property">font-family:</span> <span class="css wordProperty">'mainFont-en'</span>;
-    <span class="css property">src:</span> <span class="css propertyYallow">url</span><span class="css propertyBrackets">(</span><span class="css wordProperty">'../fonts/mainFont-en.woff2'</span><span class="css propertyBrackets">)</span> <span class="css propertyYallow">format</span><span class="css propertyBrackets">(</span><span class="css wordProperty">'woff2'</span><span class="css propertyBrackets">)</span>;
+    <span class="css property">src:</span> <span class="css propertyYallow">url</span><span class="css propertyBrackets">(</span><span class="css wordProperty">'./fonts/mainFont-en.woff2'</span><span class="css propertyBrackets">)</span> <span class="css propertyYallow">format</span><span class="css propertyBrackets">(</span><span class="css wordProperty">'woff2'</span><span class="css propertyBrackets">)</span>;
     <span class="css property">font-style:</span> <span class="css wordProperty">normal</span>;
     <span class="css property">font-display:</span> <span class="css wordProperty">swap</span>;
 
@@ -396,7 +482,7 @@
 <span class="html comment">/* Arabic version */</span>
 <span class="css propertyBrackets">@font-face</span> <span class="css selectorBrackets">{</span>
     <span class="css property">font-family:</span> <span class="css wordProperty">'mainFont-ar'</span>;
-    <span class="css property">src:</span> <span class="css propertyYallow">url</span><span class="css propertyBrackets">(</span><span class="css wordProperty">'../fonts/mainFont-ar.woff2'</span><span class="css propertyBrackets">)</span> <span class="css propertyYallow">format</span><span class="css propertyBrackets">(</span><span class="css wordProperty">'woff2'</span><span class="css propertyBrackets">)</span>;
+    <span class="css property">src:</span> <span class="css propertyYallow">url</span><span class="css propertyBrackets">(</span><span class="css wordProperty">'./fonts/mainFont-ar.woff2'</span><span class="css propertyBrackets">)</span> <span class="css propertyYallow">format</span><span class="css propertyBrackets">(</span><span class="css wordProperty">'woff2'</span><span class="css propertyBrackets">)</span>;
     <span class="css property">font-style:</span> <span class="css wordProperty">normal</span>;
     <span class="css property">font-display:</span> <span class="css wordProperty">swap</span>;
 
@@ -445,7 +531,7 @@
                                 <div class="partContent" style="gap: 24px;">
                                     <div class="part">
                                         <p>- حمل ملفات الخط وضعها في هذا المسار:</p>
-                                        <p class="pathShown" lang="en">./assets/fonts/</p>
+                                        <p class="pathShown" lang="en">/assets/fonts/</p>
                                     </div>
                                     <div class="partContent" style="gap: 8px; align-items: center;">
                                         <p>- يجب اضافة الخاصية </p>
@@ -488,11 +574,11 @@
                                     <div class="part" style="gap: 24px;">
                                         <div class="part">
                                             <p style="font-weight: 500;">مثال على المشكلة:</p>
-                                            <img src="./res/design-system/ty/1.png" alt="Typography Vertical Issues Example" style="width: 256px;">
+                                            <img src="/res/design-system/ty/1.png" alt="Typography Vertical Issues Example" style="width: 256px;">
                                         </div>
                                         <div class="part">
                                             <p style="font-weight: 500;">بعد إعادة ضبط المقاسات:</p>
-                                            <img src="./res/design-system/ty/2.png" alt="Typography Vertical solve Example" style="width: 256px;">
+                                            <img src="/res/design-system/ty/2.png" alt="Typography Vertical solve Example" style="width: 256px;">
                                         </div>
                                     </div>
                                     <div class="part">
@@ -503,7 +589,7 @@
 <span class="html comment">/* English version */</span>
 <span class="css propertyBrackets">@font-face</span> <span class="css selectorBrackets">{</span>
     <span class="css property">font-family:</span> <span class="css wordProperty">'mainFont-en'</span>;
-    <span class="css property">src:</span> <span class="css propertyYallow">url</span><span class="css propertyBrackets">(</span><span class="css wordProperty">'../fonts/mainFont-en.woff2'</span><span class="css propertyBrackets">)</span> <span class="css propertyYallow">format</span><span class="css propertyBrackets">(</span><span class="css wordProperty">'woff2'</span><span class="css propertyBrackets">)</span>;
+    <span class="css property">src:</span> <span class="css propertyYallow">url</span><span class="css propertyBrackets">(</span><span class="css wordProperty">'./fonts/mainFont-en.woff2'</span><span class="css propertyBrackets">)</span> <span class="css propertyYallow">format</span><span class="css propertyBrackets">(</span><span class="css wordProperty">'woff2'</span><span class="css propertyBrackets">)</span>;
     <span class="css property">font-style:</span> <span class="css wordProperty">normal</span>;
     <span class="css property">font-display:</span> <span class="css wordProperty">swap</span>;
 
@@ -526,7 +612,7 @@
 <span class="html comment">/* Arabic version */</span>
 <span class="css propertyBrackets">@font-face</span> <span class="css selectorBrackets">{</span>
     <span class="css property">font-family:</span> <span class="css wordProperty">'mainFont-ar'</span>;
-    <span class="css property">src:</span> <span class="css propertyYallow">url</span><span class="css propertyBrackets">(</span><span class="css wordProperty">'../fonts/mainFont-ar.woff2'</span><span class="css propertyBrackets">)</span> <span class="css propertyYallow">format</span><span class="css propertyBrackets">(</span><span class="css wordProperty">'woff2'</span><span class="css propertyBrackets">)</span>;
+    <span class="css property">src:</span> <span class="css propertyYallow">url</span><span class="css propertyBrackets">(</span><span class="css wordProperty">'./fonts/mainFont-ar.woff2'</span><span class="css propertyBrackets">)</span> <span class="css propertyYallow">format</span><span class="css propertyBrackets">(</span><span class="css wordProperty">'woff2'</span><span class="css propertyBrackets">)</span>;
     <span class="css property">font-style:</span> <span class="css wordProperty">normal</span>;
     <span class="css property">font-display:</span> <span class="css wordProperty">swap</span>;
 
@@ -1388,7 +1474,7 @@
 
                                         <span class="copyIcon" onclick="copyElement(this)">
                                             <svg width="18" height="18">
-                                                <use xlink:href="/assets/icons.svg#copy"></use>
+                                                <use xlink:href="/assets/icons/sprites/icons.svg#copy"></use>
                                             </svg>
                                         </span>
                                     </div>
@@ -2472,7 +2558,7 @@
                                 <a href="#" class="navigatorStart">
                                     <div class="icon">
                                         <svg width="24" height="24">
-                                            <use xlink:href="./assets/tafanee-icons.svg#home"></use>
+                                            <use xlink:href="/assets/icons/sprites/icons.svg#home"></use>
                                         </svg>
                                     </div>
                                 </a>
@@ -2502,7 +2588,7 @@
     <span class="html tagArrow">&lt;</span><span class="html tag">a</span> <span class="html attribute">href</span>=<span class="html className">"#"</span> <span class="html attribute">class</span>=<span class="html className">"navigatorStart"</span><span class="html tagArrow">&gt;</span>
         <span class="html tagArrow">&lt;</span><span class="html tag">div</span> <span class="html attribute">class</span>=<span class="html className">"icon"</span><span class="html tagArrow">&gt;</span>
             <span class="html tagArrow">&lt;</span><span class="html tag">svg</span> <span class="html attribute">width</span>=<span class="html className">"24"</span> <span class="html attribute">height</span>=<span class="html className">"24"</span><span class="html tagArrow">&gt;</span>
-                <span class="html tagArrow">&lt;</span><span class="html tag">use</span> <span class="html attribute">href</span>=<span class="html className">"./assets/tafanee-icons.svg#home"</span><span class="html tagArrow">&gt;</span><span class="html tagArrow">&lt;/</span><span class="html tag">use</span><span class="html tagArrow">&gt;</span>
+                <span class="html tagArrow">&lt;</span><span class="html tag">use</span> <span class="html attribute">href</span>=<span class="html className">"/assets/tafanee-icons.svg#home"</span><span class="html tagArrow">&gt;</span><span class="html tagArrow">&lt;/</span><span class="html tag">use</span><span class="html tagArrow">&gt;</span>
             <span class="html tagArrow">&lt;/</span><span class="html tag">svg</span><span class="html tagArrow">&gt;</span>
         <span class="html tagArrow">&lt;/</span><span class="html tag">div</span><span class="html tagArrow">&gt;</span>
     <span class="html tagArrow">&lt;/</span><span class="html tag">a</span><span class="html tagArrow">&gt;</span>
@@ -2534,12 +2620,15 @@
                 <div class="sctionContent">
                     <!-- Search -->
                     <div class="searchHeader">
+                        <!-- Search Input -->
                         <div class="search-input">
                             <div class="input">
                                 <div class="inputContainer">
                                     <input type="text" name="defualt-input" id="defualt-input" placeholder="Search" oninput="inputHandlling(this)">
                                 </div>
                             </div>
+
+                            <!-- Search Button -->
                             <div class="BTN Primary-BTN Icon-BTN" onclick="iconsSearch(this.parentNode.querySelector('input'))">
                                 <svg width="24" height="24">
                                     <use xlink:href="/assets/icons/sprites/icons.svg#search"></use>
@@ -2843,7 +2932,7 @@
         <!-- Footer -->
         <div class="footer">
             <div class="websiteInformation">
-                <a href="./home.html" class="websiteLogo">
+                <a href="/home.html" class="websiteLogo">
                     <svg width="208" height="64" style="color: var(--secondary-color-500);">
                         <use xlink:href="/assets/imgs/Logo.svg#logo"></use>
                     </svg>
@@ -2898,12 +2987,12 @@
                 <use xlink:href="/assets/icons/sprites/icons.svg#up-arrow"></use>
             </svg>
         </div>
-    </div>
+    </main>
 
     <!-- UI Design -->
     <div class="bubble"></div>
 
-    <!-- Js File -->
-    <script src="../assets/js/Design-System.js"></script>
+    <!-- Js Files -->
+    <script src="/assets/js/Design-System.js"></script>
 </body>
 </html>

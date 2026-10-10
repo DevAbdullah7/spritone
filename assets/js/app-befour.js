@@ -122,7 +122,7 @@ function renderIcons() {
                     </div>
                     <div class="BTN Edit-BTN" title="Edit Icon Name" onclick="editIconName(this, ${i})">
                         <svg width="24" height="24">
-                            <use href="./assets/icons/sprites/icons.svg#pencel"></use>
+                            <use href="/assets/icons/sprites/icons.svg#pencel"></use>
                         </svg>
                     </div>
                     <svg class="icon-remove" width="16" height="16" onclick="removeIcon(${i})">

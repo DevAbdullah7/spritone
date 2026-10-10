@@ -471,6 +471,7 @@ pre .js.red {
 }
 .part.icons-viewer .partContent {
     max-height: 320px;
+    padding: var(--space-3) 0;
     overflow: hidden;
     overflow-y: scroll;
 }

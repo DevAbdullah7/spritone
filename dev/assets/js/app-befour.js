@@ -115,7 +115,7 @@ function renderIcons() {
     
                 <!-- Delete Icon -->
                 <svg class="icon-remove" width="16" height="16" onclick="removeIcon(${i})">
-                    <use xlink:href="./assets/icons.svg#remove"></use>
+                    <use xlink:href="/assets/icons.svg#remove"></use>
                 </svg>
             `;
     
@@ -126,7 +126,7 @@ function renderIcons() {
     } else {
         iconsList.innerHTML = `
             <svg class="icon-remove" width="48" height="48" style="color: #919191;">
-                <use xlink:href="./assets/icons.svg#image"></use>
+                <use xlink:href="/assets/icons.svg#image"></use>
             </svg>
             <p class="orderMSG">Generate Your Icons Sprite Now !</p>
         `

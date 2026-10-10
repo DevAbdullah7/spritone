@@ -424,7 +424,7 @@ fetch('/assets/icons/sprites/mainfest.json')
     .then(res => res.json())
     .then(files => {
         files.forEach(file => {
-            // الكائن ينظف ./ تلقائياً ويحل المسار الكامل
+            // الكائن ينظف / تلقائياً ويحل المسار الكامل
             const fullUrl = new URL(file, basePath);
             const filePath = fullUrl.pathname; // ينتج: /assets/icons/sprites/icons.svg
             
@@ -500,7 +500,7 @@ function loadSprite(filePath, fileName) {
                 <h3 class="partTitle">${fileName} :</h3>
                 <div class="partContent error">
                     <svg width="48" height="48">
-                        <use xlink:href="../assets/icons/sprites/icons.svg#warning"></use>
+                        <use xlink:href="./assets/icons/sprites/icons.svg#warning"></use>
                     </svg>
 
                     Error: Failed to Fetch Icons !
@@ -558,7 +558,7 @@ function iconsSearch(searchInput) {
         if (!searchValue == '') {
             searchResult.innerHTML = `
                 <svg width="48" height="48">
-                    <use xlink:href="../assets/icons/sprites/icons.svg#warning"></use>
+                    <use xlink:href="./assets/icons/sprites/icons.svg#warning"></use>
                 </svg>
 
                 The Icon is not Found, or It's Just not Added Yet.

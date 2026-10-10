@@ -395,7 +395,7 @@ body {
     border-radius: var(--borderRedius-MD);
     background: rgba(0, 0, 0, .25);
     box-shadow: var(--shadow-MD);
-    padding: var(--space-7);
+    padding: var(--space-4) var(--space-7) var(--space-7);
 }
 
 @media only screen and (max-width: 1024px) {
@@ -403,6 +403,10 @@ body {
         flex-direction: column;
         align-items: center;
     }
+}
+
+.section#Icons {
+    gap: var(--space-4);
 }
 
 .sectionContent {
