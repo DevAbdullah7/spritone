@@ -1,3 +1,20 @@
+html.generate .main {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: var(--space-7);
+    padding: 128px var(--space-10) var(--space-5);
+}
+@media only screen and (max-width: 520px) {
+    html.generate .main {
+        padding: 96px var(--space-5) var(--space-5);
+    }
+}
+
 /* ========== Upload Icons Container ========== */
 .upload-icons-container {
     width: 100%;
@@ -5,7 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: start;
-    gap: 48px;
+    gap: var(--space-7);
 }
 @media only screen and (max-width: 520px) {
     .upload-icons-container {
@@ -34,7 +51,7 @@
     justify-content: center;
     align-items: center;
     gap: var(--space-6);
-    padding: 32px;
+    padding: var(--space-6);
     text-align: center;
     border-radius: 12px;
     border: 2px dashed var(--secondary-color-500);
@@ -63,9 +80,14 @@
         height: 48px !important;
     }
 }
+@media only screen and (max-width: 520px) {
+    .upload-box .h5 {
+        font-size: var(--fontSize-H6);
+    }
+}
 
 .upload-box .inputMSG {
-    font-size: 14px;
+    font-size: var(--fontSize-SM);
     color: var(--typography-color-PL3);
 }
 
@@ -127,9 +149,9 @@
 }
 
 @media only screen and (max-width: 520px) {
-  .uploaded-icons .container p {
-    font-size: var(--fontSize-H3);
-  }
+    .uploaded-icons .container p {
+        font-size: var(--fontSize-H3);
+    }
 }
 
 .uploaded-icons .icons-list {
@@ -355,13 +377,13 @@ pre {
 }
 
 #output .token-tag {
-    color: #599eed !important; /* لون الوسوم/التاقات مثل <svg> و <symbol> */
+    color: #1d5392 !important; /* لون الوسوم/التاقات مثل <svg> و <symbol> */
 }
 
 #output .token-attr-name {
-    color: #a0e1fb !important; /* لون الخصائص مثل id و viewBox */
+    color: var(--secondary-color-300) !important; /* لون الخصائص مثل id و viewBox */
 }
 
 #output .token-attr-value {
-    color: #ffa44a !important; /* لون قيم الخصائص بين التنصيص */
+    color: #ffb366 !important; /* لون قيم الخصائص بين التنصيص */
 }

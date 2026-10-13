@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="generate">
 <head>
     <!---------- General Metas ---------->
     <meta charset="UTF-8">
@@ -120,30 +120,31 @@
 </head>
 
 <body>
+    <!-- Navbar -->
     <header class="navbar" id="navbar">
+        <!-- Navbar Header -->
         <div class="nav-header">
             <!-- Website Logo -->
-            <a href="#" class="logo">
+            <a href="/" class="logo">
                 <img src="/res/Logo.svg" alt="Website Logo">
             </a>
 
-            
+            <!-- Open & Close Navbar: Mobile Version -->
             <button class="menu-toggle" id="menuToggle" aria-label="قائمة التصفح">
-                
+                <!-- Open Icon -->
                 <svg width="24" height="24" class="icon-open">
                     <use xlink:href="/assets/icons/sprites/icons.svg#menu"></use>
                 </svg>
-                
-                
+
+                <!-- Open Icon -->
                 <svg width="24" height="24" class="icon-close">
                     <use xlink:href="/assets/icons/sprites/icons.svg#close"></use>
                 </svg>
             </button>
         </div>
 
-        
+        <!-- Navbar Body -->
         <div class="nav-body">
-            
             <ul class="nav-links">
                 <li><a class="active" href="#home">Generate</a></li>
                 <li><a href="#services">About</a></li>
@@ -151,102 +152,162 @@
                 <li><a href="#portfolio">How It Works</a></li>
             </ul>
 
-            
             <div class="nav-footer">
                 <button class="BTN Primary-BTN">Contact</button>
             </div>
-
         </div>
 
-        <!-- UI Design Effect -->
+        <!-- Navbar UI Design Effect -->
         <div class="effect"></div>
     </header>
 
-    <!-- Upload Section -->
-    <div class="section upload-icons-container">
-        <!-- File Input -->
-        <div class="files-input">
-            <!-- Drop Zone -->
-            <div class="upload-box" id="dropZone">
-                <div class="upload-shape">
-                    <svg width="64" height="64">
-                        <use xlink:href="/assets/icons/sprites/icons.svg#upload2"></use>
-                    </svg>
-                    <div class="BTN Primary-BTN">
-                        Browse
+    <!-- Page Content -->
+    <main class="main" id="main">
+        <!-- Upload Section -->
+        <div class="section upload-icons-container">
+            <!-- File Input -->
+            <div class="files-input">
+                <!-- Drop Zone -->
+                <div class="upload-box" id="dropZone">
+                    <div class="upload-shape">
+                        <svg width="64" height="64">
+                            <use xlink:href="/assets/icons/sprites/icons.svg#upload2"></use>
+                        </svg>
+                        <div class="BTN Primary-BTN">
+                            Browse
+                        </div>
+                    </div>
+    
+                    <div class="text-part">
+                        <p class="h5">Upload or Drop Icons Here</p>
+                        <p class="inputMSG"><span style="color: #ff0000;">*</span> File Supported: .svg</p>
                     </div>
                 </div>
-
-                <div class="text-part">
-                    <p class="h5">Upload or Drop Icons Here</p>
-                    <p class="inputMSG"><span style="color: #ff0000;">*</span> File Supported: .svg</p>
-                </div>
+            
+                <!-- Input -->
+                <input type="file" accept="image/svg+xml" id="fileInput" multiple>
             </div>
         
-            <!-- Input -->
-            <input type="file" accept="image/svg+xml" id="fileInput" multiple>
-        </div>
+            <!-- Uploaded Icons -->
+            <div class="uploaded-icons">
+                <div class="container">
+                    <p>Uploaded Icons:</p>
     
-        <!-- Uploaded Icons -->
-        <div class="uploaded-icons">
-            <div class="container">
-                <p>Uploaded Icons:</p>
-
-                <div class="checkBox">
-                    <input type="checkbox" id="cleanSuffixesToggle" class="checkBoxInp">
-                    <label for="cleanSuffixesToggle" class="checkBoxLabel">Suffixes</label>
+                    <div class="checkBox">
+                        <input type="checkbox" id="cleanSuffixesToggle" class="checkBoxInp">
+                        <label for="cleanSuffixesToggle" class="checkBoxLabel">Suffixes</label>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Icons List -->
-            <div class="icons-list" id="iconsList">
-                <svg width="48" height="48" style="color: #919191;">
-                    <use xlink:href="/assets/icons/sprites/icons.svg#image"></use>
-                </svg>
-                <p class="orderMSG">Generate Your Icons Sprite Now !</p>
-            </div>
-
-            <!-- Icons Controlling -->
-            <div class="icons-controlling">
-                <!-- Count Of Icons -->
-                <div class="icons-count">
-                    <svg width="32" height="32">
-                        <use xlink:href="/assets/icons/sprites/icons.svg#images"></use>
+                
+                <!-- Icons List -->
+                <div class="icons-list" id="iconsList">
+                    <svg width="48" height="48" style="color: #919191;">
+                        <use xlink:href="/assets/icons/sprites/icons.svg#image"></use>
                     </svg>
-                    <span id="count">0</span>
+                    <p class="orderMSG">Generate Your Icons Sprite Now !</p>
                 </div>
-
-                <!-- Action Call Buttons -->
-                <div class="action-call-buttons">
-                    <!-- Clear -->
-                    <div class="BTN Danger-BTN" onclick="clearSprite()">Clear</div>
+    
+                <!-- Icons Controlling -->
+                <div class="icons-controlling">
+                    <!-- Count Of Icons -->
+                    <div class="icons-count">
+                        <svg width="32" height="32">
+                            <use xlink:href="/assets/icons/sprites/icons.svg#images"></use>
+                        </svg>
+                        <span id="count">0</span>
+                    </div>
+    
+                    <!-- Action Call Buttons -->
+                    <div class="action-call-buttons">
+                        <!-- Clear -->
+                        <div class="BTN Danger-BTN" onclick="clearSprite()">Clear</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Output Section -->
-    <div class="section output-container">
-        <!-- <h3>Output Code:</h3> -->
-
-        <!-- SVG Sprite Code -->
-        <div class="codeShown">
-            <!-- <p class="codeTitle">Output Code:</p> -->
-<pre id="output" class="language-markup">
     
-</pre>
-            <span class="copyIcon" onclick="copyElement(this)">
-                <svg width="18" height="18">
-                    <use xlink:href="/assets/icons/sprites/icons.svg#copy"></use>
+        <!-- Output Section -->
+        <div class="section output-container">
+            <!-- <h3>Output Code:</h3> -->
+    
+            <!-- SVG Sprite Code -->
+            <div class="codeShown">
+                <!-- <p class="codeTitle">Output Code:</p> -->
+                <pre id="output" class="language-markup">
+                    
+                </pre>
+                <span class="copyIcon" onclick="copyElement(this)">
+                    <svg width="18" height="18">
+                        <use xlink:href="/assets/icons/sprites/icons.svg#copy"></use>
+                    </svg>
+                </span>
+            </div>
+    
+            <!-- Action Call Buttons -->
+            <div class="action-call-buttons">
+                <button class="BTN Primary-BTN" title="Download Sprite File" onclick="downloadSprite()">
+                    <svg width="24" height="24">
+                        <use xlink:href="/assets/icons/sprites/icons.svg#download2"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <!-- Website Information -->
+        <div class="websiteInformation">
+            <a href="/home.html" class="websiteLogo">
+                <svg width="208" height="64" style="color: var(--secondary-color-500);">
+                    <use xlink:href="/assets/imgs/Logo.svg#logo"></use>
                 </svg>
-            </span>
+            </a>
+
+            <!-- website Social Accounts -->
+            <div class="websiteSocial">
+                <a href="#" class="BTN Primary-BTN Icon-BTN">
+                    <svg width="24" height="24">
+                        <use xlink:href="/assets/icons/sprites/icons.svg#whatsapp"></use>
+                    </svg>
+                </a>
+                <a href="#" class="BTN Primary-BTN Icon-BTN">
+                    <svg width="24" height="24">
+                        <use xlink:href="/assets/icons/sprites/icons.svg#twitter"></use>
+                    </svg>
+                </a>
+                <a href="#" class="BTN Primary-BTN Icon-BTN">
+                    <svg width="24" height="24">
+                        <use xlink:href="/assets/icons/sprites/icons.svg#instagram"></use>
+                    </svg>
+                </a>
+                <a href="#" class="BTN Primary-BTN Icon-BTN">
+                    <svg width="24" height="24">
+                        <use xlink:href="/assets/icons/sprites/icons.svg#tiktok"></use>
+                    </svg>
+                </a>
+                <a href="#" class="BTN Primary-BTN Icon-BTN">
+                    <svg width="24" height="24">
+                        <use xlink:href="/assets/icons/sprites/icons.svg#snapchat"></use>
+                    </svg>
+                </a>
+            </div>
         </div>
 
-        <!-- Action Call Buttons -->
-        <div class="action-call-buttons">
-            <button class="BTN Primary-BTN" title="Download Sprite File" onclick="downloadSprite()">Download</button>
+        <!-- Footer Pages & Copy Rights -->
+        <div class="footerPages-copyRights">
+            <div class="footerPages">
+                <a href="#">Privacy Policy</a>
+                <span>-</span>
+                <a href="#">Terms of Service</a>
+            </div>
+
+            <div class="copyRights">
+                Copyright 2025 &copy; All Rights Reserved | Powered By
+                <a href="https://github.com/DevAbdullah7" target="_blank">@Abdullah_Alqahtani</a>
+            </div>
         </div>
-    </div>
+    </footer>
 
     <!-- Loading Transetion -->
     <div class="loading">

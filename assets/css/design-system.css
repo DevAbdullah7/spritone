@@ -1991,7 +1991,7 @@ pre {
     border-radius: var(--borderRedius-SM);
     border: 3px solid var(--secondary-color-500);
     text-align: start;
-    color: var(--socendary-color-500-MD);
+    color: var(--typography-color-HL1);
     background: var(--primary-color-500);
     box-shadow: var(--shadow-SM);
     white-space: pre;
