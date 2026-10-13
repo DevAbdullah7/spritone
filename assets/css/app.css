@@ -44,6 +44,7 @@ html.generate .main {
     }
 }
 .upload-box {
+    position: relative;
     width: 100%;
     height: 100%;
     display: flex;
@@ -53,11 +54,29 @@ html.generate .main {
     gap: var(--space-6);
     padding: var(--space-6);
     text-align: center;
-    border-radius: 12px;
+    border-radius: var(--borderRedius-MD);
     border: 2px dashed var(--secondary-color-500);
     cursor: pointer;
     transition: all ease-in-out 0.25s;
     user-select: none;
+}
+.upload-box::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    border-radius: var(--borderRedius-MD);
+    box-shadow: var(--shadow-MD);
+    background: linear-gradient(135deg, rgb(56 189 248 / 2%), rgb(10, 14, 29));
+    opacity: 0;
+    z-index: -9999;
+    transition: all ease-in-out 0.25s;
+}
+.upload-box.dragover::after,
+.upload-box:hover::after {
+    opacity: 1;
 }
 
 .files-input input {
@@ -91,18 +110,13 @@ html.generate .main {
     color: var(--typography-color-PL3);
 }
 
-.upload-box.dragover,
-.upload-box:hover {
-    background: linear-gradient(-45deg, rgba(15, 23, 42, 0.5), rgb(12 18 34));
-}
-
 /* ========== Uploaded Icons ========== */
 .uploaded-icons {
     width: 50%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: var(--space-4);
 }
 @media only screen and (max-width: 520px) {
     .uploaded-icons {
@@ -143,7 +157,7 @@ html.generate .main {
 
 .uploaded-icons .container p {
     font-size: var(--fontSize-H5);
-    font-weight: 400;
+    font-weight: var(--fontWeight-Medium);
     color: var(--typography-color-secondary);
     user-select: none;
 }
@@ -172,9 +186,9 @@ html.generate .main {
 }
 
 .uploaded-icons .orderMSG {
-    font-size: 14px;
-    font-weight: 400;
-    color: #919191;
+    font-size: var(--fontSize-SM);
+    font-weight: var(--fontWeight-Regular);
+    color: var(--typography-color-PL3);
     user-select: none;
 }
 
@@ -183,20 +197,19 @@ html.generate .main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 8px;
+    gap: var(--space-3);
     opacity: 0;
     user-select: none;
 }
 
 .icons-controlling .icons-count {
     width: 100%;
-    font-size: 18px;
-    color: var(--secondary-color-500);
     display: flex;
     justify-content: start;
     align-items: center;
     gap: var(--space-3);
     font-size: var(--fontSize-H6);
+    color: var(--secondary-color-500);
     cursor: default;
     user-select: none;
 }
@@ -333,23 +346,22 @@ html.generate .main {
     cursor: default;
 }
 
-pre {
+html.generate pre {
     position: relative;
     width: 100%;
     height: 100%;
-    padding: var(--space-3) var(--space-5) !important;
-    margin: 0 !important;
+    padding: var(--space-3) var(--space-5);
     border-radius: 10px;
     border: 2px solid var(--secondary-color-500);
     box-shadow: var(--shadow-XL);
-    background: rgba(15, 23, 42, 0.25) !important;
+    background: rgba(15 23 42 / 50%);
     overflow: scroll;
     direction: ltr;
     transition: all ease-in-out 0.3s;
 }
 @media only screen and (max-width: 520px) {
     pre {
-        padding: var(--space-3) var(--space-4) !important;
+        padding: var(--space-3) var(--space-4);
     }
 }
 

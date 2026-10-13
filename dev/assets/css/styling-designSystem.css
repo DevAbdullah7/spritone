@@ -467,7 +467,7 @@ pre .js.red {
     justify-content: start;
     align-items: start;
     flex-wrap: wrap;
-    gap: var(--space-6);
+    gap: var(--space-5);
 }
 .part.icons-viewer .partContent {
     max-height: 320px;

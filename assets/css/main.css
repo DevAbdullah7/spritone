@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 *::-webkit-scrollbar {
     width: 5px;
@@ -30,7 +31,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     gap: var(--space-7);
     background: var(--primary-color-500);
@@ -44,7 +45,7 @@ body.freez {
     touch-action: none;
 }
 
-/* Navbar */
+/* ========== Navbar ========== */
 .navbar {
     position: fixed;
     top: 0;
@@ -313,10 +314,6 @@ body.freez {
     gap: 16px;
 }
 
-h1 {
-    text-align: center;
-}
-
 .text-part {
     display: flex;
     flex-direction: column;
@@ -349,130 +346,13 @@ h1 {
     opacity: 1;
 }
 
-/* Code Showen */
-/* .code-showen {
-    position: relative;
-    width: 100%;
-    height: 320px;
-    border-radius: 10px;
-    border: 2px solid #38bdf8;
-    background: #020617 !important;
-    opacity: .25;
-    transition: all ease-in-out .3s;
-    padding: 8px 24px !important;
-} */
-
-/* Copy Code Icon */
-/* .copy-icon {
-    position: absolute;
-    width: 48px;
-    height: 28px;
-    bottom: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 2px 0px 2px 0px;
-    border: 1px solid #1e293b;
-    color: #ffffff;
-    background: #38bdf8;
-    cursor: pointer;
-    z-index: 1;
-}
-.copy-icon.copied {
-    transform: scale(1.1);
-    transform-origin: bottom right;
-} */
-
-
-/* Design Side Panel */
-@media only screen and (max-width: 769px) {
-    .sidePanel {
-        width: 100%;
-        height: 56px;
-        transition: all ease-in-out 0.3s;
-    }
-    .sidePanel.active {
-        height: 100vh;
-    }
-
-    .sidePanel .sidePanel-header .profileInfo,
-    .sidePanel .sidePanel-header .itemsContainer,
-    .sidePanel .sidePanel-links {
-        /* transform: translateX(-150%);
-        transition: all ease-in-out .3s; */
-        display: none;
-    }
-    .sidePanel.active .sidePanel-header .profileInfo,
-    .sidePanel.active .sidePanel-header .itemsContainer,
-    .sidePanel.active .sidePanel-links {
-        /* transform: translateX(0); */
-        display: flex;
-    }
-    .sidePanel .sidePanel-header {
-        border-bottom: none;
-    }
-    .sidePanel.active .sidePanel-header {
-        border-bottom: 1px solid var(--lightColor-1);
-    }
-
-    .sidePanel .sidePanel-controlling {
-        height: 56px;
-        justify-content: space-between;
-        padding: var(--space-3) var(--space-6);
-    }
-
-    .sidePanel .sidePanel-controlling .logo {
-        width: 32px;
-    }
-
-    .sidePanel .sidePanel-controlling .controls {
-        display: block;
-    }
-
-    .sidePanel .menu {
-        display: block;
-    }
-    .sidePanel.active .menu {
-        display: none;
-    }
-    .sidePanel .close {
-        display: none;
-    }
-    .sidePanel.active .close {
-        display: block;
-    }
-
-    .sidePanel .itemsContainer {
-        gap: var(--space-6);
-        padding: var(--space-6) var(--space-8);
-    }
-
-    /* Main Content */
-    .main {
-        padding: calc(56px + var(--space-6)) var(--space-6) var(--space-6)
-            var(--space-6);
+@media only screen and (max-width: 520px) {
+    .topArrow {
+        right: var(--space-5);
     }
 }
 
-/* Cards Sizes */
-@media only screen and (max-width: 768px) {
-    .cardsContainer .cards {
-        justify-content: center;
-        gap: var(--space-6);
-    }
-    .card {
-        width: calc((100% - 16px) / 2);
-    }
-}
-
-@media only screen and (max-width: 414px) {
-    .card {
-        height: 190px;
-    }
-}
-
-/* Loading Page */
+/* ========== Loading Page ========== */
 html .loading {
     position: fixed;
     width: 100%;
@@ -497,8 +377,7 @@ html.loading .loading {
     z-index: 999999;
 }
 
-/* HTML: <div class="loader"></div> */
-.loader {
+.loading .loader {
     width: 50px;
     aspect-ratio: 1;
     border-radius: 50%;
@@ -512,27 +391,6 @@ html.loading .loading {
     100%{transform: rotate(1turn)}
 }
 
-/* Stylling output code */
-/* تنسيقات تلوين الكود المحلي */
-.hl-tag {
-    color: #569cd6; /* أزرق للوسوم مثل svg, symbol, path */
-}
-
-.hl-attr {
-    color: #9cdcfe; /* أزرق فاتح للخصائص مثل id, viewBox, fill */
-}
-
-.hl-value {
-    color: #ce9178; /* برتقالي/بني للقيم مثل "none", "0 0 24 24" */
-}
-
-.hl-comment {
-    color: #6a9955; /* أخضر للتعليقات */
-    font-style: italic;
-}
-
-
-
 /*========== Footer Section ==========*/
 .footer {
     position: relative;
@@ -544,13 +402,13 @@ html.loading .loading {
     gap: var(--space-7);
     padding: var(--space-7) var(--space-7) var(--space-4);
     box-shadow: var(--shadow-MD);
-    background: rgba(0, 0, 0, .25);
+    background: rgba(0 0 0 / .25);
 }
 @media only screen and (max-width: 520px) {
     .footer {
         gap: var(--space-7);
         padding: var(--space-6) var(--space-4) var(--space-4);
-        background: linear-gradient(to bottom, rgba(0, 0, 0, .25), var(--primary-color-500));
+        background: linear-gradient(to bottom, rgba(0 0 0 / .25), var(--primary-color-500));
     }
 }
 

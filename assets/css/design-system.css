@@ -1370,6 +1370,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 @media only screen and (max-width: 768px) {
     .card {
         width: 200px;
+        height: 196px;
     }
 }
 
