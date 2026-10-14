@@ -1,0 +1,32 @@
+/*========== Section ==========*/
+.section {
+    position: relative;
+    width: 100%;
+    min-height: calc(100dvh - (128px + var(--space-5)));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-7);
+}
+@media only screen and (max-width: 520px) {
+    .section {
+        min-height: calc(100dvh - (96px + var(--space-5)));
+    }
+}
+/*========== End Section ==========*/
+
+/*========== Section Content ==========*/
+.section .section-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-7);
+}
+/*========== End Section Content ==========*/
+
+/*========== Text Container ==========*/
+.textContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+/*========== End Text Container ==========*/

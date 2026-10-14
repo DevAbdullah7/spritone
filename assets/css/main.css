@@ -33,8 +33,30 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: var(--space-7);
     background: var(--primary-color-500);
+}
+
+.main {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-7);
+    padding: 128px var(--space-10) var(--space-5);
+    overflow: hidden;
+}
+
+@media  only screen and (max-width: 520px) {
+    body {
+        flex-direction: column;
+    }
+    .main {
+        padding: 96px var(--space-5) var(--space-5);
+    }
 }
 body.freez {
     position: fixed;
@@ -302,23 +324,12 @@ body.freez {
     z-index: -9999;
 }
 
-.section {
-    width: 100%;
-}
-
 .action-call-buttons {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 16px;
-}
-
-.text-part {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    gap: var(--space-1);
 }
 
 /* Top Arrow */
@@ -513,3 +524,97 @@ html.loading .loading {
 }
 
 /*========== End Footer Section ==========*/
+
+/*========== Hero Section ==========*/
+.section#home {
+    justify-content: space-between;
+}
+@media only screen and (max-width: 768px) {
+    .section#home {
+        flex-direction: column;
+    }
+}
+
+.section#home .hero-content {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--space-7);
+    cursor: default;
+}
+
+.section#home .hero-ui {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section#home .hero-ui img {
+    width: 100%;
+}
+
+.section#home .action-call-buttons {
+    justify-content: start;
+}
+
+@media only screen and (max-width: 768px) {
+    .section#home {
+        justify-content: center;
+        gap: var(--space-8);
+    }
+    .section#home .hero-content {
+        width: 100%;
+    }
+    .section#home .hero-content .textContent {
+        gap: var(--space-5);
+    }
+    .section#home .hero-content h1 {
+        text-align: center;
+        line-height: 1.25;
+    }
+    .section#home .hero-content p {
+        text-align: justify;
+    }
+
+    .section#home .hero-content .action-call-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .section#home .hero-ui img {
+        width: 75%;
+    }
+}
+/*========== End Hero Section ==========*/
+
+/*========== About Section ==========*/
+.section#about {
+    flex-direction: column;
+    gap: var(--space-10);
+}
+
+.section#about .section-content {
+    gap: var(--space-6);
+}
+
+.section#about .textContent {
+    text-align: center;
+}
+
+.section#about .about-ui {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media only screen and (max-width: 990px) {
+    .section#about .textContent p {
+        text-align: justify;
+    }
+
+    .section#about .about-ui img {
+        width: 50%;
+    }
+}
+/*========== End About Section ==========*/

@@ -65,7 +65,7 @@
     <!---------- Css Files ---------->
     <link rel="stylesheet" href="/assets/css/design-system.css" class="cacheItem">
     <link rel="stylesheet" href="/assets/css/main.css" class="cacheItem">
-    <link rel="stylesheet" href="/assets/css/app.css" class="cacheItem">
+    <link rel="stylesheet" href="/assets/css/layouts.css" class="cacheItem">
 
 
     <!---------- Favicon ---------->
@@ -163,93 +163,44 @@
 
     <!-- Page Content -->
     <main class="main" id="main">
-        <!-- Upload Section -->
-        <div class="section upload-icons-container">
-            <!-- File Input -->
-            <div class="files-input">
-                <!-- Drop Zone -->
-                <div class="upload-box" id="dropZone">
-                    <div class="upload-shape">
-                        <svg width="64" height="64">
-                            <use xlink:href="/assets/icons/sprites/icons.svg#upload2"></use>
-                        </svg>
-                        <div class="BTN Primary-BTN">
-                            Browse
-                        </div>
-                    </div>
-    
-                    <div class="text-part">
-                        <p class="h5">Upload or Drop Icons Here</p>
-                        <p class="inputMSG"><span style="color: #ff0000;">*</span> File Supported: .svg</p>
+        <!-- Hero Section -->
+        <div class="section" id="home">
+            <div class="hero-content">
+                <div class="textContent">
+                    <h1>Generate SVG’s Sprite Now !</h1>
+                    <p class="p-sm">Lorem ipsum dolor sit amet consectetur. Id eget felis nibh turpis. Turpis semper adipiscing duis sagittis faucibus. Semper convallis elit amet vel ut nec eget id. Aliquet facilisi sollicitudin in ac suspendisse viverra congue. Ut rhoncus pellentesque magna feugiat sit erat.  </p>
+                </div>
+                <div class="action-call-buttons">
+                    <a href="generate.html" class="BTN Primary-BTN">
+                        Generate
+                    </a>
+                    <div class="BTN Secondary-BTN">
+                        What is Spritone?
                     </div>
                 </div>
-            
-                <!-- Input -->
-                <input type="file" accept="image/svg+xml" id="fileInput" multiple>
             </div>
-        
-            <!-- Uploaded Icons -->
-            <div class="uploaded-icons">
-                <div class="container">
-                    <p>Uploaded Icons:</p>
-    
-                    <div class="checkBox">
-                        <input type="checkbox" id="cleanSuffixesToggle" class="checkBoxInp">
-                        <label for="cleanSuffixesToggle" class="checkBoxLabel">Suffixes</label>
-                    </div>
-                </div>
-                
-                <!-- Icons List -->
-                <div class="icons-list" id="iconsList">
-                    <svg width="48" height="48" style="color: #919191;">
-                        <use xlink:href="/assets/icons/sprites/icons.svg#image"></use>
-                    </svg>
-                    <p class="orderMSG">Generate Your Icons Sprite Now !</p>
-                </div>
-    
-                <!-- Icons Controlling -->
-                <div class="icons-controlling">
-                    <!-- Count Of Icons -->
-                    <div class="icons-count">
-                        <svg width="32" height="32">
-                            <use xlink:href="/assets/icons/sprites/icons.svg#images"></use>
-                        </svg>
-                        <span id="count">0</span>
-                    </div>
-    
-                    <!-- Action Call Buttons -->
-                    <div class="action-call-buttons">
-                        <!-- Clear -->
-                        <div class="BTN Danger-BTN" onclick="clearSprite()">Clear</div>
-                    </div>
-                </div>
+
+            <div class="hero-ui">
+                <img src="/assets/imgs/hero-ui.svg" alt="Hero Section UI Design">
             </div>
         </div>
-    
-        <!-- Output Section -->
-        <div class="section output-container">
-            <!-- <h3>Output Code:</h3> -->
-    
-            <!-- SVG Sprite Code -->
-            <div class="codeShown">
-                <!-- <p class="codeTitle">Output Code:</p> -->
-                <pre id="output" class="language-markup">
-                    
-                </pre>
-                <span class="copyIcon" onclick="copyElement(this)">
-                    <svg width="18" height="18">
-                        <use xlink:href="/assets/icons/sprites/icons.svg#copy"></use>
-                    </svg>
-                </span>
+
+        <!-- About Section -->
+        <div class="section" id="about">
+            <div class="section-content">
+                <div class="textContent">
+                    <h2>What is <span style="color: var(--secondary-color-500);">Spritone</span> ?</h2>
+                    <p>It is a lightweight and straightforward web development tool, designed to compile and condense separate SVG files into a unified sprite file that includes all icons within organized and easily reusable <span class="pathShown">&lt;symbol&gt;</span> elements in Frontend projects.</p>
+                </div>
+                <div class="textContent">
+                    <h4>Tool Job:</h4>
+                    <p>Instead of managing dozens of icons separately or manually writing Sprite code—which is time-consuming and results in a surge of HTTP requests that slow down website loading—this tool aims to transform this complex process into one quick step. Our goal is to provide a solution that saves developers time, improves website performance, and maintains complete privacy for local file processing.</p>
+                </div>
             </div>
-    
-            <!-- Action Call Buttons -->
-            <div class="action-call-buttons">
-                <button class="BTN Primary-BTN" title="Download Sprite File" onclick="downloadSprite()">
-                    <svg width="24" height="24">
-                        <use xlink:href="/assets/icons/sprites/icons.svg#download2"></use>
-                    </svg>
-                </button>
+
+            <div class="about-ui">
+                <img src="/assets/imgs/about12.svg" alt="">
+                <img src="/assets/imgs/about12.svg" alt="" style="transform: rotateY(180deg);">
             </div>
         </div>
     </main>
@@ -321,6 +272,5 @@
     <!-- JavaScript Files -->
     <script src="/assets/js/Design-System.js" class="cacheItem"></script>
     <script src="/assets/js/main.js" class="cacheItem"></script>
-    <script src="/assets/js/app.js" class="cacheItem"></script>
 </body>
 </html>
