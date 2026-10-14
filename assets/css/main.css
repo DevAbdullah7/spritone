@@ -652,7 +652,7 @@ html.loading .loading {
 
 .section#features .card {
     width: 360px;
-    height: 280px;
+    height: 296px;
     justify-content: space-between;
     padding: var(--space-7) var(--space-5);
 }
@@ -670,4 +670,11 @@ html.loading .loading {
 .section#features .card .text{
     line-height: 1.25;
 }
+.section#features .card .title {
+    font-size: var(--fontSize-LG);
+}
+.section#features .card .text {
+    font-size: var(--fontSize-XS);
+}
+
 /*========== End Features Section ==========*/
