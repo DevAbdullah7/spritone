@@ -362,6 +362,8 @@ body.freez {
 
 @media only screen and (max-width: 520px) {
     .topArrow {
+        width: 44px;
+        height: 44px;
         right: var(--space-5);
     }
 }
