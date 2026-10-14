@@ -55,6 +55,7 @@ body {
         flex-direction: column;
     }
     .main {
+        gap: var(--space-10);
         padding: 96px var(--space-5) var(--space-5);
     }
 }
@@ -589,6 +590,10 @@ html.loading .loading {
     .section#home .hero-content .action-call-buttons {
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    .section#home .hero-content .action-call-buttons .BTN {
+        width: calc(50% - var(--space-4));
     }
 
     .section#home .hero-ui img {
