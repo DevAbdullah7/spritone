@@ -338,7 +338,7 @@ body.freez {
     width: 56px;
     height: 56px;
     bottom: 0;
-    right: var(--space-9);
+    right: var(--space-8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -348,13 +348,16 @@ body.freez {
     cursor: pointer;
     transition: 0.4s all ease-in-out;
 }
-.topArrow:hover {
+.topArrow.active:hover {
     transform: scale(1.07);
     border: 1px solid var(--secondary-color-500);
 }
 .topArrow.active {
     bottom: var(--space-8);
     opacity: 1;
+}
+.topArrow.under-footer {
+    opacity: .25;
 }
 
 @media only screen and (max-width: 520px) {
@@ -414,6 +417,9 @@ html.loading .loading {
     padding: var(--space-7) var(--space-7) var(--space-4);
     box-shadow: var(--shadow-MD);
     background: rgba(0 0 0 / .25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 2;
 }
 @media only screen and (max-width: 520px) {
     .footer {

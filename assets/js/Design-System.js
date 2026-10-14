@@ -1,10 +1,16 @@
 // Scrolling Top Arrow
 window.addEventListener('scroll', () => {
-    if (document.querySelector('body .main .topArrow')) {
+    if (document.querySelector('.topArrow')) {
         if (400 < window.scrollY) {
-            document.querySelector('body .main .topArrow').classList.add('active')
+            document.querySelector('.topArrow').classList.add('active')
+            
+            if ((document.querySelector('.footer').getBoundingClientRect().top - 16) <= document.querySelector('.topArrow').getBoundingClientRect().bottom) {
+                document.querySelector('.topArrow').classList.add('under-footer')
+            } else {
+                document.querySelector('.topArrow').classList.remove('under-footer')
+            }
         } else {
-            document.querySelector('body .main .topArrow').classList.remove('active')
+            document.querySelector('.topArrow').classList.remove('active')
         }
     }
 })
