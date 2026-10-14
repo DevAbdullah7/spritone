@@ -1358,7 +1358,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border-radius: var(--borderRedius-SM);
     border: 1px solid var(--secondary-color-500);
     color: var(--secondary-color-500);
-    background: rgba(15, 23, 42, 0.25);
+    background: rgba(15 23 42 / 25%);
     box-shadow: var(--shadow-SM);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px); /* For Safari support */
@@ -1378,6 +1378,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .card:hover {
     transform: scale(1.05);
+}
+
+.card * {
+    transition: all ease-in-out 0.3s;
 }
 
 .card .qrcode img {

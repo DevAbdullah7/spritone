@@ -609,6 +609,7 @@ html.loading .loading {
 }
 
 .section#about .section-content {
+    flex-direction: column;
     gap: var(--space-6);
 }
 
@@ -631,3 +632,42 @@ html.loading .loading {
     }
 }
 /*========== End About Section ==========*/
+
+/*========== Features Section ==========*/
+.section#features {
+    flex-direction: column;
+}
+
+.section#features .textContent {
+    text-align: center;
+}
+@media only screen and (max-width: 768px) {
+    .section#features .textContent h2 {
+        line-height: 1.25;
+    }
+    .section#features .textContent p {
+        text-align: justify;
+    }
+}
+
+.section#features .card {
+    width: 360px;
+    height: 280px;
+    justify-content: space-between;
+    padding: var(--space-7) var(--space-5);
+}
+
+.section#features .card .cardIcon svg {
+    width: 56px !important;
+    height: 56px !important;
+}
+
+.section#features .card .cardContent {
+    gap: var(--space-3);
+}
+
+.section#features .card .title,
+.section#features .card .text{
+    line-height: 1.25;
+}
+/*========== End Features Section ==========*/
