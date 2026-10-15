@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 *::-webkit-scrollbar {
     width: 5px;
@@ -22,7 +21,13 @@
 }
 
 html {
-    /* scrollbar-gutter: stable; */
+    scroll-behavior: smooth;
+    scroll-padding-top: 128px;
+}
+@media only screen and (max-width: 520px) {
+    html {
+        scroll-padding-top: 96px;
+    }
 }
 
 body {
@@ -45,7 +50,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: var(--space-7);
+    gap: var(--space-10);
     padding: 128px var(--space-10) var(--space-5);
     overflow: hidden;
 }
@@ -678,3 +683,41 @@ html.loading .loading {
 }
 
 /*========== End Features Section ==========*/
+
+/*========== How It Works Section ==========*/
+.section#how-it-works {
+    flex-direction: column;
+}
+
+.section#how-it-works .textContent {
+    text-align: center;
+}
+
+.section#how-it-works .mockup {
+    position: relative;
+    width: 45%;
+}
+
+.section#how-it-works .mockup img {
+    width: 100%;
+}
+
+.section#how-it-works .mockup video {
+    position: absolute;
+    width: calc(100% - 36px);
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media only screen and (max-width: 520px) {
+    .section#how-it-works .mockup {
+        width: 100%;
+    }
+
+    .section#how-it-works .mockup video {
+        width: calc(100% - 16px);
+        top: 8px;
+    }
+}
+/*========== End How It Works Section ==========*/
