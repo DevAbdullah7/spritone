@@ -51,7 +51,7 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: var(--space-10);
-    padding: 128px var(--space-10) var(--space-5);
+    padding: 128px var(--space-10) var(--space-8);
     overflow: hidden;
 }
 
@@ -61,7 +61,7 @@ body {
     }
     .main {
         gap: var(--space-10);
-        padding: 96px var(--space-5) var(--space-5);
+        padding: 96px var(--space-5) var(--space-7);
     }
 }
 body.freez {
@@ -693,9 +693,19 @@ html.loading .loading {
     text-align: center;
 }
 
+.section#how-it-works .section-content {
+    flex-direction: column;
+    gap: var(--space-8);
+}
+
 .section#how-it-works .mockup {
     position: relative;
     width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--space-7);
 }
 
 .section#how-it-works .mockup img {
@@ -710,14 +720,57 @@ html.loading .loading {
     transform: translateX(-50%);
 }
 
+.section#how-it-works .mockup .BTN {
+    gap: var(--space-3);
+}
+
+.section#how-it-works .section-content .content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-7);
+}
+
+.section#how-it-works .content .textContent {
+    text-align: start;
+    min-height: 100px;
+    width: calc(100% / 3);
+}
+
+.section#how-it-works .section-content .content .interval {
+    width: 2px;
+    min-height: 100px;
+    height: 100%;
+    border-radius: var(--borderRedius-Full);
+    background: var(--secondary-color-500);
+}
+
 @media only screen and (max-width: 520px) {
     .section#how-it-works .mockup {
         width: 100%;
+        order: 2;
     }
 
     .section#how-it-works .mockup video {
         width: calc(100% - 16px);
         top: 8px;
+    }
+
+    .section#how-it-works .section-content .content {
+        flex-direction: column;
+        order: 1;
+    }
+
+    .section#how-it-works .content .textContent {
+        width: 100%;
+        text-align: center;
+    }
+
+    .section#how-it-works .section-content .content .interval {
+        width: 80%;
+        min-height: 2px;
+        height: 2px;
     }
 }
 /*========== End How It Works Section ==========*/

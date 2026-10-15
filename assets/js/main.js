@@ -117,3 +117,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Playing the video in full screen 
+function playingVideoInFullScreen(video) {
+    // التحقق مما إذا كان المتصفح يدعم خاصية Fullscreen
+    if (video.requestFullscreen) {
+        video.requestFullscreen();
+    } else if (video.webkitRequestFullscreen) { /* لمتصفحات سفاري */
+        video.webkitRequestFullscreen();
+    } else if (video.msRequestFullscreen) { /* لمتصفحات إكسبلورر القديمة */
+        video.msRequestFullscreen();
+    }
+}

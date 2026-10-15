@@ -346,4 +346,7 @@
 		<path d="M336 176L225.2 304L176 255.8" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
 		<path d="M463.099 112.37C373.679 96.33 336.709 84.45 255.999 48C175.289 84.45 138.319 96.33 48.8991 112.37C32.6991 369.13 240.579 457.79 255.999 464C271.419 457.79 479.299 369.13 463.099 112.37Z" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
 	</symbol>
+    <symbol id="expand" viewBox="0 0 512 512" fill="none">
+		<path d="M432 320V432H320M421.8 421.77L304 304M80 192V80H192M90.2 90.23L208 208M320 80H432V192M421.77 90.2L304 208M192 432H80V320M90.23 421.8L208 304" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+	</symbol>
 </svg>
