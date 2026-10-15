@@ -656,8 +656,8 @@ html.loading .loading {
 }
 
 .section#features .card {
-    width: 360px;
-    height: 296px;
+    width: 400px;
+    height: 300px;
     justify-content: space-between;
     padding: var(--space-7) var(--space-5);
 }
