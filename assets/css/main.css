@@ -36,7 +36,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background: var(--primary-color-500);
 }
@@ -774,3 +774,36 @@ html.loading .loading {
     }
 }
 /*========== End How It Works Section ==========*/
+
+/*========== Terms of Service Section ==========*/
+.section#terms-of-service .section-content img {
+    width: 192px;
+}
+.section#terms-of-service .textContent {
+    width: 100%;
+    gap: var(--space-3);
+    cursor: default;
+}
+.section#terms-of-service .textContent .content {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: var(--space-4);
+    margin-bottom: var(--space-1);
+}
+.section#terms-of-service .textContent .content span {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--borderRedius-XXXS);
+    border: 1px solid var(--secondary-color);
+    color: var(--typography-color-HL1);
+    font-size: var(--fontSize-SM);
+}
+.section#terms-of-service .textContent .content p {
+    width: 100%;
+}
+/*========== End Terms of Service Section ==========*/
