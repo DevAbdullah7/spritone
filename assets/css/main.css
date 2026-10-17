@@ -599,13 +599,15 @@ html.loading .loading {
 @media only screen and (max-width: 768px) {
     .section#home {
         justify-content: center;
-        gap: var(--space-8);
+        gap: var(--space-5);
     }
     .section#home .hero-content {
         width: 100%;
+        order: 1;
+        gap: var(--space-6);
     }
     .section#home .hero-content .textContent {
-        gap: var(--space-4);
+        gap: var(--space-3);
     }
     .section#home .hero-content h1 {
         text-align: center;
@@ -676,6 +678,8 @@ html.loading .loading {
     line-height: 1.25;
 }
 .section#features .card .title {
+    text-wrap: wrap;
+    text-overflow: visible;
     font-size: var(--fontSize-LG);
 }
 .section#features .card .text {
@@ -685,6 +689,10 @@ html.loading .loading {
 @media only screen and (max-width: 520px) {
     .section#features .card {
         gap: var(--space-5);
+    }
+    .section#features .card:hover {
+        transform: none;
+        -webkit-tap-highlight-color: transparent;
     }
   
     .section#features .card .cardIcon svg {
