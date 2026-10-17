@@ -406,7 +406,7 @@ p {
 .Secondary-BTN {
     color: var(--secondary-color-500);
     border: 1px solid var(--secondary-color-500);
-    background: rgba(15, 23, 42, 0.25);
+    background: rgba(15 23 42 / 25%);
 }
 .Secondary-BTN p {
     color: var(--secondary-color-500);

@@ -450,7 +450,7 @@ html.loading .loading {
 @media only screen and (max-width: 520px) {
     .footer {
         gap: var(--space-7);
-        padding: var(--space-6) var(--space-4) var(--space-4);
+        padding: var(--space-6) var(--space-4) var(--space-3);
         background: linear-gradient(to bottom, rgba(0 0 0 / .25), var(--primary-color-500));
     }
 }
@@ -501,7 +501,7 @@ html.loading .loading {
 }
 @media only screen and (max-width: 520px) {
     .footer .footerPages-copyRights {
-        gap: var(--space-3);
+        gap: 12px;
     }
 }
 
@@ -751,7 +751,7 @@ html.loading .loading {
 }
 
 .section#how-it-works .content .textContent {
-    text-align: start;
+    /* text-align: start; */
     min-height: 100px;
     width: calc(100% / 3);
 }
@@ -767,7 +767,7 @@ html.loading .loading {
 @media only screen and (max-width: 520px) {
     .section#how-it-works .mockup {
         width: 100%;
-        order: 2;
+        /* order: 2; */
     }
 
     .section#how-it-works .mockup video {
@@ -777,7 +777,7 @@ html.loading .loading {
 
     .section#how-it-works .section-content .content {
         flex-direction: column;
-        order: 1;
+        /* order: 1; */
     }
 
     .section#how-it-works .content .textContent {
