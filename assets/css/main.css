@@ -803,6 +803,14 @@ html.loading .loading {
     gap: var(--space-3);
     cursor: default;
 }
+.section#terms-of-service .textContent p {
+
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    text-justify: inter-word;
+    word-spacing: -0.5px;
+}
 .section#terms-of-service .textContent .content {
     width: 100%;
     display: flex;

@@ -21,8 +21,15 @@ const FreezeManager = {
 
     freeze() {
         if (this.lockCount === 0) {
+            // حفظ موضع السكرول الحالي
             this.scrollPosition = window.scrollY;
+            
+            // تثبيت الـ Body لمنع اهتزازه أو عودته للصفر
+            document.body.style.position = 'fixed';
             document.body.style.top = `-${this.scrollPosition}px`;
+            document.body.style.width = '100%';
+            
+            // إضافة كلاس التجميد الخاص بك
             document.body.classList.add('freez');
         }
         this.lockCount++;
@@ -34,9 +41,17 @@ const FreezeManager = {
         }
 
         if (this.lockCount === 0) {
+            // إزالة كلاس التجميد وخصائص التثبيت أولاً
             document.body.classList.remove('freez');
+            document.body.style.position = '';
             document.body.style.top = '';
-            window.scrollTo(0, this.scrollPosition);
+            document.body.style.width = '';
+
+            // إعادة توجيه المتصفح للموضع المحفوظ فوراً وبدون أي حركة تدرجية
+            window.scrollTo({
+                top: this.scrollPosition,
+                behavior: 'instant' // تضمن عدم حدوث أي "نزول أو طلوع" بصري
+            });
         }
     }
 };
