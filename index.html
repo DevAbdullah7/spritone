@@ -134,7 +134,7 @@
         <!-- Navbar Header -->
         <div class="nav-header">
             <!-- Website Logo -->
-            <a href="/" class="logo">
+            <a href="#home" class="logo">
                 <img src="/res/Logo.svg" alt="Website Logo">
             </a>
 
@@ -176,48 +176,37 @@
         <section class="section" id="home">
             <div class="hero-content">
                 <div class="textContent">
-                    <h1>Generate SVG’s Sprite Now !</h1>
-                    <p class="p-sm">Lorem ipsum dolor sit amet consectetur. Id eget felis nibh turpis. Turpis semper adipiscing duis sagittis faucibus. Semper convallis elit amet vel ut nec eget id. Aliquet facilisi sollicitudin in ac suspendisse viverra congue. Ut rhoncus pellentesque magna feugiat sit erat.  </p>
+                    <h1>Generate SVG’s Sprite With One Click</h1>
+                    <p class="p-sm">Stop wasting time manually crafting SVG sprites. Upload your icons, generate clean code instantly, and keep your workflow lightweight and blisteringly fast.</p>
                 </div>
                 <div class="action-call-buttons">
                     <a href="generate.html" class="BTN Primary-BTN">
-                        Generate
+                        Get Started
                     </a>
-                    <div class="BTN Secondary-BTN">
-                        What is Spritone?
-                    </div>
+                    <a href="#about" class="BTN Secondary-BTN">
+                        Learn More
+                    </a>
                 </div>
             </div>
 
             <div class="hero-ui">
-                <img src="/assets/imgs/hero-ui.svg" alt="Hero Section UI Design">
+                <img src="/assets/imgs/about12.svg" alt="Hero Section UI Design" style="transform: rotateY(180deg);">
             </div>
         </section>
 
         <!-- About Section -->
-        <section class="section" id="about">
-            <div class="section-content">
-                <div class="textContent">
-                    <h2>What is <span style="color: var(--secondary-color-500);">Spritone</span>?</h2>
-                    <p>It is a lightweight and straightforward web development tool, designed to compile and condense separate SVG files into a unified sprite file that includes all icons within organized and easily reusable <span class="pathShown">&lt;symbol&gt;</span> elements in Frontend projects.</p>
-                </div>
-                <div class="textContent">
-                    <h4>Tool Job:</h4>
-                    <p>Instead of managing dozens of icons separately or manually writing Sprite code—which is time-consuming and results in a surge of HTTP requests that slow down website loading—this tool aims to transform this complex process into one quick step. Our goal is to provide a solution that saves developers time, improves website performance, and maintains complete privacy for local file processing.</p>
-                </div>
-            </div>
-
-            <div class="about-ui">
-                <img src="/assets/imgs/about12.svg" alt="">
-                <img src="/assets/imgs/about12.svg" alt="" style="transform: rotateY(180deg);">
+        <section class="section reveal" id="about">
+            <div class="section-header">
+                <h2 class="title">What is <span style="color: var(--secondary-color-500);">Spritone</span>?</h2>
+                <p>Spritone is a lightweight, client-side developer tool built to streamline your SVG workflow. Instead of manually writing sprite maps or relying on heavy build tools and servers, Spritone transforms your scattered SVG icons into clean, highly-optimized sprites directly inside your browser.No sign-ups, no backend delays, and zero data leaves your device. Just drag, drop, and get production-ready SVG code in a single click</p>
             </div>
         </section>
 
         <!-- Features Section -->
-        <section class="section" id="features">
-            <div class="textContent">
-                <h2>Why <span style="color: var(--secondary-color-500);">Spritone</span>?</h2>
-                <p>Designed for optimal icon usage and fast SVG compilation, generating ready-to-use sprite code instantly.</p>
+        <section class="section reveal" id="features">
+            <div class="section-header">
+                <h2 class="title">Why <span style="color: var(--secondary-color-500);">Spritone</span>?</h2>
+                <p class="subTitle">Designed for optimal icon usage and fast SVG compilation, generating ready-to-use sprite code instantly.</p>
             </div>
 
             <div class="section-content">
@@ -295,10 +284,10 @@
         </section>
 
         <!-- How It Works Section -->
-        <section class="section" id="how-it-works">
-            <div class="textContent">
-                <h2>How It <span style="color: var(--secondary-color-500);">Works</span>?</h2>
-                <p>From <span style="color: var(--secondary-color-500);">Figma</span> to <span style="color: var(--secondary-color-500);">Production</span>... Just like that 👌</p>
+        <section class="section reveal" id="how-it-works">
+            <div class="section-header">
+                <h2 class="title">How It <span style="color: var(--secondary-color-500);">Works</span>?</h2>
+                <p class="subTitle">From <span style="color: var(--secondary-color-500);">Figma</span> to <span style="color: var(--secondary-color-500);">Production</span>... Just like that 👌</p>
             </div>
             <div class="section-content">
                 <div class="mockup">
@@ -339,7 +328,7 @@
     <footer class="footer" id="footer">
         <!-- Website Information -->
         <div class="websiteInformation">
-            <a href="/home.html" class="websiteLogo">
+            <a href="#home" class="websiteLogo">
                 <svg width="208" height="64" style="color: var(--secondary-color-500);">
                     <use xlink:href="/assets/imgs/Logo.svg#logo"></use>
                 </svg>
@@ -393,7 +382,7 @@
     <!-- Loading Transetion -->
     <div class="loading">
         <div class="loader"></div>
-        Generating Sprite...
+        Loading...
     </div>
 
     <!-- Top Scrolling Button -->

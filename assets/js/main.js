@@ -129,3 +129,22 @@ function playingVideoInFullScreen(video) {
         video.msRequestFullscreen();
     }
 }
+
+// Reveal Effect 
+function reveal() {
+    const sections = document.querySelectorAll(".reveal");
+    sections.forEach(section => {
+        const windowHeight = window.innerHeight;
+        const revealTop = section.getBoundingClientRect().top;
+        const revealPoint = 150;
+        if (revealTop < windowHeight - revealPoint) {
+            section.classList.add("active")
+        } else {
+            section.classList.remove("active")
+        }
+    })
+}
+
+window.addEventListener("scroll", () => {
+    //reveal()
+})

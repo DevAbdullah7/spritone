@@ -73,6 +73,24 @@ body.freez {
     touch-action: none;
 }
 
+/*.reveal {
+    position: relative;
+    -webkit-transform: translateY(150px);
+    -ms-transform: translateY(150px);
+    transform: translateY(150px);
+    opacity: 0;
+    -webkit-transition: 0.5s all ease-in-out;
+    -o-transition: 0.5s all ease-in-out;
+    transition: 0.5s all ease-in-out;
+}
+
+.reveal.active {
+    -webkit-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+    opacity: 1;
+}*/
+
 /* ========== Navbar ========== */
 .navbar {
     position: fixed;
@@ -559,6 +577,10 @@ html.loading .loading {
     cursor: default;
 }
 
+.section#home .hero-content h1 {
+    font-size: var(--fontSize-H2);
+}
+
 .section#home .hero-ui {
     display: flex;
     justify-content: center;
@@ -582,14 +604,16 @@ html.loading .loading {
         width: 100%;
     }
     .section#home .hero-content .textContent {
-        gap: var(--space-5);
+        gap: var(--space-4);
     }
     .section#home .hero-content h1 {
         text-align: center;
         line-height: 1.25;
     }
     .section#home .hero-content p {
+        font-size: var(--fontSize-LG);
         text-align: justify;
+        line-height: 1.25;
     }
 
     .section#home .hero-content .action-call-buttons {
@@ -602,39 +626,20 @@ html.loading .loading {
     }
 
     .section#home .hero-ui img {
-        width: 75%;
+        width: 100%;
     }
 }
 /*========== End Hero Section ==========*/
 
 /*========== About Section ==========*/
 .section#about {
-    flex-direction: column;
-    gap: var(--space-10);
+    min-height: unset;
+    height: fit-content;
 }
 
-.section#about .section-content {
-    flex-direction: column;
-    gap: var(--space-6);
-}
-
-.section#about .textContent {
-    text-align: center;
-}
-
-.section#about .about-ui {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-@media only screen and (max-width: 990px) {
-    .section#about .textContent p {
-        text-align: justify;
-    }
-
-    .section#about .about-ui img {
-        width: 50%;
-    }
+.section#about .section-header p {
+    font-size: var(--fontSize-LG);
+    text-align: justify;
 }
 /*========== End About Section ==========*/
 
@@ -643,15 +648,9 @@ html.loading .loading {
     flex-direction: column;
 }
 
-.section#features .textContent {
-    text-align: center;
-}
 @media only screen and (max-width: 768px) {
-    .section#features .textContent h2 {
+    .section#features .section-header h2 {
         line-height: 1.25;
-    }
-    .section#features .textContent p {
-        text-align: justify;
     }
 }
 
@@ -680,6 +679,25 @@ html.loading .loading {
 }
 .section#features .card .text {
     font-size: var(--fontSize-XS);
+}
+
+@media only screen and (max-width: 520px) {
+    .section#features .card {
+        gap: var(--space-5);
+    }
+  
+    .section#features .card .cardIcon svg {
+        width: 48px !important;
+        height: 48px !important;
+    }
+  
+    .section#features .card .title {
+        font-size: var(--fontSize-H6);
+    }
+
+    .section#features .card .text {
+        font-size: var(--fontSize-MD);
+    }
 }
 
 /*========== End Features Section ==========*/

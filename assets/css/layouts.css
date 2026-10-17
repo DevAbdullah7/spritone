@@ -15,6 +15,18 @@
 }
 /*========== End Section ==========*/
 
+/*========== Section Header ==========*/
+.section .section-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-3);
+    text-align: center;
+}
+/*========== End Section Header ==========*/
+
 /*========== Section Content ==========*/
 .section .section-content {
     position: relative;
