@@ -290,18 +290,12 @@
                 <p class="subTitle">From <span style="color: var(--secondary-color-500);">Figma</span> to <span style="color: var(--secondary-color-500);">Production</span>... Just like that 👌</p>
             </div>
             <div class="section-content">
-                <div class="mockup">
+                <div class="mockup" onclick="playingVideoInFullScreen(this.querySelector('video'))">
                     <img src="/assets/imgs/iMac.svg" alt="Mockup Frame">
                     <video autoplay loop muted playsinline class="mockup-video">
                         <source src="/assets/res/workflow.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
-                    <div class="BTN Primary-BTN fullScreen" onclick="playingVideoInFullScreen(this.parentNode.querySelector('video'))">
-                        Full Screen
-                        <svg width="18" height="18">
-                            <use xlink:href="/assets/icons/sprites/icons.svg#expand"></use>
-                        </svg>
-                    </div>
                 </div>
 
                 <div class="content">

@@ -7,11 +7,11 @@ html.generate .main {
     justify-content: start;
     align-items: center;
     gap: var(--space-7);
-    padding: 128px var(--space-10) var(--space-5);
+    padding: 128px var(--space-10) var(--space-9);
 }
 @media only screen and (max-width: 520px) {
     html.generate .main {
-        padding: 96px var(--space-5) var(--space-5);
+        padding: 96px var(--space-5) var(--space-7);
     }
 }
 

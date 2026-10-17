@@ -377,8 +377,8 @@ p {
     border-radius: var(--borderRedius-SM);
     font-size: var(--fontSize-MD);
     font-weight: var(--fontWeight-Medium);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px); /* For Safari support */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* For Safari support */
     text-decoration: none;
     transition: all ease-in-out 0.3s;
     user-select: none;
