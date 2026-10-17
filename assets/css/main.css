@@ -538,6 +538,7 @@ html.loading .loading {
     .footer .copyRights {
         font-size: var(--fontSize-MD);
         gap: var(--space-1);
+        line-height: 1.25;
     }
 }
 
