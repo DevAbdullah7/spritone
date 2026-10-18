@@ -91,6 +91,26 @@ body.freez {
     opacity: 1;
 }*/
 
+/* ========== Language Settings ========== */
+html {
+    direction: ltr;
+}
+
+html.arabic {
+    direction: rlt;
+}
+
+html *.arabic,
+html.arabic *.english {
+    display: none;
+}
+html *.english,
+html.arabic *.arabic {
+    display: block;
+}
+
+/* ========== End Language Settings ========== */
+
 /* ========== Navbar ========== */
 .navbar {
     position: fixed;
