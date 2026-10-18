@@ -62,18 +62,18 @@ const FreezeManager = {
 let loadingStartTime = 0;
 
 function showLoading() {
-    loadingStartTime = performance.now();
+    // loadingStartTime = performance.now();
     FreezeManager.freeze();
-    document.documentElement.classList.add('loading');
-    console.log('⏳ Loading started...');
+    document.querySelector(('html')).classList.add('loading');
+    // console.log('⏳ Loading started...');
 }
 
 function hideLoading() {
-    document.documentElement.classList.remove('loading');
+    document.querySelector(('html')).classList.remove('loading');
     FreezeManager.unfreeze();
     
-    const durationInSeconds = ((performance.now() - loadingStartTime) / 1000).toFixed(2);
-    console.log(`✅ Loading finished in ${durationInSeconds} seconds.`);
+    // const durationInSeconds = ((performance.now() - loadingStartTime) / 1000).toFixed(2);
+    // console.log(`✅ Loading finished in ${durationInSeconds} seconds.`);
 }
 
 /**
