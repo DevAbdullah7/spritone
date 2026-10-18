@@ -97,7 +97,7 @@ html {
 }
 
 html.arabic {
-    direction: rlt;
+    direction: rtl;
 }
 
 html *.arabic,

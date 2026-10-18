@@ -35,6 +35,14 @@ function togglesHandelling(toggle) {
         toggle.parentNode.classList.add('active')
     }
 }
+// Lang Toggle
+const toggleInput = document.getElementById('LangToggle');
+
+toggleInput.addEventListener('change', (e) => {
+    document.querySelector('html').classList.toggle('arabic')
+    const isLang = e.target.checked;
+    isLang ? document.querySelector('html').lang = "ar" : document.querySelector('html').lang = "en"
+});
 
 // CheckBoxes
 function checkBoxesHandelling(checkBox) {

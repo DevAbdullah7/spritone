@@ -553,14 +553,11 @@ p {
 /* ========== Toggles ========== */
 .toggle {
     position: relative;
-    width: 64px;
-    height: 28px;
+    width: 48px;
+    height: 24px;
     border: 1px solid var(--secondary-color-500);
     border-radius: var(--borderRedius-Full);
-}
-
-.toggle:hover {
-    border-color: var(--secondary-color-700);
+    direction: ltr;
 }
 
 .toggleCheck {
@@ -573,8 +570,8 @@ p {
 
 .toggleSlider {
     position: absolute;
-    width: 28px;
-    height: 28px;
+    width: 18px;
+    height: 18px;
     left: 2px;
     top: 50%;
     transform: translateY(-50%);
@@ -590,129 +587,100 @@ p {
     height: 100%;
     top: 0;
     left: 0;
-    background: var(--secondary-color-500);
+    background: var(--primary-color-500);
     border-radius: var(--borderRedius-Full);
     z-index: 0;
     transition: all ease-in-out 0.3s;
 }
 
-/* Toggle Active */
-.toggle.active {
-    border-color: var(--secondary-color-500);
-}
-
-.toggle.active .toggleGround,
-.toggleCheck:checked~.toggleGround {
-    background: var(--secondary-color-500);
-}
-
 .toggle.active .toggleSlider,
 .toggleCheck:checked+.toggleSlider {
-    transform: translate(32px, -50%);
-    background: var(--secondary-color-500);
+    transform: translate(23px, -50%);
 }
 
 /* Toggle Disabled */
 .toggle.disabled {
-    border-color: var(--secondary-color-500);
     opacity: 0.25;
-}
-
-.toggle.disabled .toggleGround {
-    background: var(--secondary-color-500);
 }
 
 .toggle.disabled .toggleSlider {
     transform: translate(0, -50%);
-    background: var(--secondary-color-500);
 }
 
 .toggle-wrapper {
-  position: relative;
-  display: inline-block;
-  user-select: none;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    position: relative;
+    display: inline-block;
+    user-select: none;
+    direction: ltr;
 }
 
 .toggle-input {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .toggle-track {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 280px;
-  height: 48px;
-  background-color: #121824;
-  border: 1px solid #1e293b;
-  border-radius: 12px;
-  padding: 4px;
-  cursor: pointer;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
-  transition: border-color 0.25s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 144px;
+    height: 32px;
+    background-color: var(--primary-color-600);
+    border: 1px solid var(--secondary-color-500);
+    border-radius: 6px;
+    padding: 2px;
+    cursor: pointer;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+    transition: border-color 0.25s ease;
 }
 
 .toggle-track:hover {
-  border-color: rgba(124, 58, 237, 0.4);
+    border-color: var(--secondary-color-600);
 }
 
-.toggle-input:focus-visible + .spritone-toggle-track {
-  outline: 2px solid #7c3aed;
-  outline-offset: 2px;
+.toggle-input:focus-visible + .toggle-track {
+    outline: 2px solid #7c3aed;
+    outline-offset: 2px;
 }
 
 .toggle-thumb {
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  width: calc(50% - 4px);
-  height: calc(100% - 8px);
-  background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.35);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 1;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(50% - 2px);
+    height: calc(100% - 4px);
+    background: var(--gradient-color-Secondary);
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.35);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
 }
 
-.toggle-input:checked + .spritone-toggle-track .spritone-toggle-thumb {
-  transform: translateX(100%);
+.toggle-input:checked + .toggle-track .toggle-thumb {
+    transform: translateX(100%);
 }
 
 .toggle-option {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #64748b;
-  z-index: 2;
-  transition: color 0.25s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    font-size: var(--fontSize-XXS);
+    font-weight: var(--fontWeight-Medium);
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.toggle-option svg {
-  width: 16px;
-  height: 16px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.toggle-option span {
+    color: var(--secondary-color);
 }
-
-.toggle-input:not(:checked) + .spritone-toggle-track .option-left {
-  color: #ffffff;
-}
-
-.toggle-input:checked + .spritone-toggle-track .option-right {
-  color: #ffffff;
+.toggle-input:not(:checked) + .toggle-track .option-left span,
+.toggle-input:checked + .toggle-track .option-right span {
+    color: var(--primary-color);
 }
 /* ========== End Toggles ========== */
 
@@ -1214,85 +1182,6 @@ input::-webkit-inner-spin-button {
 }
 
 /* ========== End Dropdown List ========== */
-
-/* ========== Toggles ========== */
-.toggle {
-    position: relative;
-    width: 64px;
-    height: 28px;
-    border: 1px solid var(--lightColor-1);
-    border-radius: var(--borderRedius-Full);
-}
-
-.toggle:hover {
-    border-color: var(--primaryColor-1);
-}
-
-.toggleCheck {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    z-index: 1;
-}
-
-.toggleSlider {
-    position: absolute;
-    width: 28px;
-    height: 28px;
-    left: 2px;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    background: var(--lightColor-1);
-    z-index: 1;
-    transition: all ease-in-out 0.3s;
-}
-
-.toggleGround {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: var(--primaryColor-2);
-    border-radius: var(--borderRedius-Full);
-    z-index: 0;
-    transition: all ease-in-out 0.3s;
-}
-
-/* Toggle Active */
-.toggle.active {
-    border-color: var(--primaryColor-1);
-}
-
-.toggle.active .toggleGround,
-.toggleCheck:checked ~ .toggleGround {
-    background: var(--primaryColor-1);
-}
-
-.toggle.active .toggleSlider,
-.toggleCheck:checked + .toggleSlider {
-    transform: translate(32px, -50%);
-    background: var(--primaryColor-2);
-}
-
-/* Toggle Disabled */
-.toggle.disabled {
-    border-color: var(--lightColor-1);
-    opacity: 0.25;
-}
-
-.toggle.disabled .toggleGround {
-    background: var(--primaryColor-2);
-}
-
-.toggle.disabled .toggleSlider {
-    transform: translate(0, -50%);
-    background: var(--lightColor-1);
-}
-
-/* ========== End Toggles ========== */
 
 /* ========== Pagination ========== */
 .pagination {

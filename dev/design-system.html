@@ -1341,36 +1341,36 @@
                 </div>
             </div>
 
-          <!-- Toggles: -->
+            <!-- Toggles: -->
             <div class="section" id="Toggles">
                 <p class="sectionTitle">Toggles:</p>
                 <div class="sectionContent">
                     <div class="part">
                         <div class="partTitle">Toggles:</div>
                         <div class="partContent">
-                            <form>
-                                <label class="spritone-toggle-wrapper">
-                                  <input type="checkbox" id="spritoneToggle" class="spritone-toggle-input">
-                                  
-                                  <div class="spritone-toggle-track">
-                                    <div class="spritone-toggle-thumb"></div>
-                                
-                                    <div class="spritone-toggle-option option-left">
-                                      <svg viewBox="0 0 24 24">
-                                        <path d="M4 6h16M4 12h16m-7 6h7"/>
-                                      </svg>
-                                      <span>Individual</span>
+                            <form style="display: flex; flex-direction: column; gap: 16px;">
+                                <label class="toggle-wrapper">
+                                    <input type="checkbox" id="LangToggle" class="toggle-input">
+
+                                    <div class="toggle-track">
+                                        <div class="toggle-thumb"></div>
+                                    
+                                        <div class="toggle-option option-left">
+                                            <svg width="32" height="12">
+                                                <use xlink:href="/assets/icons/sprites/icons.svg#uk"></use>
+                                            </svg>
+                                            <span>EN</span>
+                                        </div>
+                                    
+                                        <div class="toggle-option option-right">
+                                            <svg width="32" height="12">
+                                                <use xlink:href="/assets/icons/sprites/icons.svg#sa"></use>
+                                            </svg>
+                                            <span>AR</span>
+                                        </div>
                                     </div>
-                                
-                                    <div class="spritone-toggle-option option-right">
-                                      <svg viewBox="0 0 24 24">
-                                        <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
-                                      </svg>
-                                      <span>SVG Sprite</span>
-                                    </div>
-                                  </div>
                                 </label>
-                              
+
                                 <div class="toggle">
                                     <input type="checkbox" id="temp23" class="toggleCheck" onchange="togglesHandling(this)">
                                     <span class="toggleSlider"></span>
