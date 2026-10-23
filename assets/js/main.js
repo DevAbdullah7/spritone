@@ -12,6 +12,23 @@ cacheItems.forEach(item => {
     }
 });
 
+//website language
+function language() {
+    const lang = window.localStorage.getItem("lang")
+    if (!lang || lang == "en") {
+        document.querySelector("html").classList.remove("arabic")
+        document.querySelector("html").lang = "en"
+        window.localStorage.setItem("lang", "en")
+    } else {
+        document.querySelector("html").classList.add("arabic")
+        document.querySelector("html").lang = "ar"
+        window.localStorage.setItem("lang", "ar")
+    }
+}
+window.addEventListener("load", () => {
+    language()
+})
+
 // ==========================================
 // 1. Freeze Manager (نظام التجميد الموحد)
 // ==========================================

@@ -41,9 +41,13 @@ const toggleInput = document.getElementById('LangToggle');
 toggleInput.addEventListener('change', (e) => {
     showLoading();
     setTimeout(() => {
-        document.querySelector('html').classList.toggle('arabic')
-        const isLang = e.target.checked;
-        isLang ? document.querySelector('html').lang = "ar" : document.querySelector('html').lang = "en"
+        const lang = window.localStorage.getItem("lang")
+        if (!lang || lang == "ar") {
+            window.localStorage.setItem("lang", "en")
+        } else {
+            window.localStorage.setItem("lang", "ar")
+        }
+        language()
         hideLoading();
     }, 350)
 });

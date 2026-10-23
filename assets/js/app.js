@@ -230,7 +230,8 @@ function renderIcons() {
             <svg class="icon-remove" width="48" height="48" style="color: #919191;">
                 <use xlink:href="/assets/icons/sprites/icons.svg#image"></use>
             </svg>
-            <p class="orderMSG">Generate Your Icons Sprite Now !</p>
+            <p class="orderMSG english">Generate Your Icons Sprite Now !</p>
+            <p class="orderMSG arabic">اصنع كود Sprite لأيقوناتك الان !</p>
         `;
         iconsList.style = 'justify-content: center;';
         iconsList.parentElement.querySelector('.icons-controlling').style = 'opacity: 0; height: 0;';

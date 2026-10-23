@@ -187,14 +187,16 @@ html.arabic *.arabic {
 
 .nav-links a {
     text-decoration: none;
+}
+
+.nav-links a p {
     color: var(--typography-color-HL1);
     font-size: var(--fontSize-H6);
     font-weight: var(--fontWeight-Medium);
     transition: color 0.2s;
 }
-
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links a p:hover,
+.nav-links a.active p {
     color: var(--secondary-color-500);
 }
 
@@ -392,6 +394,10 @@ html.arabic *.arabic {
     cursor: pointer;
     transition: 0.4s all ease-in-out;
 }
+html.arabic .topArrow {
+    right: unset;
+    left: var(--space-8);
+}
 .topArrow.active:hover {
     transform: scale(1.07);
     border: 1px solid var(--secondary-color-500);
@@ -409,6 +415,10 @@ html.arabic *.arabic {
         width: 44px;
         height: 44px;
         right: var(--space-5);
+    }
+    html.arabic .topArrow {
+      right: unset;
+      left: var(--space-5);
     }
 }
 
@@ -560,6 +570,9 @@ html.loading .loading {
         gap: var(--space-1);
         line-height: 1.25;
     }
+    html.arabic .footer .footerPages {
+        font-size: var(--fontSize-MD);
+    }
 }
 
 .footer .copyRights a {
@@ -630,7 +643,6 @@ html.loading .loading {
         gap: var(--space-3);
     }
     .section#home .hero-content h1 {
-        text-align: center;
         line-height: 1.25;
     }
     .section#home .hero-content p {
@@ -708,7 +720,8 @@ html.loading .loading {
 
 @media only screen and (max-width: 520px) {
     .section#features .card {
-        gap: var(--space-5);
+        justify-content: center;
+        gap: var(--space-4);
     }
     .section#features .card:hover {
         transform: none;

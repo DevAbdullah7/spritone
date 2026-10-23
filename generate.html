@@ -146,10 +146,22 @@
         <!-- Navbar Body -->
         <div class="nav-body">
             <ul class="nav-links">
-                <li><a class="active" href="#">Generate</a></li>
-                <li><a href="/#about">About</a></li>
-                <li><a href="/#features">Features</a></li>
-                <li><a href="/#how-it-works">How It Works</a></li>
+                <li><a class="active" href="#">
+                    <p class="english">Generate</p>
+                    <p class="arabic">اصنع كود</p>
+                </a></li>
+                <li><a href="/#about">
+                    <p class="english">About</p>
+                    <p class="arabic">عن</p>
+                </a></li>
+                <li><a href="/#features">
+                    <p class="english">Features</p>
+                    <p class="arabic">المميزات</p>
+                </a></li>
+                <li><a href="/#how-it-works">
+                    <p class="english">How It Works</p>
+                    <p class="arabic">كيف تعمل</p>
+                </a></li>
             </ul>
 
             <div class="nav-footer">
@@ -174,13 +186,16 @@
                             <use xlink:href="/assets/icons/sprites/icons.svg#upload2"></use>
                         </svg>
                         <div class="BTN Primary-BTN">
-                            Browse
+                            <p class="english">Browse</p>
+                            <p class="arabic">ارفع الايقونات</p>
                         </div>
                     </div>
     
                     <div class="text-part">
-                        <p class="h5">Upload or Drop Icons Here</p>
-                        <p class="inputMSG"><span style="color: #ff0000;">*</span> File Supported: .svg</p>
+                        <p class="h5 english">Upload or Drop Icons Here</p>
+                        <p class="h5 arabic">اسحب او ارفع الايقونات هنا</p>
+                        <p class="inputMSG english"><span style="color: #ff0000;">*</span> File Supported: .svg</p>
+                        <p class="inputMSG arabic"><span style="color: #ff0000;">*</span> الملفات المدعومة: .svg</p>
                     </div>
                 </div>
             
@@ -191,11 +206,13 @@
             <!-- Uploaded Icons -->
             <div class="uploaded-icons">
                 <div class="container">
-                    <p>Uploaded Icons:</p>
+                    <p class="english">Uploaded Icons:</p>
+                    <p class="arabic">الايقونات المرفوعة:</p>
     
                     <div class="checkBox">
                         <input type="checkbox" id="cleanSuffixesToggle" class="checkBoxInp">
-                        <label for="cleanSuffixesToggle" class="checkBoxLabel">Suffixes</label>
+                        <label for="cleanSuffixesToggle" class="checkBoxLabel english">Suffixes</label>
+                        <label for="cleanSuffixesToggle" class="checkBoxLabel arabic">اللواحق</label>
                     </div>
                 </div>
                 
@@ -204,7 +221,8 @@
                     <svg width="48" height="48" style="color: #919191;">
                         <use xlink:href="/assets/icons/sprites/icons.svg#image"></use>
                     </svg>
-                    <p class="orderMSG">Generate Your Icons Sprite Now !</p>
+                    <p class="orderMSG english">Generate Your Icons Sprite Now !</p>
+                    <p class="orderMSG arabic">اصنع كود Sprite لأيقوناتك الان !</p>
                 </div>
     
                 <!-- Icons Controlling -->
@@ -220,7 +238,10 @@
                     <!-- Action Call Buttons -->
                     <div class="action-call-buttons">
                         <!-- Clear -->
-                        <div class="BTN Danger-BTN" onclick="clearSprite()">Clear</div>
+                        <div class="BTN Danger-BTN" onclick="clearSprite()">
+                            <p class="english">Clear</p>
+                            <p class="arabic">حذف الكل</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -258,7 +279,7 @@
     <footer class="footer" id="footer">
         <!-- Website Information -->
         <div class="websiteInformation">
-            <a href="/home.html" class="websiteLogo">
+            <a href="/" class="websiteLogo">
                 <svg width="208" height="64" style="color: var(--secondary-color-500);">
                     <use xlink:href="/assets/imgs/Logo.svg#logo"></use>
                 </svg>
@@ -297,14 +318,26 @@
         <!-- Footer Pages & Copy Rights -->
         <div class="footerPages-copyRights">
             <div class="footerPages">
-                <a href="#">Privacy Policy</a>
+                <a href="#">
+                    <span class="english">Privacy Policy</span>
+                    <span class="arabic">سياسة الخصوصية</span>
+                </a>
                 <span>-</span>
-                <a href="/Terms-of-Service.html">Terms of Service</a>
+                <a href="/Terms-of-Service.html">
+                    <span class="english">Terms of Service</span>
+                    <span class="arabic">شروط الاستخدام</span>
+                </a>
             </div>
 
             <div class="copyRights">
-                Copyright 2025 &copy; All Rights Reserved | Powered By
-                <a href="https://github.com/DevAbdullah7" target="_blank">@Abdullah_Alqahtani</a>
+                <p class="english">
+                    Copyright 2025 &copy; All Rights Reserved | Powered By
+                    <a href="https://github.com/DevAbdullah7" target="_blank">@Abdullah_Alqahtani</a>
+                </p>
+                <p class="arabic">
+                    جميع الحقوق محفوظة &copy; 2025 | تم التطوير بواسطة 
+                    <a href="https://github.com/DevAbdullah7" target="_blank">@Abdullah_Alqahtani</a>
+                </p>
             </div>
         </div>
     </footer>
