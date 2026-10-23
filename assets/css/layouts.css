@@ -38,9 +38,6 @@
     flex: 1;
     gap: var(--space-7);
 }
-.section#terms-policy .section-content {
-    flex-direction: column;
-}
 /*========== End Section Content ==========*/
 
 /*========== Text Container ==========*/

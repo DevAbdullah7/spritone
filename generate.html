@@ -146,26 +146,46 @@
         <!-- Navbar Body -->
         <div class="nav-body">
             <ul class="nav-links">
-                <li><a class="active" href="#">
+                <li><a href="/generate.html">
                     <p class="english">Generate</p>
                     <p class="arabic">اصنع كود</p>
                 </a></li>
                 <li><a href="/#about">
                     <p class="english">About</p>
-                    <p class="arabic">عن</p>
+                    <p class="arabic">من نحن</p>
                 </a></li>
                 <li><a href="/#features">
                     <p class="english">Features</p>
                     <p class="arabic">المميزات</p>
                 </a></li>
                 <li><a href="/#how-it-works">
-                    <p class="english">How It Works</p>
-                    <p class="arabic">كيف تعمل</p>
+                    <p class="english">How It Works?</p>
+                    <p class="arabic">كيف تعمل؟</p>
                 </a></li>
             </ul>
 
             <div class="nav-footer">
-                <button class="BTN Primary-BTN">Contact</button>
+                <label class="toggle-wrapper">
+                    <input type="checkbox" id="LangToggle" class="toggle-input">
+
+                    <div class="toggle-track">
+                        <div class="toggle-thumb"></div>
+                    
+                        <div class="toggle-option option-left">
+                            <svg width="24" height="10">
+                                <use xlink:href="/assets/icons/sprites/icons.svg#uk"></use>
+                            </svg>
+                            <span>EN</span>
+                        </div>
+                    
+                        <div class="toggle-option option-right">
+                            <svg width="24" height="10">
+                                <use xlink:href="/assets/icons/sprites/icons.svg#sa"></use>
+                            </svg>
+                            <span>AR</span>
+                        </div>
+                    </div>
+                </label>
             </div>
         </div>
 
@@ -318,7 +338,7 @@
         <!-- Footer Pages & Copy Rights -->
         <div class="footerPages-copyRights">
             <div class="footerPages">
-                <a href="#">
+                <a href="/Privacy-policy.html">
                     <span class="english">Privacy Policy</span>
                     <span class="arabic">سياسة الخصوصية</span>
                 </a>
@@ -343,9 +363,9 @@
     </footer>
 
     <!-- Loading Transetion -->
-    <div class="loading">
+    <div class="loading" dir="ltr">
         <div class="loader"></div>
-        Generating Sprite...
+        Loading...
     </div>
 
     <!-- UI Effect -->

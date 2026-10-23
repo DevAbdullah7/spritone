@@ -836,15 +836,18 @@ html.loading .loading {
 /*========== End How It Works Section ==========*/
 
 /*========== Terms of Service Section ==========*/
-.section#terms-of-service .section-content img {
+.section#terms-policy {
+    flex-direction: column;
+}
+.section#terms-policy .section-content img {
     width: 192px;
 }
-.section#terms-of-service .textContent {
+.section#terms-policy .textContent {
     width: 100%;
     gap: var(--space-3);
     cursor: default;
 }
-.section#terms-of-service .textContent p {
+.section#terms-policy .textContent p {
 
     text-align: justify;
     hyphens: auto;
@@ -852,7 +855,7 @@ html.loading .loading {
     text-justify: inter-word;
     word-spacing: -0.5px;
 }
-.section#terms-of-service .textContent .content {
+.section#terms-policy .textContent .content {
     width: 100%;
     display: flex;
     justify-content: start;
@@ -860,7 +863,7 @@ html.loading .loading {
     gap: var(--space-4);
     margin-bottom: var(--space-1);
 }
-.section#terms-of-service .textContent .content span {
+.section#terms-policy .textContent .content span {
     width: 24px;
     height: 24px;
     display: flex;
@@ -871,7 +874,7 @@ html.loading .loading {
     color: var(--typography-color-HL1);
     font-size: var(--fontSize-SM);
 }
-.section#terms-of-service .textContent .content p {
+.section#terms-policy .textContent .content p {
     width: 100%;
 }
 /*========== End Terms of Service Section ==========*/
