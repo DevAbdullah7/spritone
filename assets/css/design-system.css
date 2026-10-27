@@ -124,7 +124,7 @@
 /* ---------- Font Setup ---------- */
 @font-face {
     font-family: "mainFont";
-    src: url("/assets/fonts/Vazirmatn.woff2") format("woff2");
+    src: url("./assets/fonts/Vazirmatn.woff2") format("woff2");
     font-style: normal;
     font-display: swap;
 

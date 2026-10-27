@@ -162,9 +162,9 @@ function passwordInpHandlling(passToggle) {
 
     // Changing password hiding icon
     if (type == 'password') {
-        passToggle.querySelector('use').setAttribute('xlink:href', '/assets/icons/sprites/icons.svg#eye')
+        passToggle.querySelector('use').setAttribute('xlink:href', './assets/icons/sprites/icons.svg#eye')
     } else if (type == 'text') {
-        passToggle.querySelector('use').setAttribute('xlink:href', '/assets/icons/sprites/icons.svg#eye-off')
+        passToggle.querySelector('use').setAttribute('xlink:href', './assets/icons/sprites/icons.svg#eye-off')
     }
 }
 
@@ -223,7 +223,7 @@ function colorInputHandlling(input) {
 //     input.parentNode.querySelector('.inputMSG').innerHTML = `
 //     ${b6h}
 //     <svg width="16" height="16" class="cleaner" onclick="imageInputCleaner(this.parentNode.parentNode.querySelector('input'))">
-//         <use xlink:href="/assets/icons/sprites/icons.svg#remove"></use>
+//         <use xlink:href="./assets/icons/sprites/icons.svg#remove"></use>
 //     </svg>
 //     `;
 //     input.classList.add('has-text')
@@ -260,7 +260,7 @@ function imageInputHandlling(input) {
     input.parentNode.querySelector('.inputMSG').innerHTML = `
     ${formattedName}
     <svg width="16" height="16" class="cleaner" onclick="imageInputCleaner(this.parentNode.parentNode.querySelector('input'))">
-        <use xlink:href="/assets/icons/sprites/icons.svg#remove"></use>
+        <use xlink:href="./assets/icons/sprites/icons.svg#remove"></use>
     </svg>
     `;
     input.classList.add('has-text');
@@ -414,14 +414,14 @@ function copyElement(ele) {
     ele.classList.add('copied')
     ele.innerHTML = `
     <svg width="20" height="20">
-        <use xlink:href="/assets/icons/sprites/icons.svg#checkmark"></use>
+        <use xlink:href="./assets/icons/sprites/icons.svg#checkmark"></use>
     </svg>
     `
     setTimeout(() => {
         ele.classList.remove('copied')
         ele.innerHTML = `
         <svg width="18" height="18">
-            <use xlink:href="/assets/icons/sprites/icons.svg#copy"></use>
+            <use xlink:href="./assets/icons/sprites/icons.svg#copy"></use>
         </svg>
         `
         selection.removeRange(range);
@@ -440,15 +440,15 @@ function sidePanelLinksHandlling(link) {
 
 // ========== Icons Factionality ==========
 // Get & Print Icons in Icons Section
-const basePath = window.location.origin + '/assets/icons/sprites/';
+const basePath = window.location.origin + './assets/icons/sprites/';
 
-fetch('/assets/icons/sprites/mainfest.json')
+fetch('./assets/icons/sprites/mainfest.json')
     .then(res => res.json())
     .then(files => {
         files.forEach(file => {
             // الكائن ينظف / تلقائياً ويحل المسار الكامل
             const fullUrl = new URL(file, basePath);
-            const filePath = fullUrl.pathname; // ينتج: /assets/icons/sprites/icons.svg
+            const filePath = fullUrl.pathname; // ينتج: ./assets/icons/sprites/icons.svg
             
             // استخراج اسم الملف بدون امتداد
             const fileName = filePath.split('/').pop().replace('.svg', '');
@@ -522,7 +522,7 @@ function loadSprite(filePath, fileName) {
                 <h3 class="partTitle">${fileName} :</h3>
                 <div class="partContent error">
                     <svg width="48" height="48">
-                        <use xlink:href="./assets/icons/sprites/icons.svg#warning"></use>
+                        <use xlink:href="../assets/icons/sprites/icons.svg#warning"></use>
                     </svg>
 
                     Error: Failed to Fetch Icons !
@@ -580,7 +580,7 @@ function iconsSearch(searchInput) {
         if (!searchValue == '') {
             searchResult.innerHTML = `
                 <svg width="48" height="48">
-                    <use xlink:href="./assets/icons/sprites/icons.svg#warning"></use>
+                    <use xlink:href="../assets/icons/sprites/icons.svg#warning"></use>
                 </svg>
 
                 The Icon is not Found, or It's Just not Added Yet.

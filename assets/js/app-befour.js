@@ -122,11 +122,11 @@ function renderIcons() {
                     </div>
                     <div class="BTN Edit-BTN" title="Edit Icon Name" onclick="editIconName(this, ${i})">
                         <svg width="24" height="24">
-                            <use href="/assets/icons/sprites/icons.svg#pencel"></use>
+                            <use href="./assets/icons/sprites/icons.svg#pencel"></use>
                         </svg>
                     </div>
                     <svg class="icon-remove" width="16" height="16" onclick="removeIcon(${i})">
-                        <use xlink:href="/assets/icons/sprites/icons.svg#remove"></use>
+                        <use xlink:href="./assets/icons/sprites/icons.svg#remove"></use>
                     </svg>
                 </div>
             `;
@@ -139,7 +139,7 @@ function renderIcons() {
     } else {
         iconsList.innerHTML = `
             <svg class="icon-remove" width="48" height="48" style="color: #919191;">
-                <use xlink:href="/assets/icons/sprites/icons.svg#image"></use>
+                <use xlink:href="./assets/icons/sprites/icons.svg#image"></use>
             </svg>
             <p class="orderMSG">Generate Your Icons Sprite Now !</p>
         `;
@@ -162,7 +162,7 @@ function editIconName(btn, index) {
     // تغيير أيقونة الزر إلى صح
     btn.innerHTML = `
         <svg width="24" height="24">
-            <use xlink:href="/assets/icons/sprites/icons.svg#checkmark"></use>
+            <use xlink:href="./assets/icons/sprites/icons.svg#checkmark"></use>
         </svg>
     `;
 

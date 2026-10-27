@@ -228,7 +228,7 @@ function renderIcons() {
     if (icons.length === 0) {
         iconsList.innerHTML = `
             <svg class="icon-remove" width="48" height="48" style="color: #919191;">
-                <use xlink:href="/assets/icons/sprites/icons.svg#image"></use>
+                <use xlink:href="./assets/icons/sprites/icons.svg#image"></use>
             </svg>
             <p class="orderMSG english">Generate Your Icons Sprite Now !</p>
             <p class="orderMSG arabic">اصنع كود Sprite لأيقوناتك الان !</p>
@@ -268,7 +268,7 @@ function renderIcons() {
                             >
                             <div class="inputIcon" id="resetIconName" title="Reset Icon Name">
                                 <svg width="24" height="24">
-                                    <use href="/assets/icons/sprites/icons.svg#refresh"></use>
+                                    <use href="./assets/icons/sprites/icons.svg#refresh"></use>
                                 </svg>
                             </div>
                         </div>
@@ -277,11 +277,11 @@ function renderIcons() {
                     <div class="action-call-buttons">
                         <div class="BTN Edit-BTN" title="Edit Icon Name" onclick="editIconName(this, ${i})">
                             <svg width="24" height="24">
-                                <use href="/assets/icons/sprites/icons.svg#pencel"></use>
+                                <use href="./assets/icons/sprites/icons.svg#pencel"></use>
                             </svg>
                         </div>
                         <svg class="icon-remove" width="16" height="16" onclick="removeIcon(${i})">
-                            <use xlink:href="/assets/icons/sprites/icons.svg#remove"></use>
+                            <use xlink:href="./assets/icons/sprites/icons.svg#remove"></use>
                         </svg>
                     </div>
                 </div>
@@ -325,7 +325,7 @@ function editIconName(btn, index) {
 
     btn.innerHTML = `
         <svg width="24" height="24">
-            <use xlink:href="/assets/icons/sprites/icons.svg#checkmark"></use>
+            <use xlink:href="./assets/icons/sprites/icons.svg#checkmark"></use>
         </svg>
     `;
 
