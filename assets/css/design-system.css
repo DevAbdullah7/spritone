@@ -687,12 +687,14 @@ html.arabic .toggle-input:checked + .toggle-track .toggle-thumb {
 /* ========== Inputs ========== */
 .input {
     position: relative;
-    width: 300px;
+    min-width: 128px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
     gap: var(--space-2);
+    direction: ltr;
 }
 
 .input .inputContainer {

@@ -10,6 +10,15 @@
             localStorage.setItem("hasVisited", "true");
         }
     </script> -->
+    <script>
+        window.addEventListener("load", () => {
+            document.querySelector("html").classList.add("loading")
+            
+            setTimeout(() => {
+                document.querySelector("html").classList.remove("loading")
+            }, 300)
+        })
+    </script>
     <!---------- General Metas ---------->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -216,10 +225,12 @@
                 </div>
                 <div class="action-call-buttons">
                     <a href="generate.html" class="BTN Primary-BTN">
-                        Generate
+                        <p class="english">Generate</p>
+                        <p class="arabic">ارفع الايقونات</p>
                     </a>
                     <a href="#how-it-works" class="BTN Secondary-BTN">
-                        How It Works?
+                        <p class="english">How It Works?</p>
+                        <p class="arabic">كيف تعمل؟</p>
                     </a>
                 </div>
             </div>
@@ -265,7 +276,7 @@
                         </p>
 
                         <p class="title arabic">الخصوصية</p>
-                        <p class="text arabic">لست بحاجة الى رفع ايقوناتك الى سيرفر خارجي. كل المعالجة، والتجميع، والتكويد تتم مباشرة في المتصفح لضمان اعلى خصوصية وسرعة ممكنة</p>
+                        <p class="text arabic">لست بحاجة الى رفع ايقوناتك الى سيرفر خارجي. كل المعالجة، والتجميع، والتكويد تتم مباشرة في المتصفح لضمان اعلى خصوصية ممكنة</p>
                     </div>
                 </div>
                 <div class="card whiteCard">
@@ -282,7 +293,7 @@
                         </p>
 
                         <p class="title arabic">السرعة والاداء</p>
-                        <p class="text arabic">تم بنائها بلغة JavaScript بدون مكتبات خارجية ثقيلة. مما يعزز خفة واداء الاداة في معالجة الايقونات دون اجهاد النظام المحلي للجهاز</p>
+                        <p class="text arabic">بمجرد رفع الايقونات سيتم توليد الكود مباشرة، جميع التعديلات والمعالجة يتم تطبيقها فورا على الكود بشكل متزامن</p>
                     </div>
                 </div>
                 <div class="card whiteCard">
@@ -300,7 +311,7 @@
 
                         <p class="title arabic">تحكم وتخصيص كامل</p>
                         <p class="text arabic">
-                            معاينة مباشرة للأيقونة، نظام تسمية ID's مرن، تحكم كامل عبر الـCSS للأيقونات، تعديلات ومعالجة دقيقة على سمات الـSVG قبل تصدير الكود النهائي، اعتماد كلي على فكرة الـcurrentColor سواءً في الـFill او الـStroke
+                            معاينة مباشرة للأيقونة، نظام تسمية ID's مرن، تحكم كامل عبر الـCSS، تعديلات ومعالجة دقيقة على سمات الـSVG قبل تصدير الكود النهائي، اعتماد كلي على فكرة الـcurrentColor سواءً في الـFill او الـStroke
                         </p>
                         
                     </div>
@@ -377,42 +388,11 @@
     <!-- Footer -->
     <footer class="footer" id="footer">
         <!-- Website Information -->
-        <div class="websiteInformation">
-            <a href="#home" class="websiteLogo">
+        <a href="#home" class="websiteLogo">
                 <svg width="208" height="64" style="color: var(--secondary-color-500);">
                     <use xlink:href="/assets/imgs/Logo.svg#logo"></use>
                 </svg>
             </a>
-
-            <!-- website Social Accounts -->
-            <div class="websiteSocial">
-                <a href="#" class="BTN Primary-BTN Icon-BTN">
-                    <svg width="24" height="24">
-                        <use xlink:href="/assets/icons/sprites/icons.svg#whatsapp"></use>
-                    </svg>
-                </a>
-                <a href="#" class="BTN Primary-BTN Icon-BTN">
-                    <svg width="24" height="24">
-                        <use xlink:href="/assets/icons/sprites/icons.svg#twitter"></use>
-                    </svg>
-                </a>
-                <a href="#" class="BTN Primary-BTN Icon-BTN">
-                    <svg width="24" height="24">
-                        <use xlink:href="/assets/icons/sprites/icons.svg#instagram"></use>
-                    </svg>
-                </a>
-                <a href="#" class="BTN Primary-BTN Icon-BTN">
-                    <svg width="24" height="24">
-                        <use xlink:href="/assets/icons/sprites/icons.svg#tiktok"></use>
-                    </svg>
-                </a>
-                <a href="#" class="BTN Primary-BTN Icon-BTN">
-                    <svg width="24" height="24">
-                        <use xlink:href="/assets/icons/sprites/icons.svg#snapchat"></use>
-                    </svg>
-                </a>
-            </div>
-        </div>
 
         <!-- Footer Pages & Copy Rights -->
         <div class="footerPages-copyRights">

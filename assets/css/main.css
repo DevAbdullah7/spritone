@@ -40,6 +40,14 @@ body {
     align-items: center;
     background: var(--primary-color-500);
 }
+body.freez {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    overflow: hidden;
+    touch-action: none;
+}
 
 .main {
     position: relative;
@@ -56,21 +64,10 @@ body {
 }
 
 @media  only screen and (max-width: 520px) {
-    body {
-        flex-direction: column;
-    }
     .main {
         gap: var(--space-10);
         padding: 96px var(--space-5) var(--space-7);
     }
-}
-body.freez {
-    position: fixed;
-    left: 0;
-    right: 0;
-    width: 100%;
-    overflow: hidden;
-    touch-action: none;
 }
 
 /*.reveal {
@@ -469,7 +466,7 @@ html.loading .loading {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: var(--space-7);
+    gap: var(--space-5);
     padding: var(--space-7) var(--space-7) var(--space-4);
     box-shadow: var(--shadow-MD);
     background: rgba(0 0 0 / .25);
@@ -479,7 +476,6 @@ html.loading .loading {
 }
 @media only screen and (max-width: 520px) {
     .footer {
-        gap: var(--space-7);
         padding: var(--space-6) var(--space-4) var(--space-3);
         background: linear-gradient(to bottom, rgba(0 0 0 / .25), var(--primary-color-500));
     }
