@@ -135,6 +135,18 @@
     <script>
         var cacheVersion = '?v=0.0.2'
     </script>
+    <style>
+        #screenWidth {
+            position: absolute;
+            width: 100%;
+            top: 64px;
+            left: 0;
+            text-align: center;
+            font-size: 32px;
+            color: white;
+            z-index: 999999;
+        }
+    </style>
 </head>
 
 <body>
@@ -436,6 +448,10 @@
 
     <!-- UI Effect -->
     <div class="bubble"></div>
+    <div id="screenWidth">test</div>
+    <script>
+        document.querySelector("#screenWidth").innerHTML = window.innerWidth
+    </script>
 
     <!-- JavaScript Files -->
     <script src="./assets/js/Design-System.js" class="cacheItem"></script>

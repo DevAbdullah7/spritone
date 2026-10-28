@@ -184,6 +184,10 @@ html.generate .main {
     padding-right: var(--space-3);
     overflow-y: scroll;
 }
+html.arabic .uploaded-icons .icons-list.has-scroll {
+    padding-right: unset;
+    padding-left: var(--space-3);
+}
 
 .uploaded-icons .orderMSG {
     font-size: var(--fontSize-SM);
@@ -239,6 +243,9 @@ html.generate .main {
     flex: 1;
     height: 24px;
 }
+html.arabic .uploaded-icons .input {
+    direction: rtl;
+}
 .uploaded-icons .input[status="error"] {
     height: fit-content;
 }
@@ -246,6 +253,7 @@ html.generate .main {
     height: 24px;
 }
 .uploaded-icons .input input {
+    direction: ltr;
     flex: 1;
     min-height: unset;
     padding: var(--space-1) var(--space-3);

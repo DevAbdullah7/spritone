@@ -272,7 +272,7 @@ function renderIcons() {
                                 </svg>
                             </div>
                         </div>
-                        <span class="inputMSG"></span>
+                        <div class="inputMSG"></div>
                     </div>
                     <div class="action-call-buttons">
                         <div class="BTN Edit-BTN" title="Edit Icon Name" onclick="editIconName(this, ${i})">
@@ -398,7 +398,10 @@ function updateIconName(index, btn, newName) {
         if (inputWrapper) {
             inputWrapper.setAttribute('Status', 'error');
             const msgEl = inputWrapper.querySelector('.inputMSG');
-            if (msgEl) msgEl.innerHTML = `This Name is Duplicated !`;
+            if (msgEl) msgEl.innerHTML = `
+                <p class="english">This Name is Duplicated !</p>
+                <p class="arabic">هذا الاسم مكرر !</p>
+            `;
         }
         return;
     }
