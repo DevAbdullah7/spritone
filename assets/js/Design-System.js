@@ -44,24 +44,6 @@ langToggle.addEventListener('click', (e) => {
     }, 350)
 });
 
-// CheckBoxes
-function checkBoxesHandelling(checkBox) {
-    if (checkBox.parentNode.classList.contains('active')) {
-        checkBox.parentNode.classList.remove('active')
-    } else {
-        checkBox.parentNode.classList.add('active')
-    }
-}
-
-// Radios
-function radiosHandelling(radio) {
-    if (radio.parentNode.classList.contains('active')) {
-        radio.parentNode.classList.remove('active')
-    } else {
-        radio.parentNode.classList.add('active')
-    }
-}
-
 // Pagination
 function paginationNumbersHandelling(number) {
     const numbers = number.parentNode.children
