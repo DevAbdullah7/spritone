@@ -36,9 +36,9 @@ function togglesHandelling(toggle) {
     }
 }
 // Lang Toggle
-const toggleInput = document.getElementById('LangToggle');
+const langToggle = document.querySelector('#lang-toggle')
 
-toggleInput.addEventListener('change', (e) => {
+langToggle.addEventListener('click', (e) => {
     showLoading();
     setTimeout(() => {
         const lang = window.localStorage.getItem("lang")
@@ -440,9 +440,9 @@ function sidePanelLinksHandlling(link) {
 
 // ========== Icons Factionality ==========
 // Get & Print Icons in Icons Section
-const basePath = window.location.origin + './assets/icons/sprites/';
+const basePath = window.location.origin + '/assets/icons/sprites/';
 
-fetch('./assets/icons/sprites/mainfest.json')
+fetch('/assets/icons/sprites/mainfest.json')
     .then(res => res.json())
     .then(files => {
         files.forEach(file => {

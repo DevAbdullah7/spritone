@@ -551,6 +551,41 @@ p {
 /* ========== End Checkboxes & Radios ========== */
 
 /* ========== Toggles ========== */
+/* Language Toggle */
+.lang-toggle {
+    position: relative;
+    width: 142px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-1);
+    border: 1px solid var(--secondary-color-500);
+    border-radius: var(--borderRedius-XXS);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--secondary-color-500);
+    background: var(--primary-color-500);
+    direction: ltr;
+    cursor: pointer;
+    user-select: none;
+}
+
+.lang-toggle div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-1);
+    border-radius: var(--borderRedius-XXXS);
+    transition: all ease-in-out .3s;
+}
+.lang-toggle div.active {
+    color: var(--primary-color-500);
+    background: var(--secondary-color-500);
+}
+
 .toggle {
     position: relative;
     width: 48px;
@@ -558,6 +593,9 @@ p {
     border: 1px solid var(--secondary-color-500);
     border-radius: var(--borderRedius-Full);
     direction: ltr;
+}
+.toggle * {
+    cursor: pointer;
 }
 
 .toggleCheck {
@@ -605,82 +643,6 @@ p {
 
 .toggle.disabled .toggleSlider {
     transform: translate(0, -50%);
-}
-
-.toggle-wrapper {
-    position: relative;
-    display: inline-block;
-    user-select: none;
-    direction: ltr;
-}
-
-.toggle-input {
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.toggle-track {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 144px;
-    height: 32px;
-    background-color: var(--primary-color-600);
-    border: 1px solid var(--secondary-color-500);
-    border-radius: 6px;
-    padding: 2px;
-    cursor: pointer;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
-    transition: border-color 0.25s ease;
-}
-
-.toggle-track:hover {
-    border-color: var(--secondary-color-600);
-}
-
-.toggle-input:focus-visible + .toggle-track {
-    outline: 2px solid #7c3aed;
-    outline-offset: 2px;
-}
-
-.toggle-thumb {
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: calc(50% - 2px);
-    height: calc(100% - 4px);
-    background: var(--gradient-color-Secondary);
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.35);
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 1;
-}
-
-html.arabic .toggle-input:checked + .toggle-track .toggle-thumb {
-    transform: translateX(100%);
-}
-
-.toggle-option {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
-    font-size: var(--fontSize-XXS);
-    font-weight: var(--fontWeight-Medium);
-    z-index: 2;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.toggle-option span {
-    color: var(--secondary-color);
-}
-.toggle-input:not(:checked) + .toggle-track .option-left span,
-.toggle-input:checked + .toggle-track .option-right span {
-    color: var(--primary-color);
 }
 /* ========== End Toggles ========== */
 
@@ -1519,8 +1481,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .navigator .navigatorStart {
     width: 60px;
-    color: var(--primaryColor-2);
-    background-color: var(--primaryColor-1);
+    color: var(--primary-color-500);
+    background: var(--secondary-color-500);
     clip-path: path(
         "M0 3C0 1.343 0.3 0 0.66 0H50.16L60 20L50.158 40H0.66C0.3 40 0 38.657 0 37V3Z"
     );
@@ -1528,25 +1490,27 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .navigator .navigatorItem {
     width: 238.745px;
-    color: var(--typography-title);
-    background-color: #eaeaea;
+    background: var(--primary-color-800);
     clip-path: path(
         "M10.645 20.465L0 0H228.1L238.745 20.242L228.1 40H0L10.645 20.465Z"
     );
     transform: translateX(-11px);
     padding: var(--space-2) var(--space-6);
 }
+.navigator .navigatorItem p {
+    color: var(--secondary-color-500);
+}
 
 .navigator .navigatorEnd {
     width: 228.1px;
-    background-color: var(--primaryColor-1);
+    background: var(--secondary-color-500);
     clip-path: path("M10.645 20.465L0 0H228.1V40H0L10.645 20.465Z");
     transform: translateX(-22px);
     padding: var(--space-2) var(--space-6);
 }
 
 .navigator .navigatorEnd p {
-    color: var(--primaryColor-2);
+    color: var(--primary-color-500);
 }
 
 /* Mobiles Version */

@@ -146,7 +146,7 @@
         <!-- Navbar Body -->
         <div class="nav-body">
             <ul class="nav-links">
-                <li><a href="/generate.html">
+                <li><a href="/generate.html" class="active">
                     <p class="english">Generate</p>
                     <p class="arabic">اصنع كود</p>
                 </a></li>
@@ -165,27 +165,20 @@
             </ul>
 
             <div class="nav-footer">
-                <label class="toggle-wrapper">
-                    <input type="checkbox" id="LangToggle" class="toggle-input">
-
-                    <div class="toggle-track">
-                        <div class="toggle-thumb"></div>
-                    
-                        <div class="toggle-option option-left">
-                            <svg width="24" height="10">
-                                <use xlink:href="./assets/icons/sprites/icons.svg#uk"></use>
-                            </svg>
-                            <span>EN</span>
-                        </div>
-                    
-                        <div class="toggle-option option-right">
-                            <svg width="24" height="10">
-                                <use xlink:href="./assets/icons/sprites/icons.svg#sa"></use>
-                            </svg>
-                            <span>AR</span>
-                        </div>
+                <div class="lang-toggle" id="lang-toggle">
+                    <div class="en">
+                        <svg width="32" height="12">
+                            <use xlink:href="/assets/icons/sprites/icons.svg#uk"></use>
+                        </svg>
+                        <span>EN</span>
                     </div>
-                </label>
+                    <div class="ar">
+                        <svg width="32" height="12">
+                            <use xlink:href="/assets/icons/sprites/icons.svg#sa"></use>
+                        </svg>
+                        <span>AR</span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -213,7 +206,7 @@
     
                     <div class="text-part">
                         <p class="h5 english">Upload or Drop Icons Here</p>
-                        <p class="h5 arabic">اسحب او ارفع الايقونات هنا</p>
+                        <p class="h5 arabic">اسحب وافلت الايقونات هنا</p>
                         <p class="inputMSG english"><span style="color: #ff0000;">*</span> File Supported: .svg</p>
                         <p class="inputMSG arabic"><span style="color: #ff0000;">*</span> الملفات المدعومة: .svg</p>
                     </div>

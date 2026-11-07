@@ -195,27 +195,20 @@
             </ul>
 
             <div class="nav-footer">
-                <label class="toggle-wrapper">
-                    <input type="checkbox" id="LangToggle" class="toggle-input">
-
-                    <div class="toggle-track">
-                        <div class="toggle-thumb"></div>
-                    
-                        <div class="toggle-option option-left">
-                            <svg width="24" height="10">
-                                <use xlink:href="/assets/icons/sprites/icons.svg#uk"></use>
-                            </svg>
-                            <span>EN</span>
-                        </div>
-                    
-                        <div class="toggle-option option-right">
-                            <svg width="24" height="10">
-                                <use xlink:href="/assets/icons/sprites/icons.svg#sa"></use>
-                            </svg>
-                            <span>AR</span>
-                        </div>
+                <div class="lang-toggle" id="lang-toggle">
+                    <div class="en">
+                        <svg width="32" height="12">
+                            <use xlink:href="/assets/icons/sprites/icons.svg#uk"></use>
+                        </svg>
+                        <span>EN</span>
                     </div>
-                </label>
+                    <div class="ar">
+                        <svg width="32" height="12">
+                            <use xlink:href="/assets/icons/sprites/icons.svg#sa"></use>
+                        </svg>
+                        <span>AR</span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -230,10 +223,10 @@
             <div class="hero-content">
                 <div class="textContent">
                     <h1 class="english">Generate SVG Sprite With One Click</h1>
-                    <p class="p-sm english">Stop wasting time by crafting SVG sprites manually. Upload your icons, generate clean code instantly, and keep your workflow lightweight and blisteringly fast.</p>
+                    <p class="english">Stop wasting time by crafting SVG sprites manually. Upload your icons, generate clean code instantly, and keep your workflow lightweight and blisteringly fast.</p>
 
-                    <h1 class="arabic"> SVG Sprite <br>اصبح بضغطة زر</h1>
-                    <p class="p-sm arabic">توقف عن اضاعة الوقت في كتابة وتوليد اكواد SVG Sprite  يدوياً. ارفع الأيقونات دفعة واحدة، واحصل على كود جاهز للنسخ والتحميل مباشرة</p>
+                    <h1 class="arabic"> SVG Sprite اصبح بضغطة زر</h1>
+                    <p class="arabic">توقف عن اضاعة الوقت في كتابة وتوليد اكواد SVG Sprite  يدوياً. ارفع الأيقونات دفعة واحدة، واحصل على كود جاهز للنسخ والتحميل مباشرة</p>
                 </div>
                 <div class="action-call-buttons">
                     <a href="./generate.html" class="BTN Primary-BTN">
@@ -248,7 +241,16 @@
             </div>
 
             <div class="hero-ui">
-                <img src="/assets/imgs/about12.svg" alt="Hero Section UI Design" style="transform: rotateY(180deg);">
+                <!-- Mockup Viewbox -->
+                <div class="mockup-viewbox">
+                    <!-- Device -->
+                    <img class="english mockup-device" src="./assets/imgs/mockupEN.svg" alt="Mockup Device Image">
+                    <img class="arabic mockup-device" src="./assets/imgs/mockupAR.svg" alt="Mockup Device Image">
+                    
+                    <!-- Image of Mockup -->
+                    <img class="english warped-image" src="./assets/imgs/appEN.png" alt="App Screen Image For Mockup">
+                    <img class="arabic warped-image" src="./assets/imgs/appAR.png" alt="App Screen Image For Mockup">
+                </div>
             </div>
         </section>
 
@@ -282,7 +284,7 @@
                     </div>
     
                     <div class="cardContent">
-                        <p class="title english">Client-Side Only</p>
+                        <p class="title english">Privacy</p>
                         <p class="text english">
                             No file uploads to external servers. All processing, compilation, and generation happen directly in your browser for maximum privacy and speed.
                         </p>
@@ -299,9 +301,9 @@
                     </div>
     
                     <div class="cardContent">
-                        <p class="title english">Zero Dependencies & Blazing Fast</p>
+                        <p class="title english">Speed & Performance</p>
                         <p class="text english">
-                            Built with pure vanilla JavaScript and zero heavy libraries. Delivers lightning-fast performance without slowing down your system.
+                            Once the icons are uploaded, the code will be generated immediately, all modifications and processing are applied to the code instantly and synchronously
                         </p>
 
                         <p class="title arabic">السرعة والاداء</p>
@@ -318,12 +320,12 @@
                     <div class="cardContent">
                         <p class="title english">Full Control & Customization</p>
                         <p class="text english">
-                            Instant live preview, customizable element IDs, easy icon management, and fine-grained SVG attribute adjustments before final export.
+                            Instant live preview, customizable element IDs, full CSS control, reliance on the `currentColor` concept, and fine-grained SVG attribute adjustments before final export.
                         </p>
 
                         <p class="title arabic">تحكم وتخصيص كامل</p>
                         <p class="text arabic">
-                            معاينة مباشرة للأيقونة، نظام تسمية ID's مرن، تحكم كامل عبر الـCSS، تعديلات ومعالجة دقيقة على سمات الـSVG قبل تصدير الكود النهائي، اعتماد كلي على فكرة الـcurrentColor سواءً في الـFill او الـStroke
+                            معاينة مباشرة للأيقونة، نظام تسمية ID's مرن، تحكم كامل عبر الـCSS، تعديلات ومعالجة دقيقة على سمات الـSVG قبل تصدير الكود النهائي، اعتماد كلي على فكرة الـcurrentColor
                         </p>
                         
                     </div>
@@ -336,14 +338,14 @@
                     </div>
     
                     <div class="cardContent">
-                        <p class="title english">Clean & Production-Ready Export</p>
+                        <p class="title english">Production-Ready Export</p>
                         <p class="text english">
                             Get clean, minified, and optimized SVG Sprite code, ready to drop straight into your production workflow with no overhead.
                         </p>
 
                         <p class="title arabic">كود نظيف وجاهز للأستخدام</p>
                         <p class="text arabic">
-                          احصل على كود نظيف، قليل الحجم، ومعالج بدقة جاهز تماما للأستخدام
+                            احصل على كود نظيف، قليل الحجم، ومعالج بدقة جاهز تماما للأستخدام
                         </p>
                     </div>
                 </div>
@@ -388,7 +390,7 @@
                     <div class="textContent">
                         <h3 class="english"><span style="color: var(--secondary-color-500);">03</span>. Export</h3>
                         <p class="english">Copy the generated SVG code or download the file, then embed it in your project.</p>
-                      
+                        
                         <h3 class="arabic"><span style="color: var(--secondary-color-500);">03</span>. الاستخراج</h3>
                         <p class="arabic">انسخ او حمل الكود المستخرج واضفه الى مشروعك</p>
                     </div>
@@ -448,10 +450,6 @@
 
     <!-- UI Effect -->
     <div class="bubble"></div>
-    <div id="screenWidth">test</div>
-    <script>
-        document.querySelector("#screenWidth").innerHTML = window.innerWidth
-    </script>
 
     <!-- JavaScript Files -->
     <script src="/assets/js/Design-System.js" class="cacheItem"></script>

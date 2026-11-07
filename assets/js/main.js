@@ -14,15 +14,23 @@ cacheItems.forEach(item => {
 
 //website language
 function language() {
+    const href = window.location.pathname
+    if (href.includes('design-system')) return
+    
     const lang = window.localStorage.getItem("lang")
+    const langToggle = document.querySelector('#lang-toggle')
     if (!lang || lang == "en") {
         document.querySelector("html").classList.remove("arabic")
         document.querySelector("html").lang = "en"
+        langToggle.querySelector(".en").classList.add('active')
+        langToggle.querySelector(".ar").classList.remove('active')
         window.localStorage.setItem("lang", "en")
     } else {
+        console.log('ar')
         document.querySelector("html").classList.add("arabic")
         document.querySelector("html").lang = "ar"
-        window.localStorage.setItem("lang", "ar")
+        langToggle.querySelector(".ar").classList.add('active')
+        langToggle.querySelector(".en").classList.remove('active')
     }
 }
 window.addEventListener("load", () => {

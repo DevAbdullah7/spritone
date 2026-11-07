@@ -74,6 +74,9 @@ html.generate .main {
     z-index: -9999;
     transition: all ease-in-out 0.25s;
 }
+html.arabic .upload-box::after {
+    background: linear-gradient(-135deg, rgb(56 189 248 / 2%), rgb(10, 14, 29));
+} 
 .upload-box.dragover::after,
 .upload-box:hover::after {
     opacity: 1;
@@ -257,6 +260,9 @@ html.arabic .uploaded-icons .input {
     flex: 1;
     min-height: unset;
     padding: var(--space-1) var(--space-3);
+}
+html.arabic .uploaded-icons .input input {
+    text-align: right;
 }
 .uploaded-icons .input.buttonInp .inputIcon {
     width: 24px;
