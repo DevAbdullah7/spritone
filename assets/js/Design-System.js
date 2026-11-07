@@ -27,14 +27,6 @@ function tabsButtonHandling(btn) {
     btn.parentNode.setAttribute('Type', Type)
 }
 
-// Toggles
-function togglesHandelling(toggle) {
-    if (toggle.parentNode.classList.contains('active')) {
-        toggle.parentNode.classList.remove('active')
-    } else {
-        toggle.parentNode.classList.add('active')
-    }
-}
 // Lang Toggle
 const langToggle = document.querySelector('#lang-toggle')
 
