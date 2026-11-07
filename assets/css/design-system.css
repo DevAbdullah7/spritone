@@ -1004,7 +1004,7 @@ input::-webkit-inner-spin-button {
     border: 1px solid #686868;
     color: #686868;
     font-size: var(--fontSize-XXS);
-    appearance: none;
+    appearance: base-select;
     outline: none;
     cursor: pointer;
     user-select: none;
