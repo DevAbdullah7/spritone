@@ -439,6 +439,7 @@ html .loading {
     -webkit-backdrop-filter: blur(2px);
     background: rgba(0 0 0 / .25);
     z-index: -999999;
+    user-select: none;
 }
 
 html.loading .loading {
@@ -475,6 +476,7 @@ html.loading .loading {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     z-index: 2;
+    user-select: none;
 }
 @media only screen and (max-width: 520px) {
     .footer {
@@ -592,6 +594,7 @@ html.loading .loading {
 /*========== Hero Section ==========*/
 .section#home {
     justify-content: space-between;
+    user-select: none;
 }
 @media only screen and (max-width: 768px) {
     .section#home {
@@ -802,6 +805,7 @@ html.arabic .mockup-device {
 /*========== How It Works Section ==========*/
 .section#how-it-works {
     flex-direction: column;
+    user-select: none;
 }
 
 .section#how-it-works .textContent {
@@ -900,6 +904,7 @@ html.arabic .mockup-device {
 }
 .section#terms-policy .section-content img {
     width: 192px;
+    user-select: none;
 }
 .section#terms-policy .textContent {
     width: 100%;

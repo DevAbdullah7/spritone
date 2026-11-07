@@ -24,6 +24,7 @@
     align-items: center;
     gap: var(--space-3);
     text-align: center;
+    user-select: none;
 }
 /*========== End Section Header ==========*/
 
