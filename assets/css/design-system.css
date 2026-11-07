@@ -618,6 +618,11 @@ p {
     z-index: 1;
     transition: all ease-in-out 0.3s;
 }
+.toggle.active .toggleSlider {
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color-500);
+}
 
 .toggleGround {
     position: absolute;
@@ -629,6 +634,9 @@ p {
     border-radius: var(--borderRedius-Full);
     z-index: 0;
     transition: all ease-in-out 0.3s;
+}
+.toggle.active .toggleGround {
+    background: var(--secondary-color-500);
 }
 
 .toggle.active .toggleSlider,
