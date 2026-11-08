@@ -70,42 +70,38 @@ body.freez {
     }
 }
 
-/*.reveal {
-    position: relative;
-    -webkit-transform: translateY(150px);
-    -ms-transform: translateY(150px);
-    transform: translateY(150px);
-    opacity: 0;
-    -webkit-transition: 0.5s all ease-in-out;
-    -o-transition: 0.5s all ease-in-out;
-    transition: 0.5s all ease-in-out;
+/* Visibility Transition in Loading Status */
+html.loading * {
+    transition: none;
 }
 
-.reveal.active {
-    -webkit-transform: translateY(0px);
-    -ms-transform: translateY(0px);
-    transform: translateY(0px);
-    opacity: 1;
-}*/
+html.loading .main {
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+html .main {
+    visibility: visible !important;
+    opacity: unset !important;
+}
 
 /* ========== Language Settings ========== */
-html {
+html.english {
     direction: ltr;
 }
-
 html.arabic {
     direction: rtl;
 }
 
+html *.english,
 html *.arabic,
+html.english *.arabic,
 html.arabic *.english {
     display: none !important;
 }
-html *.english,
+html.english *.english,
 html.arabic *.arabic {
     display: block !important;
 }
-
 /* ========== End Language Settings ========== */
 
 /* ========== Navbar ========== */
@@ -660,7 +656,7 @@ html.arabic .mockup-device {
 @media only screen and (max-width: 768px) {
     .section#home {
         justify-content: center;
-        gap: var(--space-8);
+        gap: var(--space-5);
     }
     .section#home .hero-content {
         width: 100%;

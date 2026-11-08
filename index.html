@@ -1,24 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- <script>
-        // Check about new user
-        const hasVisited = localStorage.getItem('hasVisited')
-        if (hasVisited) {
-            window.location.replace("/generate.html");
-        } else {
-            localStorage.setItem("hasVisited", "true");
-        }
-    </script> -->
-    <script>
-        window.addEventListener("load", () => {
-            document.querySelector("html").classList.add("loading")
-            
-            setTimeout(() => {
-                document.querySelector("html").classList.remove("loading")
-            }, 300)
-        })
-    </script>
     <!---------- General Metas ---------->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -222,11 +204,11 @@
         <section class="section" id="home">
             <div class="hero-content">
                 <div class="textContent">
-                    <h1 class="english">Generate SVG Sprite With One Click</h1>
+                    <h1 class="english">Generate <span style="color: var(--secondary-color-500);">SVG Sprite</span> With One Click</h1>
                     <p class="english">Stop wasting time by crafting SVG sprites manually. Upload your icons, generate clean code instantly, and keep your workflow lightweight and blisteringly fast.</p>
 
-                    <h1 class="arabic"> SVG Sprite اصبح بضغطة زر</h1>
-                    <p class="arabic">توقف عن اضاعة الوقت في كتابة وتوليد اكواد SVG Sprite  يدوياً. ارفع الأيقونات دفعة واحدة، واحصل على كود جاهز للنسخ والتحميل مباشرة</p>
+                    <h1 class="arabic">احصل على <span style="color: var(--secondary-color-500);">SVG Sprite</span> بضغطة زر</h1>
+                    <p class="arabic">توقف عن اضاعة الوقت في كتابة وتوليد اكواد SVG Sprite  يدوياً. ارفع الأيقونات دفعة واحدة، واحصل على كود Sprite جاهز للنسخ والتحميل مباشرة، وحافظ على جعل عملك سريعاً واحترافي.</p>
                 </div>
                 <div class="action-call-buttons">
                     <a href="./generate.html" class="BTN Primary-BTN">
@@ -255,7 +237,7 @@
         </section>
 
         <!-- About Section -->
-        <section class="section reveal" id="about">
+        <section class="section" id="about">
             <div class="section-header">
                 <h2 class="english">What is <span style="color: var(--secondary-color-500);">Spritone</span>?</h2>
                 <p class="english">Spritone is a lightweight, client-side developer tool built to streamline your SVG workflow. Instead of manually writing sprite maps or relying on heavy build tools and servers, Spritone transforms your scattered SVG icons into clean, highly-optimized sprites directly inside your browser. No sign-ups, no backend delays, and zero data leaves your device. Just drag, drop, and get production-ready SVG code in a single click</p>
@@ -266,7 +248,7 @@
         </section>
 
         <!-- Features Section -->
-        <section class="section reveal" id="features">
+        <section class="section" id="features">
             <div class="section-header">
                 <h2 class="english">Why <span style="color: var(--secondary-color-500);">Spritone</span>?</h2>
                 <p class="english">Designed for optimal icon usage and fast SVG compilation, generating ready-to-use sprite code instantly.</p>
@@ -353,7 +335,7 @@
         </section>
 
         <!-- How It Works Section -->
-        <section class="section reveal" id="how-it-works">
+        <section class="section" id="how-it-works">
             <div class="section-header">
                 <h2 class="english">How It <span style="color: var(--secondary-color-500);">Works</span>?</h2>
                 <p class="english">From <span style="color: var(--secondary-color-500);">Figma</span> to <span style="color: var(--secondary-color-500);">Production</span>... Just like that 👌</p>
@@ -438,7 +420,6 @@
     <!-- Loading Transetion -->
     <div class="loading" dir="ltr">
         <div class="loader"></div>
-        Loading...
     </div>
 
     <!-- Top Scrolling Button -->

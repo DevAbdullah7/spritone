@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" class="generate">
 <head>
+    <script>
+        window.addEventListener("load", () => {
+            showLoading();
+            
+            setTimeout(() => {
+                hideLoading();
+            }, 250)
+        })
+    </script>
     <!---------- General Metas ---------->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -146,7 +155,7 @@
         <!-- Navbar Body -->
         <div class="nav-body">
             <ul class="nav-links">
-                <li><a href="/generate.html" class="active">
+                <li><a href="/generate.html" class="active" style="color: var(--secondary-color-500);">
                     <p class="english">Generate</p>
                     <p class="arabic">رفع الايقونات</p>
                 </a></li>
@@ -266,9 +275,8 @@
     
             <!-- SVG Sprite Code -->
             <div class="codeShown">
-                <!-- <p class="codeTitle">Output Code:</p> -->
 <pre id="output" class="language-markup">
-                    
+
 </pre>
                 <span class="copyIcon" onclick="copyElement(this)">
                     <svg width="18" height="18">
@@ -327,7 +335,6 @@
     <!-- Loading Transetion -->
     <div class="loading" dir="ltr">
         <div class="loader"></div>
-        Loading...
     </div>
 
     <!-- UI Effect -->

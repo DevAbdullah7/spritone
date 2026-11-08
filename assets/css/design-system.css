@@ -172,19 +172,19 @@ html * {
         /* Heading Titles */
         --fontSize-H1: 56px;
         --fontSize-H2: 42px;
-        --fontSize-H3: 36px;
-        --fontSize-H4: 32px;
-        --fontSize-H5: 28px;
-        --fontSize-H6: 26px;
+        --fontSize-H3: 32px;
+        --fontSize-H4: 28px;
+        --fontSize-H5: 24px;
+        --fontSize-H6: 22px;
 
         /* Paragraphs */
-        --fontSize-XL: 22px;
-        --fontSize-LG: 20px;
-        --fontSize-MD: 18px;
-        --fontSize-SM: 16px;
-        --fontSize-XS: 14px;
-        --fontSize-XXS: 12px;
-        --fontSize-XXXS: 10px;
+        --fontSize-XL: 20px;
+        --fontSize-LG: 18px;
+        --fontSize-MD: 16px;
+        --fontSize-SM: 14px;
+        --fontSize-XS: 12px;
+        --fontSize-XXS: 10px;
+        --fontSize-XXXS: 8px;
     }
 }
 
@@ -193,11 +193,11 @@ html * {
     :root {
         /* Heading Titles */
         --fontSize-H1: 48px;
-        --fontSize-H2: 36px;
+        --fontSize-H2: 38px;
         --fontSize-H3: 32px;
         --fontSize-H4: 28px;
-        --fontSize-H5: 26px;
-        --fontSize-H6: 24px;
+        --fontSize-H5: 24px;
+        --fontSize-H6: 22px;
 
         /* Paragraphs */
         --fontSize-XL: 20px;

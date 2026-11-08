@@ -20,14 +20,15 @@ function language() {
     const lang = window.localStorage.getItem("lang")
     const langToggle = document.querySelector('#lang-toggle')
     if (!lang || lang == "en") {
+        document.querySelector("html").classList.add("english")
         document.querySelector("html").classList.remove("arabic")
         document.querySelector("html").lang = "en"
         langToggle.querySelector(".en").classList.add('active')
         langToggle.querySelector(".ar").classList.remove('active')
         window.localStorage.setItem("lang", "en")
     } else {
-        console.log('ar')
         document.querySelector("html").classList.add("arabic")
+        document.querySelector("html").classList.remove("english")
         document.querySelector("html").lang = "ar"
         langToggle.querySelector(".ar").classList.add('active')
         langToggle.querySelector(".en").classList.remove('active')
@@ -129,7 +130,7 @@ function runWithLoadingIfNeeded(targetCount, actionTask) {
 document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.getElementById('navbar');
     const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.querySelectorAll('.nav-links a, .BTN');
+    const navLinks = document.querySelectorAll('.nav-links a');
 
     if (!navbar || !menuToggle) return;
 
@@ -140,8 +141,8 @@ document.addEventListener('DOMContentLoaded', () => {
             FreezeManager.freeze();
             navbar.classList.add('is-open');
         } else {
-            navbar.classList.remove('is-open');
             FreezeManager.unfreeze();
+            navbar.classList.remove('is-open');
         }
     }
 

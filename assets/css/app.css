@@ -1,20 +1,3 @@
-html.generate .main {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    gap: var(--space-7);
-    padding: 128px var(--space-10) var(--space-9);
-}
-@media only screen and (max-width: 520px) {
-    html.generate .main {
-        padding: 96px var(--space-5) var(--space-7);
-    }
-}
-
 /* ========== Upload Icons Container ========== */
 .upload-icons-container {
     width: 100%;
@@ -32,7 +15,6 @@ html.generate .main {
 }
 
 /* ========== Upload Box ========== */
-
 .files-input {
     width: 50%;
     height: 100%;
@@ -91,11 +73,9 @@ html.arabic .upload-box::after {
     flex-direction: column;
     align-items: center;
     gap: var(--space-4);
-}
-
-.upload-box svg {
     color: var(--secondary-color-500);
 }
+
 @media only screen and (max-width: 912px) {
     .upload-box svg {
         width: 48px !important;
@@ -400,17 +380,17 @@ html.generate pre {
 
 /* ألوان العناصر محلياً */
 #output .token-punctuation {
-    color: #969696 !important; /* لون الوسوم/التاقات مثل <svg> و <symbol> */
+    color: #969696 !important;
 }
 
 #output .token-tag {
-    color: #1d5392 !important; /* لون الوسوم/التاقات مثل <svg> و <symbol> */
+    color: #1d5392 !important;
 }
 
 #output .token-attr-name {
-    color: var(--secondary-color-300) !important; /* لون الخصائص مثل id و viewBox */
+    color: var(--secondary-color-300) !important;
 }
 
 #output .token-attr-value {
-    color: #ffb366 !important; /* لون قيم الخصائص بين التنصيص */
+    color: #ffb366 !important;
 }
