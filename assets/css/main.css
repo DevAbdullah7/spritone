@@ -75,11 +75,11 @@ html.loading * {
     transition: none;
 }
 
-html.loading .main {
+html.loading .main * {
     visibility: hidden !important;
     opacity: 0 !important;
 }
-html .main {
+html .main * {
     visibility: visible !important;
     opacity: unset !important;
 }
