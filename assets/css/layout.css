@@ -192,7 +192,7 @@ body.freez {
         rgba(0, 0, 0, 0.126) 92.5%,
         rgba(0, 0, 0, 0.075) 97
     );
-    background: var(--primary-color-600);
+    background: var(--primary-color-500);
     pointer-events: none;
     z-index: -1;
 }
