@@ -1,79 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- <script>
-        // Check about new user
-        const hasVisited = localStorage.getItem('hasVisited')
-        if (hasVisited) {
-            window.location.replace("/generate.html");
-        } else {
-            localStorage.setItem("hasVisited", "true");
-        }
-    </script> -->
-    <!---------- General Metas ---------->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://URL.com/"> <!-- Change the URL -->
-    <meta name="robots" content="index, follow">
-
-
-    <!---------- Website Information ---------->
-    <title>Spritone</title>
-    <meta name="application-name" content="Spritone">
-    <meta name="apple-mobile-web-app-title" content="Spritone">
-    <link rel="manifest" href="./assets./res/manifest.json" class="cacheItem">
-
-
-    <!---------- SEO Metas ---------->
-    <!-- Title -->
-    <meta property="title" content="Spritone">
-    <meta property="og:site_name" content="Spritone">
-    <meta property="og:title" content="Spritone">
-    <meta name="twitter:title" content="Spritone">
-
-    <!-- Description -->
-    <meta name="description" content=""> <!-- put the description of website in ( content ) property -->
-    <meta name="og:description" content=""> <!-- put the description of website in ( content ) property -->
-    <meta name="twitter:description" content=""> <!-- put the description of website in ( content ) property -->
-
-    <!-- Website Information -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://URL.com"> <!-- Change the URL -->
-    <meta property="og:locale" content="en_EN">
-
-    <!-- Sharing Image -->
-    <meta name="image" content="https://URL.com./assets/imgs/Sharing-image.png" class="cacheItem"> <!-- Change the URL -->
-    <meta property="image" content="https://URL.com./assets/imgs/Sharing-image.png" class="cacheItem"> <!-- Change the URL -->
-    <meta property="og:image" content="https://URL.com./assets/imgs/Sharing-image.png" class="cacheItem"> <!-- Change the URL -->
-
-    <!-- Keywords -->
-    <meta name="keywords" content=""> <!-- put the keywords list of website in ( content ) property -->
-
-
-    <!---------- Display Settings ---------->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-
-    <!-- Theme Colors -->
-    <meta name="theme-color" content="#0f172a">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#0f172a-transparent">
-    <meta name="msapplication-TileColor" content="#0f172a-transparent">
-
-    <!-- iOS Lunch Screen -->
-    <!-- <link rel="apple-touch-startup-image" href="./assets/imgs/lunchScreens/apple_splash_2048.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem" class="cacheItem"/>
-    <link rel="apple-touch-startup-image" href="./assets/imgs/lunchScreens/apple_splash_1668.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem" class="cacheItem"/>
-    <link rel="apple-touch-startup-image" href="./assets/imgs/lunchScreens/apple_splash_1536.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem" class="cacheItem"/>
-<head>
-    <!-- <script>
-        // Check about new user
-        const hasVisited = localStorage.getItem('hasVisited')
-        if (hasVisited) {
-            window.location.replace("/generate.html");
-        } else {
-            localStorage.setItem("hasVisited", "true");
-        }
-    </script> -->
     <!---------- General Metas ---------->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -199,7 +126,7 @@
         <!-- Navbar Header -->
         <div class="nav-header">
             <!-- Website Logo -->
-            <a href="/" class="logo">
+            <a href="./index.html" class="logo">
                 <img src="./res/Logo.svg" alt="Website Logo">
             </a>
 
@@ -220,19 +147,19 @@
         <!-- Navbar Body -->
         <div class="nav-body">
             <ul class="nav-links">
-                <li><a href="/generate.html">
+                <li><a href="./generate.html">
                     <p class="english">Generate</p>
                     <p class="arabic">رفع الايقونات</p>
                 </a></li>
-                <li><a href="/#about">
+                <li><a href="./index.html#about">
                     <p class="english">About</p>
                     <p class="arabic">نبذة عن الاداة</p>
                 </a></li>
-                <li><a href="/#features">
+                <li><a href="./index.html#features">
                     <p class="english">Features</p>
                     <p class="arabic">المميزات</p>
                 </a></li>
-                <li><a href="/#how-it-works">
+                <li><a href="./index.html#how-it-works">
                     <p class="english">How It Works?</p>
                     <p class="arabic">كيف تعمل؟</p>
                 </a></li>
@@ -242,13 +169,13 @@
                 <div class="lang-toggle" id="lang-toggle">
                     <div class="en">
                         <svg width="32" height="12">
-                            <use xlink:href="/assets/icons/sprites/icons.svg#uk"></use>
+                            <use xlink:href="./assets/icons/sprites/icons.svg#uk"></use>
                         </svg>
                         <span>EN</span>
                     </div>
                     <div class="ar">
                         <svg width="32" height="12">
-                            <use xlink:href="/assets/icons/sprites/icons.svg#sa"></use>
+                            <use xlink:href="./assets/icons/sprites/icons.svg#sa"></use>
                         </svg>
                         <span>AR</span>
                     </div>
@@ -476,7 +403,7 @@
     <!-- Footer -->
     <footer class="footer" id="footer">
         <!-- Website Information -->
-        <a href="/" class="websiteLogo">
+        <a href="./index.html" class="websiteLogo">
             <svg width="208" height="64" style="color: var(--secondary-color-500);">
                 <use xlink:href="./assets/imgs/Logo.svg#logo"></use>
             </svg>
@@ -512,7 +439,6 @@
     <!-- Loading Transetion -->
     <div class="loading" dir="ltr">
         <div class="loader"></div>
-        Loading...
     </div>
 
     <!-- Top Scrolling Button -->
