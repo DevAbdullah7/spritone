@@ -139,6 +139,8 @@ body.freez {
 .navbar.is-open {
     height: 100vh;
     height: 100dvh;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
 }
 
 .navbar.is-open .nav-body {
@@ -161,8 +163,6 @@ body.freez {
     top: 0;
     left: 0;
     transform: translateY(-2px);
-    backdrop-filter: blur(64px);
-    -webkit-backdrop-filter: blur(64px);
     mask-image: linear-gradient(
         to bottom,
         black 0%,
@@ -243,8 +243,6 @@ body.freez {
     }
     .navbar .effect {
         height: calc(100% + 64px);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
     }
 
     .nav-header {
