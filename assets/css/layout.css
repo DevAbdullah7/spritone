@@ -156,14 +156,13 @@ body.freez {
 
 .navbar .effect {
     position: absolute;
-    top: 0;
     width: 100%;
-    height: calc(100% + 32px);
+    height: calc(100% + 48px);
+    top: 0;
+    left: 0;
+    transform: translateY(-2px);
     backdrop-filter: blur(64px);
     -webkit-backdrop-filter: blur(64px);
-    transform: translateY(-2px);
-    pointer-events: none;
-    z-index: -1;
     mask-image: linear-gradient(
         to bottom,
         black 0%,
@@ -193,6 +192,9 @@ body.freez {
         rgba(0, 0, 0, 0.126) 92.5%,
         rgba(0, 0, 0, 0.075) 97
     );
+    background: var(--primary-color-600);
+    pointer-events: none;
+    z-index: -1;
 }
 .navbar.is-open .effect {
     height: calc(100% + 1024px);
@@ -240,7 +242,7 @@ body.freez {
         padding: var(--space-2) var(--space-5);
     }
     .navbar .effect {
-        height: calc(100% + 48px);
+        height: calc(100% + 64px);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
     }
