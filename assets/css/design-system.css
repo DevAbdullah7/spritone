@@ -211,7 +211,7 @@ html * {
 }
 
 /* Mobiles */
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 520px) {
     :root {
         /* Heading Titles */
         --fontSize-H1: 42px;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <!---------- General Metas ---------->
     <meta charset="UTF-8">
@@ -64,8 +64,8 @@
 
     <!---------- Css Files ---------->
     <link rel="stylesheet" href="/assets/css/design-system.css" class="cacheItem">
+    <link rel="stylesheet" href="/assets/css/layout.css" class="cacheItem">
     <link rel="stylesheet" href="/assets/css/main.css" class="cacheItem">
-    <link rel="stylesheet" href="/assets/css/layouts.css" class="cacheItem">
 
 
     <!---------- Favicon ---------->
@@ -117,18 +117,6 @@
     <script>
         var cacheVersion = '?v=0.0.2'
     </script>
-    <style>
-        #screenWidth {
-            position: absolute;
-            width: 100%;
-            top: 64px;
-            left: 0;
-            text-align: center;
-            font-size: 32px;
-            color: white;
-            z-index: 999999;
-        }
-    </style>
 </head>
 
 <body>
@@ -423,7 +411,7 @@
     </div>
 
     <!-- Top Scrolling Button -->
-    <div class="topArrow BTN Secondary-BTN Icon-BTN" onclick="window.scrollTo(0,0)">
+    <div class="GoTop BTN Secondary-BTN Icon-BTN" onclick="window.scrollTo(0,0)">
         <svg width="24" height="24">
             <use xlink:href="/assets/icons/sprites/icons.svg#up-arrow"></use>
         </svg>

@@ -1,16 +1,16 @@
 // Scrolling Top Arrow
 window.addEventListener('scroll', () => {
-    if (document.querySelector('.topArrow')) {
+    if (document.querySelector('.GoTop')) {
         if (400 < window.scrollY) {
-            document.querySelector('.topArrow').classList.add('active')
+            document.querySelector('.GoTop').classList.add('active')
             
-            if ((document.querySelector('.footer').getBoundingClientRect().top - 16) <= document.querySelector('.topArrow').getBoundingClientRect().bottom) {
-                document.querySelector('.topArrow').classList.add('under-footer')
+            if ((document.querySelector('.footer').getBoundingClientRect().top - 16) <= document.querySelector('.GoTop').getBoundingClientRect().bottom) {
+                document.querySelector('.GoTop').classList.add('under-footer')
             } else {
-                document.querySelector('.topArrow').classList.remove('under-footer')
+                document.querySelector('.GoTop').classList.remove('under-footer')
             }
         } else {
-            document.querySelector('.topArrow').classList.remove('active')
+            document.querySelector('.GoTop').classList.remove('active')
         }
     }
 })
