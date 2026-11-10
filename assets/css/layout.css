@@ -237,7 +237,7 @@ body.freez {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        padding: var(--space-2) var(--space-8);
+        padding: var(--space-2) var(--space-5);
     }
     .navbar .effect {
         height: calc(100% + 48px);
@@ -274,7 +274,7 @@ body.freez {
         height: unset;
         flex: 1;
         flex-direction: row;
-        gap: var(--space-8);
+        gap: var(--space-6);
         justify-content: center;
         margin: 0;
     }
@@ -285,6 +285,22 @@ body.freez {
 
     .nav-footer {
         width: auto;
+    }
+}
+
+@media only screen and (min-width: 1150px) {
+    .nav-links {
+        gap: var(--space-7);
+    }
+}
+
+@media only screen and (min-width: 1475px) {
+    .navbar {
+        padding: var(--space-2) var(--space-8);
+    }
+
+    .nav-links {
+        gap: var(--space-8);
     }
 }
 /*========== End Navbar ==========*/
@@ -450,7 +466,7 @@ html.arabic .GoTop {
     opacity: .25;
 }
 
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 768px) {
     .GoTop {
         width: 44px;
         height: 44px;
@@ -473,7 +489,7 @@ html.arabic .GoTop {
     align-items: center;
     gap: var(--space-7);
 }
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 768px) {
     .section {
         min-height: calc(100dvh - (96px + var(--space-5)));
     }

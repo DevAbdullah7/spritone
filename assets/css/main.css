@@ -1,17 +1,22 @@
 /* ========== General Settings ========== */
-*::selection {
-    color: var(--primary-color-500);
-    background: var(--secondary-color-500);
-}
-/* ========== End General Settings ========== */
-
-/* ========== Elements Dimensions Settings ========== */
+/* Elements Dimensions */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-/* ========== End Elements Dimensions Settings ========== */
+
+/* Smooth Transition Between Pages */
+@view-transition {
+    navigation: auto;
+}
+
+/* User Selection */
+*::selection {
+    color: var(--primary-color-500);
+    background: var(--secondary-color-500);
+}
+/* ========== End General Settings ========== */
 
 /* ========== Scrolling Settings ========== */
 *::-webkit-scrollbar {
@@ -78,7 +83,7 @@ html.loading .loading {
 }
 
 .loading .loader {
-    width: 64px;
+    width: 56px;
     aspect-ratio: 1;
     border-radius: 50%;
     background: 
