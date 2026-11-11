@@ -581,7 +581,8 @@ p {
     border-radius: var(--borderRedius-XXXS);
     transition: all ease-in-out .3s;
 }
-.lang-toggle div.active {
+html.english .lang-toggle .en,
+html.arabic .lang-toggle .ar {
     color: var(--primary-color-500);
     background: var(--secondary-color-500);
 }

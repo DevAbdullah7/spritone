@@ -2,6 +2,18 @@
 <html class="generate">
 <head>
     <script>
+        const lang = window.localStorage.getItem("lang")
+        if (!lang || lang == "en") {
+            document.querySelector("html").classList.add("english")
+            document.querySelector("html").classList.remove("arabic")
+            document.querySelector("html").lang = "en"
+            window.localStorage.setItem("lang", "en")
+        } else {
+            document.querySelector("html").classList.add("arabic")
+            document.querySelector("html").classList.remove("english")
+            document.querySelector("html").lang = "ar"
+            window.localStorage.setItem("lang", "ar")
+        }
         window.addEventListener("load", () => {
             showLoading();
             
@@ -135,7 +147,7 @@
         <!-- Navbar Header -->
         <div class="nav-header">
             <!-- Website Logo -->
-            <a href="/" class="logo">
+            <a href="./index.html" class="logo">
                 <img src="./res/Logo.svg" alt="Website Logo">
             </a>
 

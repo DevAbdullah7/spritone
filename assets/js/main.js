@@ -34,9 +34,6 @@ function language() {
         langToggle.querySelector(".en").classList.remove('active')
     }
 }
-window.addEventListener("load", () => {
-    language()
-})
 
 // ==========================================
 // 1. Freeze Manager (نظام التجميد الموحد)

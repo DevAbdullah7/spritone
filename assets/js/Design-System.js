@@ -34,12 +34,17 @@ langToggle.addEventListener('click', (e) => {
     showLoading();
     setTimeout(() => {
         const lang = window.localStorage.getItem("lang")
-        if (!lang || lang == "ar") {
-            window.localStorage.setItem("lang", "en")
-        } else {
+        if (!lang || lang == "en") {
+            document.querySelector("html").classList.add("arabic")
+            document.querySelector("html").classList.remove("english")
+            document.querySelector("html").lang = "ar"
             window.localStorage.setItem("lang", "ar")
+        } else {
+            document.querySelector("html").classList.add("english")
+            document.querySelector("html").classList.remove("arabic")
+            document.querySelector("html").lang = "en"
+            window.localStorage.setItem("lang", "en")
         }
-        language()
         hideLoading();
     }, 350)
 });
