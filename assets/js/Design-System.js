@@ -421,7 +421,7 @@ function sidePanelLinksHandlling(link) {
 // Get & Print Icons in Icons Section
 const basePath = window.location.origin + 'spritone/assets/icons/sprites/'; // (spritone) for github only !!
 
-fetch('../../assets/icons/sprites/mainfest.json')
+fetch('assets/icons/sprites/mainfest.json')
     .then(res => res.json())
     .then(files => {
         files.forEach(file => {
