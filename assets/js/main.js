@@ -12,29 +12,6 @@ cacheItems.forEach(item => {
     }
 });
 
-//website language
-function language() {
-    const href = window.location.pathname
-    if (href.includes('design-system')) return
-    
-    const lang = window.localStorage.getItem("lang")
-    const langToggle = document.querySelector('#lang-toggle')
-    if (!lang || lang == "en") {
-        document.querySelector("html").classList.add("english")
-        document.querySelector("html").classList.remove("arabic")
-        document.querySelector("html").lang = "en"
-        langToggle.querySelector(".en").classList.add('active')
-        langToggle.querySelector(".ar").classList.remove('active')
-        window.localStorage.setItem("lang", "en")
-    } else {
-        document.querySelector("html").classList.add("arabic")
-        document.querySelector("html").classList.remove("english")
-        document.querySelector("html").lang = "ar"
-        langToggle.querySelector(".ar").classList.add('active')
-        langToggle.querySelector(".en").classList.remove('active')
-    }
-}
-
 // ==========================================
 // 1. Freeze Manager (نظام التجميد الموحد)
 // ==========================================
@@ -82,21 +59,14 @@ const FreezeManager = {
 // ==========================================
 // 2. Loading Controller (إدارة اللودينج المباشرة)
 // ==========================================
-let loadingStartTime = 0;
-
 function showLoading() {
-    // loadingStartTime = performance.now();
     FreezeManager.freeze();
     document.querySelector(('html')).classList.add('loading');
-    // console.log('⏳ Loading started...');
 }
 
 function hideLoading() {
     document.querySelector(('html')).classList.remove('loading');
     FreezeManager.unfreeze();
-    
-    // const durationInSeconds = ((performance.now() - loadingStartTime) / 1000).toFixed(2);
-    // console.log(`✅ Loading finished in ${durationInSeconds} seconds.`);
 }
 
 /**

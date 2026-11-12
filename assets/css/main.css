@@ -43,7 +43,7 @@ html {
 /* ========== End Scrolling Settings ========== */
 
 /* ========== Loading Settings ========== */
-html.loading * {
+/* html.loading * {
     transition: none;
 }
 
@@ -54,7 +54,7 @@ html.loading .main {
 html .main {
     visibility: visible !important;
     opacity: unset !important;
-}
+} */
 
 /* Loader Stylling */
 html .loading {
