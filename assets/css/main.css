@@ -270,7 +270,7 @@ html.arabic .mockup-viewbox .mockup-device {
 .section#about {
     min-height: unset;
     height: fit-content;
-    margin-bottom: var(--space-10);
+    margin-bottom: var(--space-8);
 }
 
 .section#about .section-header p {
@@ -295,7 +295,6 @@ html.arabic .mockup-viewbox .mockup-device {
     height: fit-content;
     flex-direction: column;
     gap: var(--space-8);
-    margin-bottom: var(--space-10);
 }
 
 @media only screen and (max-width: 768px) {
