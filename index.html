@@ -15,18 +15,33 @@
             window.localStorage.setItem("lang", "ar")
         }
     </script>
+
     <!---------- General Metas ---------->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="canonical" href="https://URL.com/"> <!-- Change the URL -->
     <meta name="robots" content="index, follow">
 
-
     <!---------- Website Information ---------->
     <title>Spritone</title>
     <meta name="application-name" content="Spritone">
     <meta name="apple-mobile-web-app-title" content="Spritone">
     <link rel="manifest" href="./assets/res/manifest.json" class="cacheItem">
+
+    <!---------- Css Files ---------->
+    <link rel="stylesheet" href="./assets/css/design-system.css" class="cacheItem">
+    <link rel="stylesheet" href="./assets/css/layout.css" class="cacheItem">
+    <link rel="stylesheet" href="./assets/css/main.css" class="cacheItem">
+
+    <!---------- Display Settings ---------->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Theme Colors -->
+    <meta name="theme-color" content="#0f172a">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#0f172a-transparent">
+    <meta name="msapplication-TileColor" content="#0f172a-transparent">
 
 
     <!---------- SEO Metas ---------->
@@ -55,35 +70,19 @@
     <meta name="keywords" content=""> <!-- put the keywords list of website in ( content ) property -->
 
 
-    <!---------- Display Settings ---------->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-
-    <!-- Theme Colors -->
-    <meta name="theme-color" content="#0f172a">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#0f172a-transparent">
-    <meta name="msapplication-TileColor" content="#0f172a-transparent">
-
     <!-- iOS Lunch Screen -->
-    <!-- <link rel="apple-touch-startup-image" href="./assets/imgs/lunchScreens/apple_splash_2048.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem" class="cacheItem"/>
-    <link rel="apple-touch-startup-image" href="./assets/imgs/lunchScreens/apple_splash_1668.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem" class="cacheItem"/>
-    <link rel="apple-touch-startup-image" href="./assets/imgs/lunchScreens/apple_splash_1536.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem" class="cacheItem"/>
-    <link rel="apple-touch-startup-image" href="./assets/imgs/lunchScreens/apple_splash_1125.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem" class="cacheItem"/>
-    <link rel="apple-touch-startup-image" href="./assets/imgs/lunchScreens/apple_splash_1242.png" media="(device-width: 414px) and (device-height: 763px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" class="cacheItem" class="cacheItem"/>
-    <link rel="apple-touch-startup-image" href="./assets/imgs/lunchScreens/apple_splash_828.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem" class="cacheItem"/>
-    <link rel="apple-touch-startup-image" href="./assets/imgs/lunchScreens/apple_splash_750.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem" class="cacheItem"/>
-    <link rel="apple-touch-startup-image" href="./assets/imgs/lunchScreens/apple_splash_640.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem" class="cacheItem"/> -->
-
-
-    <!---------- Css Files ---------->
-    <link rel="stylesheet" href="./assets/css/design-system.css" class="cacheItem">
-    <link rel="stylesheet" href="./assets/css/layout.css" class="cacheItem">
-    <link rel="stylesheet" href="./assets/css/main.css" class="cacheItem">
-
+    <!-- <link rel="apple-touch-startup-image" href="./assets/imgs/lunchScreens/apple_splash_2048.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem"/>
+    <link rel="apple-touch-startup-image" href="./assets/imgs/lunchScreens/apple_splash_1668.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem"/>
+    <link rel="apple-touch-startup-image" href="./assets/imgs/lunchScreens/apple_splash_1536.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem"/>
+    <link rel="apple-touch-startup-image" href="./assets/imgs/lunchScreens/apple_splash_1125.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem"/>
+    <link rel="apple-touch-startup-image" href="./assets/imgs/lunchScreens/apple_splash_1242.png" media="(device-width: 414px) and (device-height: 763px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" class="cacheItem"/>
+    <link rel="apple-touch-startup-image" href="./assets/imgs/lunchScreens/apple_splash_828.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem"/>
+    <link rel="apple-touch-startup-image" href="./assets/imgs/lunchScreens/apple_splash_750.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem"/>
+    <link rel="apple-touch-startup-image" href="./assets/imgs/lunchScreens/apple_splash_640.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" class="cacheItem"/> -->
 
     <!---------- Favicon ---------->
     <link rel="icon" type="image/x-icon" href="./assets/imgs/Favicon/Favicon.png" class="cacheItem">
+    <link rel="manifest" href="./assets/imgs/Favicon/manifest.json" class="cacheItem">
     
     <!-- Browser -->
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/imgs/Favicon/favicon-16x16.png" class="cacheItem">
