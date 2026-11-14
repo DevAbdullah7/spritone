@@ -1,19 +1,19 @@
 {
     "name": "Spritone",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "author": "Abdullah Alqahtani",
     "developer": {
         "name": "Abdullah Alqahtani",
         "url": "https://github.com/DevAbdullah7"
     },
     "short_name": "Spritone",
-    "description": "موقع الكتروني لعرض اوقات الصلاة",
+    "description": "Technical Tool To Convert The SVG Icons Into SVG Sprite",
     "theme_color": "#0f172a",
     "background_color": "#0f172a",
     "display": "standalone",
     "orientation": "portrait",
     "Scope": "/",
-    "start_url": "https://Spritone.com/",
+    "start_url": "https://devabdullah7.github.io/spritone/",
     "dir": "auto",
     "lang": "en",
     "display_override": [
