@@ -19,7 +19,8 @@ function cleanBoundaries(name) {
 }
 
 function extractBaseAndSuffix(fullName) {
-    const cleanName = fullName.replace(/\.svg$/i, '').trim().toLowerCase();
+    // استبدال أي مسافات بشرطات وتحويل النص إلى أحرف صغيرة وتنظيفه
+    const cleanName = fullName.replace(/\.svg$/i, '').trim().toLowerCase().replace(/\s+/g, '-').replace(/-+/g, '-');
     const match = cleanName.match(/^(.*?)(?:[_-]?(outline|sharp|filled|round|twotone))?$/i);
     
     if (match) {
@@ -118,7 +119,6 @@ async function handleFiles(files) {
     const fileList = [...files];
     if (fileList.length === 0) return;
 
-    // تصفية أولية: قبول ملفات SVG الحقيقية واستبعاد المجلدات فوراً
     const svgFiles = fileList.filter(file => {
         const isSvgExtension = file.name.toLowerCase().endsWith('.svg');
         const isSvgMime = file.type === 'image/svg+xml' || file.type === '';
@@ -132,7 +132,6 @@ async function handleFiles(files) {
             return new Promise(resolve => {
                 const reader = new FileReader();
 
-                // حماية بمؤقت 3 ثوانٍ لكل ملف لمنع التعليق
                 const fileTimeout = setTimeout(() => {
                     reader.abort();
                     resolve(null);
@@ -264,7 +263,7 @@ function renderIcons() {
                                 type="text" 
                                 name="icon-name" 
                                 placeholder="Enter Icon Name" 
-                                oninput="inputHandlling(this), this.value = this.value.replace(/[^a-zA-Z0-9\\s-]/g, '')"
+                                oninput="inputHandlling(this), this.value = this.value.replace(/[^a-zA-Z0-9\\s-]/g, '').replace(/\\s+/g, '-')"
                             >
                             <div class="inputIcon" id="resetIconName" title="Reset Icon Name">
                                 <svg width="24" height="24">
@@ -502,7 +501,6 @@ function formatNode(node, level = 2) {
     return result;
 }
 
-// تلوين الكود محلياً بدون مكتبات خارجية
 function highlightSVG(code) {
     const escaped = code
         .replace(/&/g, '&amp;')
