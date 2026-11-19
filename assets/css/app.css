@@ -236,6 +236,7 @@ html.arabic .uploaded-icons .input {
 }
 .uploaded-icons .input[status="error"] {
     height: fit-content;
+    color: var(--danger-color-500-MD);
 }
 .uploaded-icons .input * {
     height: 24px;
