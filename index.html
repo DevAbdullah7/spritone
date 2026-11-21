@@ -436,13 +436,15 @@
     <div class="bubble"></div>
 
     <!-- JavaScript Files -->
+    <!-- Service Worker Registeration -->
     <script>
         if (typeof navigator.serviceWorker !== 'undefined') {
             navigator.serviceWorker.register('sw.js')
         }
     </script>
+    <script type="module"  src="./assets/js/app.js" class="cacheItem"></script>
 
-    <script type="module"  src="./assets/js/Design-System.js" class="cacheItem"></script>
+    <script type="module"  src="./assets/js/design-system.js" class="cacheItem"></script>
     <script type="module"  src="./assets/js/main.js" class="cacheItem"></script>
 </body>
 </html>
