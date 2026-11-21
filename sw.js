@@ -1,4 +1,4 @@
-const cacheName = 'spritone-v8'
+const cacheName = 'spritone'
 const assets = [
     '/',
     '/index.html',

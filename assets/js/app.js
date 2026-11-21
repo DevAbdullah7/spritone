@@ -1,7 +1,7 @@
 export const APP = {
     deferredInstall: null,
     SW: null,
-    cacheName: 'spritone-v8',
+    cacheName: 'spritone',
     init() {
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js').then((registration) => {
